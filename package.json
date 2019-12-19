@@ -14,6 +14,7 @@
     "redux": "^4.0.4",
     "redux-firestore": "^0.11.0",
     "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
