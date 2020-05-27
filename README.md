@@ -1,2 +1,3 @@
-# com-dictionary-private
-com-dictionary-private
+# com-dictionary
+
+com-dictionary
