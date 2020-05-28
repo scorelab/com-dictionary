@@ -1,0 +1,99 @@
+.body
+{
+  padding-top: 6vmin;
+  background-color: white;
+  padding-bottom: 8vmin;
+}
+
+.title_bar
+{
+  background-color: gainsboro;
+  padding-left: 12vmin;
+  padding-right: 12vmin;
+  padding-top: 3vmin;
+  padding-bottom: 3vmin;
+  min-height: 15vmin;
+  position: 'fixed';
+  z-index: 1;
+  width: '100%';
+}
+
+.title
+{
+  width:50vmin;
+  height: 6vmin;
+  margin-top: 2vmin;
+  background-color: rgba(0, 255, 255, 0.548);
+  float: left;
+}
+
+
+.navbar
+{
+  margin-left: 65%;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+
+.search_word
+{
+  margin-right: 20vmin; 
+}
+
+
+.search_text
+{
+  border: solid gray;
+}
+
+.index
+{
+  position: relative;
+  margin-top: 8vmin;
+  width:80%;
+  margin-left: 10%;
+  color : #12aad4;
+
+}
+
+.day
+{
+  border: none;
+  margin-top: 2vmin;
+  margin-left: 14vmin;
+}
+
+.new_card
+{
+  width:60%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.search_style
+{
+  width: 50vmin;
+  margin-left : "4vmin";
+  border : "solid 1px";
+  border-color:"#CFD8D8 ";
+  border-radius:"6px"
+
+}
+
+.select_style
+{
+  width: 30vmin;
+  border-bottom : "solid 1px";
+  color : "black";
+  text-align: center;
+}
+
+
+.footer
+{
+  background-color: transparent;
+  text-align: center;
+  height: 4vmin;
+}
