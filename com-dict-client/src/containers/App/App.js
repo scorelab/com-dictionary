@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import React , { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom"
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-     Community Dictionary
-    </div>
-  );
+
+import HomePage from "../home/home"
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+       <Route exact path="/" component={HomePage} />
+      </Router>
+
+    );
+  }
 }
 
 export default App;
