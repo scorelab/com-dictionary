@@ -97,3 +97,24 @@
   text-align: center;
   height: 4vmin;
 }
+
+.social_btn
+{
+  width: 18vmin;
+  color: white;
+}
+
+
+.login-form {
+  align-self: center;
+}
+.login-form-forgot {
+  float: right;
+}
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}
