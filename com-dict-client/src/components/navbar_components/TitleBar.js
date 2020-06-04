@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu} from 'antd';
-import { PlusCircleOutlined , UserOutlined} from '@ant-design/icons';
+import { PlusCircleOutlined} from '@ant-design/icons';
+
+import UserAccount from "./UserAccount"
 
 
 const { SubMenu } = Menu;
@@ -22,12 +24,11 @@ function TitleBar() {
 
 
                
-
                 <SubMenu
                     key="account"
                     title={
                     <span>
-                        <UserOutlined style={{color:"black", fontSize:"28px"}}/>
+                        <UserAccount />
                     </span>
                     }
                     >
