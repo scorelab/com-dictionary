@@ -1,8 +1,8 @@
 import React from 'react';
 import { Modal, Button, Card, Divider, Typography} from 'antd';
 import { UserOutlined} from '@ant-design/icons';
-import NormalLoginForm from '../login_components/LoginForm'
-import SocialLogin from '../login_components/SocialLogin'
+import NormalLoginForm from '../login/LoginForm'
+import SocialLogin from '../login/SocialLogin'
 
 
 const {Text} = Typography;
@@ -69,11 +69,11 @@ class App extends React.Component {
             <SocialLogin />
 
         </Card>
-
-      <div style={{textAlign:"center"}}>
-        <Text strong>Don't have an account?</Text>
-            <a>Sign Up here</a>
-      </div>
+        
+        <div style={{ textAlign: "center" }}>
+          <Text strong>Don't have an account?</Text>
+          <a href="/signup">Sign Up here</a>
+        </div>
         </Modal>
       </div>
     );
