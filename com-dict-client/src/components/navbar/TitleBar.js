@@ -17,7 +17,7 @@ function TitleBar() {
                 <Menu.Item key="2">Categories</Menu.Item>
                 <Menu.Item key="3">Vote</Menu.Item>
                 <Menu.Item key="4">
-                    <Link to="/">
+                    <Link to="/add">
                     <PlusCircleOutlined style={{color:"black", fontSize:"28px"}}/>
                     </Link>
                 </Menu.Item> 
