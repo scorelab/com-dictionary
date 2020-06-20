@@ -1,11 +1,11 @@
 import React from 'react';
 import './home.css';
 import { Layout } from 'antd';
-import TitleBar from "../../components/TitleBar"
-import WordSearch from "../../components/WordSearch"
-import AlphaIndex from "../../components/AlphaIndex"
-import DayNew from "../../components/DayNew"
-import FooterPage from "../../components/FooterPage"
+import TitleBar from "../../components/navbar/TitleBar"
+import WordSearch from "../../components/home/WordSearch"
+import AlphaIndex from "../../components/home/AlphaIndex"
+import DayNew from "../../components/home/DayNew"
+import FooterPage from "../../components/footer/FooterPage"
 
 const {Header,Footer, Content } = Layout;
 
