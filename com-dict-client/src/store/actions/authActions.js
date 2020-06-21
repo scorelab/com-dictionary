@@ -1,7 +1,8 @@
 export const signIn = (credentials) => async (firebase, history) => {
   try {
     await firebase.login(credentials);
-    history.push("/app");
+    console.log("Success");
+    history.push("/");
   } catch (e) {
     console.log(e.message);
   }
@@ -10,7 +11,7 @@ export const signIn = (credentials) => async (firebase, history) => {
 export const signOut = () => async (firebase, history) => {
   try {
     await firebase.logout();
-    history.push("/login");
+    history.push("/");
   } catch (e) {
     console.log(e.message);
   }
