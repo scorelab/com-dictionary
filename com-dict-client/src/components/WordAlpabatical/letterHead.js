@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "antd";
+import { Typography, Row, Col } from "antd";
 
 const { Title } = Typography;
 
@@ -7,7 +7,7 @@ function LetterHead(props) {
   const { letter } = props;
   return (
     <div className="letter_div">
-      <Title style={{ color: "white" }}>{letter}</Title>
+        <Title style={{ color: "white" }}>{letter}</Title>
     </div>
   );
 }
