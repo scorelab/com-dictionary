@@ -1,0 +1,31 @@
+.letter_div
+{
+  margin-top: 3vmin;
+  text-align: center;
+  background-color:black;
+}
+
+
+.word_card
+{
+  /* width:80%; */
+  /* margin-left:10%; */
+  /* padding:0px; */
+  
+}
+
+.word_index
+{
+  /* width:50%; */
+  /* margin-left:10%; */
+  /* padding:0px; */
+  /* margin-top:4%; */
+  
+}
+
+
+.trending
+{
+  /* margin-top:10%; */
+  /* width:100%; */
+}

@@ -51,25 +51,30 @@ function WordHome() {
   const words = useSelector((state) => state.firestore.ordered.definitions);
 
   return (
-    <>
+    <Row>
+    <Col span={3}></Col>
+     <Col span={18}>
       <Tabs
         onChange={(key) => setActiveKey(key)}
         defaultActiveKey="1"
         type="card"
-        size="small"
-        className="index"
+        tabBarGutter="4px"
       >
         {[...Array(26).keys()].map((i) => (
           <TabPane
             tab={`${String.fromCharCode(i + 65)}`}
             key={String.fromCharCode(i + 65)}
           >
+      
             <LetterHead letter={String.fromCharCode(i + 65)} />
             <Row>{words && words.map((val, i) => <Word data={val} />)}</Row>
           </TabPane>
         ))}
       </Tabs>
-    </>
+      </Col>
+      <Col span={3}></Col>
+      </Row>
+ 
   );
 }
 
