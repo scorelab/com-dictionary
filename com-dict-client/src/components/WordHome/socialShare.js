@@ -1,11 +1,19 @@
 import React from "react";
 import { Button } from "antd";
-import { ShareAltOutlined } from "@ant-design/icons";
+import {
+  FacebookFilled,
+  TwitterCircleFilled,
+  ShareAltOutlined,
+} from "@ant-design/icons";
 
 import {
+  FacebookShareCount,
+  OKShareCount,
+  PinterestShareCount,
   TwitterShareButton,
   FacebookShareButton,
   FacebookIcon,
+  RedditIcon,
   TwitterIcon,
 } from "react-share";
 
@@ -23,7 +31,7 @@ function SocialShare() {
         type="link"
         icon={
           <ShareAltOutlined
-            style={{ fontSize: "16pt", color: "gray", padding: 10 }}
+            style={{ fontSize: "24pt", color: "gray"}}
           />
         }
         size="large"

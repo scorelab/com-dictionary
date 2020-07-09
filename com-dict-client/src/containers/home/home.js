@@ -1,11 +1,10 @@
-import React from 'react';
-import './home.css';
-import { Layout } from 'antd';
-import TitleBar from "../../components/navbar/TitleBar"
-import WordSearch from "../../components/home/WordSearch"
-import AlphaIndex from "../../components/home/AlphaIndex"
-import DayNew from "../../components/home/DayNew"
-import FooterPage from "../../components/footer/FooterPage"
+import React from "react";
+import "./home.css";
+import { Layout } from "antd";
+import TitleBar from "../../components/Header";
+import WordHome from "../../components/WordHome";
+// import WordBook from "../../components/WordHome/book";
+import FooterPage from "../../components/footer";
 
 const {Header,Footer, Content } = Layout;
 
@@ -16,9 +15,7 @@ function HomePage() {
         <TitleBar />
       </Header>
       <Content className="body">
-        <WordSearch />
-        <AlphaIndex />
-        <DayNew />
+      <WordHome />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

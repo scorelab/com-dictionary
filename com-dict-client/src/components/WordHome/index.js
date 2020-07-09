@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Card, Row, Col, Divider, Button, Pagination } from "antd";
+// import {
+//   SoundOutlined,
+//   LikeOutlined,
+//   DislikeOutlined,
+// } from "@ant-design/icons";
+// import SelectLang from "../Search/SelectLang";
+// import SocialShare from "./SocialShare";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
-import Word from "./word";
+import WordSimple from "./wordSimple";
 const { Title, Text } = Typography;
 
 function WordHome() {
@@ -27,7 +34,7 @@ function WordHome() {
       <Row>
         <Col lg={4} md={0} sm={0}></Col>
         <Col lg={12} md={24} sm={24} xs={24}>
-          {words && words.map((val, i) => <Word data={val} />)}
+          {words && words.map((val, i) => <WordSimple data={val} />)}
         </Col>
         <Col lg={1} md={0} sm={0}></Col>
 
@@ -44,16 +51,16 @@ function WordHome() {
 
         <Col lg={1} md={0} sm={0}></Col>
       </Row>
-      <Row style={{ paddingTop: "2vmin" }}>
-        <Col lg={4} md={4} sm={4}></Col>
-        <Col lg={4} md={4} sm={4}>
+      <Row style={{ paddingTop: "2vmin"}}>
+        <Col lg={4} md={0} sm={0}></Col>
+        <Col lg={12} md={24} sm={24} xs={24} style={{textAlign:"center"}}>
           <Pagination
             defaultCurrent={1}
             total={words && words.length}
             onChange={(page, pageSize) => setPage(page)}
           />
         </Col>
-        <Col lg={4} md={4} sm={4}></Col>
+        {/* <Col lg={4} md={4} sm={4}></Col> */}
       </Row>
     </>
   );
