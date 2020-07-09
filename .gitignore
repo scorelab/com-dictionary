@@ -4,3 +4,4 @@
 .env
 ./package-lock.json
 com-dict-client/.env
+com-dict-client/.env

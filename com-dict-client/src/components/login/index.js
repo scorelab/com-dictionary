@@ -96,7 +96,7 @@ function App(props) {
 
         <div style={{ textAlign: "center" }}>
           <Text strong>Don't have an account?</Text>
-          <a href="/signup">Sign Up here</a>
+          <a href="/signup" style={{fontSize:"2.5vmin"}}> Sign Up here</a>
         </div>
 
 
