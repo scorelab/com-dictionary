@@ -2,7 +2,7 @@ import React from "react";
 import "../home/home.css";
 import "./letterDict.css";
 import { Layout } from "antd";
-import TitleBar from "../../components/navbar/TitleBar";
+import TitleBar from "../../components/Header";
 import LetterHead from "../../components/WordAlpabatical/letterHead";
 import AlphaIndex from "../../components/WordAlpabatical";
 import FooterPage from "../../components/footer/FooterPage";
