@@ -8,9 +8,11 @@ import rootReducer from "./reducers";
 
 import firebase from "../config";
 
+import { auth } from "../config";
+
 // react-redux-firebase config
 const rrfConfig = {
-  userProfile: null,
+  userProfile: "users",
   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime
   attachAuthIsReady: true,
 };
