@@ -1,4 +1,6 @@
 .vscode/settings.json
 .vscode/
 .idea/
+.env
 ./package-lock.json
+com-dict-client/.env

@@ -6,9 +6,9 @@ import HomePage from "./containers/home/home";
 import SignUp from "./containers/signup/signup";
 import AddWord from "./containers/addWord/addWord";
 import LetterBased from "./containers/dictionary/letterDict";
-import Browse from "./containers/browse/browse";
-import Categories from "./containers/categories/categories";
-import Search from "./containers/search/search";
+// import Browse from "./containers/browse/browse";
+// import Categories from "./containers/categories/categories";
+// import Search from "./containers/search/search";
 
 const fakeAuth = {
   isAuthenticated: true,
@@ -27,9 +27,9 @@ export default function Routes() {
     <Router>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
-      <Route exact path="/browse" component={Browse} />
-      <Route exact path="/search" component={Search} />
-      <Route exact path="/Categories" component={Categories} />
+      {/* <Route exact path="/browse" component={Browse} /> */}
+      {/* <Route exact path="/search" component={Search} /> */}
+      {/* <Route exact path="/Categories" component={Categories} /> */}
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>

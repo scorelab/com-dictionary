@@ -23,7 +23,7 @@ function SocialShare() {
         type="link"
         icon={
           <ShareAltOutlined
-            style={{ fontSize: "16pt", color: "gray", padding: 10 }}
+            style={{ fontSize: "22pt", color: "black" }}
           />
         }
         size="large"

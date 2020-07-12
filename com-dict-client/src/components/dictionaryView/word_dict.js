@@ -16,8 +16,8 @@ import {
   PlusCircleOutlined,
 } from "@ant-design/icons";
 
-import SelectLang from "../Search/SelectLang";
-import SocialShare from "./SocialShare";
+import SelectLang from "../home/SelectLang";
+import SocialShare from "../WordAlpabatical/socialShare";
 
 const { Title, Text } = Typography;
 
@@ -31,12 +31,12 @@ function Word()
         
                 </Col>
                 <Col xl={20} lg={20} md={24} sm={24} xs={24}>
-                    <Card bordered style={{boxShadow:"2px 2px 4px rgba(0, 0, 0, 0.15)"}}>
+                    <Card bordered>
                     <Row>
                         <Col xl={18} lg={18} md={24} sm={24} xs={24}>
                         <Row>
                             <Col xl={12} lg={12} md={12} sm={12} xs={12} style={{ textAlign: "left" }}>
-                               <Title level={5}><span className="word_title">Word</span></Title>
+                                <Title level={5}>Word</Title>
                             </Col>
 
                             <Col xl={0} lg={0} md={12} sm={12} xs={12} style={{ textAlign: "right" }}>
@@ -48,13 +48,13 @@ function Word()
                             </Col>
                         </Row>    
                         <Row>
-                            <Text><span className="language_span">English</span></Text>
+                            <Text>English</Text>
                             <Divider
                                 type="vertical"
                                 flex
                                 style={{ height: "5vmin" }}
                             ></Divider>
-                            <Text><span className="type_span">Noun</span></Text>
+                            <Text>Noun</Text>
                             <Divider
                                 flex
                                 type="vertical"
