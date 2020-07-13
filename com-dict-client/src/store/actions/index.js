@@ -1,2 +1,9 @@
-export { signIn, signOut } from "./authActions";
-export { addWord, updateWord } from "./wordActions";
+export {
+  signIn,
+  signOut,
+  createNewUser,
+  addNewUser,
+  signInWithGoogle,
+  signInWithProviderID,
+} from "./authActions";
+export { addWord, updateWord, getWords } from "./wordActions";
