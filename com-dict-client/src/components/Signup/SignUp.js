@@ -10,9 +10,12 @@ import {
   Button,
   AutoComplete
 } from 'antd';
+import { Typography } from 'antd';
+import signup from '../images/pablo-sign-up.png';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
+const { Title } = Typography;
 const AutoCompleteOption = AutoComplete.Option;
 
 const formItemLayout = {
@@ -21,48 +24,31 @@ const formItemLayout = {
       span: 24,
     },
     sm: {
-      span: 8,
+      span: 24,
     },
     md: {
         span:8,
       },
     lg: {
         span:6,
-    }
+    },
+    xl: {
+      span:6,
+  }
   },
   wrapperCol: {
     xs: {
         span: 24,
       },
       sm: {
-        span: 16,
+        span: 24,
       },
       md: {
           span:16,
         },
       lg: {
-          span:14,
+          span:18,
       }
-  },
-};
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 16,
-      offset: 4,
-    },
-    sm: {
-      span: 16,
-      offset: 4,
-    },
-    md: {
-        span: 16,
-        offset: 4,
-      },
-    lg: {
-        span: 14,
-        offset: 6,
-      },
   },
 };
 
@@ -89,7 +75,27 @@ const RegistrationForm = () => {
 
  
   return (
-
+    <Row>
+    <Row>
+      <Col span={1}></Col>
+      <Col span={23}>
+        <span style={{textAlign:"center"}}><Title level={1}>BECOME A PART OF OUR COMMUNITY TODAY!!!</Title></span>
+      </Col>
+    </Row>
+    <Row style={{paddingTop:"3vmin"}}>
+      <Col xl={1} lg={0}></Col>
+      <Col xl={7} lg={8} md={0} sm={0} xs={0} style={{textAlign:"center"}}>
+        
+        <Row align="middle">
+        <img style={{maxWidth:"120%", paddingTop:"5%"}} src={signup} />
+        </Row>
+        
+      </Col>
+      <Col xl={0} lg={1} md={1} sm={1} xs={1}></Col>
+      <Row>
+        
+      </Row>
+      <Col xl={14} lg={12} md={22} sm={22} xs={22}>
     <Form
       {...formItemLayout}
       form={form}
@@ -214,7 +220,9 @@ const RegistrationForm = () => {
         </Row>
       </Form.Item>
 
-
+    <Row>
+      <Col span={6}></Col>
+      <Col span={18}>
 
       <Form.Item
         name="agreement"
@@ -225,7 +233,7 @@ const RegistrationForm = () => {
               value ? Promise.resolve() : Promise.reject('Should accept agreement'),
           },
         ]}
-        {...tailFormItemLayout}
+        {...formItemLayout}
       >
        
         <Checkbox>
@@ -233,11 +241,13 @@ const RegistrationForm = () => {
         </Checkbox>
 
       </Form.Item>
+      </Col>
+      </Row>
 
     <Row gutter={8}>
-    <Col span ={4}></Col>
-      <Col span={20}>
-      <Form.Item {...tailFormItemLayout}>
+    <Col span ={6}></Col>
+      <Col span={18}>
+
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="register-form-button">
@@ -245,10 +255,13 @@ const RegistrationForm = () => {
         </Button>
      
       </Form.Item>
-      </Form.Item>
       </Col>
       </Row>
     </Form>
+    </Col>
+      <Col xl={0} lg={0} md={1} sm={1} xs={1}></Col>
+    </Row>
+    </Row>
 
   );
 };

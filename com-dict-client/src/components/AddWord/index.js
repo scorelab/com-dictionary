@@ -1,21 +1,21 @@
 import React from "react";
-import { Card, Typography, Form, Input, Select, Button } from "antd";
+import { Card, Typography, Form, Input, Select, Button, Row, Col} from "antd";
 import WordClass from "../WordClass";
 import EditableTagGroup from "../RelatedWords";
 
-// import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
+import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
 
-// import { addWord } from "../../store/actions";
+import { addWord } from "../../store/actions";
 
 const { Text } = Typography;
 var optionText;
 
 function WordForm() {
-  // const firestore = useFirestore();
-  // useFirestoreConnect([{ collection: "definitions" }]);
+  const firestore = useFirestore();
+  useFirestoreConnect([{ collection: "definitions" }]);
   const onSubmit = (values) => {
     const definition = values;
-    // return addWord(definition)(firestore);
+    return addWord(definition)(firestore);
   };
 
   const onChange = (value) => {
@@ -40,19 +40,19 @@ function WordForm() {
           marginRight: "10%",
         }}
         headStyle={{
-          backgroundColor: "#DCD9D9",
+          backgroundColor: "#FFFFFF",
           fontSize: "x-large",
-          color: "#4FD5DE",
+          color: "black",
           border: 0,
           textAlign: "center",
         }}
-        bodyStyle={{ backgroundColor: "#E9E9E9", border: 0 }}
+        bodyStyle={{ backgroundColor: "#FFFFFF", border: 0 }}
       >
         <Text style={{ fontSize: "18px" }}>
           All the definitions and transaltions on Community Dictionary were
           written by people just like you. Now's your chance to add your own!
         </Text>
-        <Form onFinish={onSubmit} style={{ paddingTop: "4vmin" }}>
+        <Form onFinish={onSubmit} style={{ paddingTop: "4vmin"}}>
           <Form.Item label="Select the language">
             <Select
               showSearch
@@ -110,17 +110,25 @@ function WordForm() {
           </Form.Item>
 
           <Form.Item>
-            <Button
-              type="primary"
-              size="large"
-              htmlType="submit"
-              block
-              className="submit_btn"
-            >
-              Add to dictionary
-            </Button>
+            <Row>
+              <Col xl={6} ls={6} md={3} sm={0} xs={0}>
+              </Col>
+              <Col xl={12} lg={12} md={18} sm={24} xs={24}>
+                  <Button
+                  type="primary"
+                  // size="large"
+                  htmlType="submit"
+                  block
+                  // className="submit_btn"
+                >
+                  Add Word
+                </Button>
+              </Col>
+              <Col xl={6} ls={6} md={3} sm={0} xs={0}>
+              </Col>
+            </Row>
           </Form.Item>
-        </Form>
+          </Form>
       </Card>
     </div>
   );

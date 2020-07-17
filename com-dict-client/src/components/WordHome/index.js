@@ -34,7 +34,7 @@ function WordHome() {
       <Row>
         <Col lg={4} md={0} sm={0}></Col>
         <Col lg={12} md={24} sm={24} xs={24}>
-          {words && words.map((val, i) => <WordSimple data={val} />)}
+          {/* {words && words.map((val, i) => <WordSimple data={val} />)} */}
         </Col>
         <Col lg={1} md={0} sm={0}></Col>
 
