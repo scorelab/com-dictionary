@@ -2,7 +2,7 @@ import React from "react";
 import "../home/home.css";
 import "./addWord.css";
 import { Layout } from "antd";
-import TitleBar from "../../components/navbar/TitleBar";
+import TitleBar from "../../components/Header";
 import WordForm from "../../components/AddWord";
 import FooterPage from "../../components/footer/FooterPage";
 
