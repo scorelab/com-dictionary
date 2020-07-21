@@ -1,25 +1,20 @@
 import React from "react";
 import "../home/home.css";
-import "./letterDict.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import LetterHead from "../../components/WordAlpabatical/letterHead";
-import AlphaIndex from "../../components/WordAlpabatical";
+import FlagWord from "../../components/flag"
 import FooterPage from "../../components/footer/FooterPage";
-// import Word from "../../components/dictionaryView/word_dict";
-import Word from "../../components/WordHome/word";
 
 const { Header, Footer, Content } = Layout;
 
-function LetterBased() {
+function reportWord() {
   return (
     <Layout>
       <Header className="title_bar">
         <TitleBar />
       </Header>
       <Content className="body">
-        <AlphaIndex />
-        <Word />
+        <FlagWord />
       </Content>
       <Footer className="footer_div">
         <FooterPage />
@@ -28,4 +23,5 @@ function LetterBased() {
   );
 }
 
-export default LetterBased;
+export default reportWord;
+
