@@ -6,7 +6,7 @@ import {
   DislikeOutlined,
 } from "@ant-design/icons";
 import SelectLang from "../Search/SelectLang";
-import SocialShare from "./SocialShare";
+import SocialShare from "./socialShare";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
 const { Title, Text } = Typography;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Typography, Form, Input, Select, Button, Row, Col } from "antd";
 import WordClass from "./WordClass";
-import EditableTagGroup from "../RelatedWords";
+import EditableTagGroup from "./RelatedWords";
 
 import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
 
@@ -13,7 +13,7 @@ var optionText;
 
 function WordForm() {
   const firestore = useFirestore();
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("English");
   const [headTerm, setHeadTerm] = useState("");
   const [otherLanguageTerm, setOtherLanguageTerm] = useState("");
   const [wordClass, setWordClass] = useState([]);
@@ -21,6 +21,8 @@ function WordForm() {
   const [example, setExample] = useState("");
   const [category, setCategory] = useState("");
   const [relatedWords, setRelatedWords] = useState([]);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
 
   useFirestoreConnect([
     { collection: "languages" },
@@ -28,20 +30,23 @@ function WordForm() {
     { collection: "headTerms" },
   ]);
   const onSubmit = (values) => {
-    const definition = values;
-    console.log(definition);
+    // const definition = values;
+    // console.log(definition);
     const data = {
-      language,
-      headTerm,
-      otherLanguageTerm,
-      category,
-      meaning,
-      wordClass,
-      example,
-      relatedWords,
+      other_language: language,
+      head_term: headTerm,
+      other_language_term: otherLanguageTerm,
+      categories: category,
+      other_language_def: meaning,
+      word_classes: wordClass,
+      example: example,
+      related_words: relatedWords,
+      likes: likes,
+      dislikes: dislikes,
+      userId: user,
     };
     console.log(data);
-    // return addWord(definition)(firestore);
+    return addWord(data)(firestore);
   };
 
   const languages = useSelector((state) => state.firestore.ordered.languages);
@@ -54,15 +59,6 @@ function WordForm() {
   console.log(headTerms);
 
   const user = useSelector((state) => state.firebase.auth.uid);
-
-  const onChange = (value) => {
-    optionText = value;
-    console.log(optionText);
-  };
-
-  const onSearch = (val) => {
-    console.log("search:", val);
-  };
 
   return (
     <div>
@@ -96,13 +92,12 @@ function WordForm() {
           >
             <Select
               showSearch
-              // defaultValue={languages && languages[0].id}
+              defaultValue={language}
               onChange={(val) => setLanguage(val)}
-              onSearch={onSearch}
             >
               {languages &&
                 languages.map((lng, i) => (
-                  <Select.Option key={i} value={lng.id}>
+                  <Select.Option key={i} value={lng.language}>
                     {lng.language}
                   </Select.Option>
                 ))}
@@ -116,22 +111,16 @@ function WordForm() {
             <Select
               showSearch
               placeholder="New word in English"
-              // defaultValue={languages && languages[0].id}
               onChange={(val) => setHeadTerm(val)}
-              // onSearch={onSearch}
             >
               {headTerms &&
                 headTerms.map((ht, i) => (
-                  <Select.Option key={i} value={ht.id}>
+                  <Select.Option key={i} value={ht.head_term}>
                     {ht.head_term}
                   </Select.Option>
                 ))}
             </Select>
           </Form.Item>
-
-          {/* <Form.Item name="head_term" rules={[{ required: true, message: "" }]}>
-            <Input placeholder="Head term - New word in English" />
-          </Form.Item> */}
 
           <Form.Item
             name="other_language_term"
@@ -139,7 +128,6 @@ function WordForm() {
           >
             <Input
               onChange={(val) => setOtherLanguageTerm(val.target.value)}
-              onChange={(val) => console.log(val)}
               placeholder="Word in <selected langauge>"
             />
           </Form.Item>
@@ -149,7 +137,7 @@ function WordForm() {
             name="classes"
             label="Select the word class"
           >
-            <WordClass />
+            <WordClass onChange={(val) => setWordClass(val)} />
           </Form.Item>
 
           <Form.Item
@@ -173,18 +161,19 @@ function WordForm() {
             <Select
               showSearch
               placeholder="Select the category"
-              onChange={(val) => setCategory(val.value)}
-              onSearch={onSearch}
+              onChange={(val) => setCategory(val)}
             >
               {categories &&
                 categories.map((ct, i) => (
-                  <Select.Option value={ct.id}>{ct.category}</Select.Option>
+                  <Select.Option value={ct.category}>
+                    {ct.category}
+                  </Select.Option>
                 ))}
             </Select>
           </Form.Item>
 
           <Form.Item name="related_words" label="Add related words (if any)">
-            <EditableTagGroup onChange={(val) => setRelatedWords(val)} />
+            <EditableTagGroup onChange={(val) => console.log(val)} />
           </Form.Item>
 
           <Form.Item name="likes">

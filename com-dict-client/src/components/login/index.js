@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { Modal,Avatar, Button, Card, Divider, Typography, Row, Col } from "antd";
+import {
+  Modal,
+  Avatar,
+  Button,
+  Card,
+  Divider,
+  Typography,
+  Row,
+  Col,
+} from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import NormalLoginForm from "./loginForm";
 import SocialLogin from "./socialLogin";
-import login from '../images/pablo-sign-in.png';
+import login from "../images/pablo-sign-in.png";
 
 const { Text } = Typography;
 const { Meta } = Card;
@@ -44,67 +53,69 @@ function App(props) {
   const { visible, confirmLoading } = state;
   return (
     <div>
-      <Button
-        type="link"
-        size="large"
-        onClick={showModal}
-      >
+      <Button type="link" size="large" onClick={showModal}>
         <span class="icons8-customer"></span>
       </Button>
       <Modal
-        width = "80%"
+        width="80%"
         footer={null}
         visible={visible}
         onOk={handleOk}
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
       >
-      <Row>
-        <Col xl={8} lg={8} md={0} sm={0} xs={0} style={{textAlign:"center"}}>
-          <Row justify="space-around" align="middle">
-            <img class="login_anime" style={{maxWidth:"110%",height:"auto",paddingTop:"20vmin"}} src={login} />
-          </Row>
-        
-        </Col>
-        <Col xl={16} lg={16} md={24} sm={24} xs={24}>
-        <Card
-        title ="WELCOME BACK!!!"
-          style={{
-            backgroundColor: "#FFFFFF ",
-            border: 0,
-            padding: "1vmin",
-            width: "100%"
-          }}
-          headStyle={{
-            backgroundColor: "#FFFFFF ",
-            fontSize: "6vmin",
-            color: "#black",
-            border: 0,
-            textAlign: "center",
-          }}
-          bodyStyle={{ backgroundColor: "#FFFFFF", border: 0 }}
-        >
+        <Row>
+          <Col
+            xl={8}
+            lg={8}
+            md={0}
+            sm={0}
+            xs={0}
+            style={{ textAlign: "center" }}
+          >
+            <Row justify="space-around" align="middle">
+              <img
+                class="login_anime"
+                style={{
+                  maxWidth: "110%",
+                  height: "auto",
+                  paddingTop: "20vmin",
+                }}
+                src={login}
+              />
+            </Row>
+          </Col>
+          <Col xl={16} lg={16} md={24} sm={24} xs={24}>
+            <Card
+              title="WELCOME BACK!!!"
+              style={{
+                backgroundColor: "#FFFFFF ",
+                border: 0,
+                padding: "1vmin",
+                width: "100%",
+              }}
+              headStyle={{
+                backgroundColor: "#FFFFFF ",
+                fontSize: "6vmin",
+                color: "#black",
+                border: 0,
+                textAlign: "center",
+              }}
+              bodyStyle={{ backgroundColor: "#FFFFFF", border: 0 }}
+            >
+              <NormalLoginForm />
 
+              <Divider> OR </Divider>
 
-          <NormalLoginForm />
+              <SocialLogin />
+            </Card>
 
-          <Divider> OR </Divider>
-
-          <SocialLogin />
-
-        </Card>
-
-        <div style={{ textAlign: "center" }}>
-          <Text strong>Don't have an account?</Text>
-          <a href="/signup">Sign Up here</a>
-        </div>
-
-
-
-        </Col>
-
-      </Row>
-
+            <div style={{ textAlign: "center" }}>
+              <Text strong>Don't have an account?</Text>
+              <a href="/signup">Sign Up here</a>
+            </div>
+          </Col>
+        </Row>
       </Modal>
     </div>
   );

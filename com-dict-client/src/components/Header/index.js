@@ -7,7 +7,7 @@ import {
   MenuOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import UserAccount from "../Login";
+import UserAccount from "../login";
 import SelectLang from "../Search/SelectLang";
 import SearchText from "../Search/SearchText";
 import cover from "../logo/cover.png";

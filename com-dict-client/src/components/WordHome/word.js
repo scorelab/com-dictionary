@@ -11,14 +11,13 @@ import {
 } from "@ant-design/icons";
 // } from "./node_modules/@ant-design/icons";
 import SelectLang from "../Search/SelectLang";
-import SocialShare from "./SocialShare";
+import SocialShare from "./socialShare";
 
 const { Title, Text } = Typography;
 
 function Word() {
   return (
     <Row>
-<<<<<<< HEAD
       <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
       <Col xl={22} lg={22} md={24} sm={24} xs={24}>
         <Card bordered>
@@ -27,22 +26,11 @@ function Word() {
               <Col xl={12} lg={12} style={{ textAlign: "left" }}>
                 <Title level={5}>Word</Title>
               </Col>
-=======
-    <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
-    <Col xl={22} lg={22} md={24} sm={24} xs={24}>
-    <Card bordered>
-    <Col xl={19} lg={19}>
-      <Row>
-          <Col xl={12} lg={12} style={{ textAlign: "left" }}>
-            <Title level={5} >Word</Title>
-          </Col>
->>>>>>> e625349a589bde16508b9448e56021c08cd0493f
 
               <Col xl={0} lg={0} style={{ textAlign: "center" }}>
                 <SelectLang />
               </Col>
 
-<<<<<<< HEAD
               <Col xl={12} lg={12} style={{ textAlign: "right" }}>
                 <SocialShare />
               </Col>
@@ -50,15 +38,6 @@ function Word() {
 
             <Row align="middle">
               <Text>English</Text>
-=======
-          <Col xl={12} lg={12} style={{ textAlign: "right" }}>
-            <SocialShare />
-          </Col>
-        </Row>
-        
-        <Row align="middle">
-              <Text >English</Text>
->>>>>>> e625349a589bde16508b9448e56021c08cd0493f
               <Divider
                 type="vertical"
                 flex

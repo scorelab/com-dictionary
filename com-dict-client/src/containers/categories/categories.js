@@ -2,9 +2,9 @@ import React from "react";
 import { Layout } from "antd";
 import "./categories.css";
 import TitleBar from "../../components/Header";
-import FooterPage from "../../components/Footer";
-import CatHead from "../../components/Categories/catHead"
-import CatView from "../../components/Categories/catView"
+import FooterPage from "../../components/footer";
+import CatHead from "../../components/Categories/catHead";
+import CatView from "../../components/Categories/catView";
 const { Header, Footer, Content } = Layout;
 
 function Categories() {
