@@ -6,7 +6,7 @@ import {
   DislikeOutlined,
   PlusCircleOutlined,
 } from "@ant-design/icons";
-import SelectLang from "../home/SelectLang";
+import SelectLang from "../Search/SelectLang";
 import SocialShare from "./socialShare";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";

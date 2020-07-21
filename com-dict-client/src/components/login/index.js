@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal,Avatar, Button, Card, Divider, Typography, Row, Col } from "antd";
-import NormalLoginForm from "./LoginForm";
-import SocialLogin from "./SocialLogin";
+import { UserOutlined } from "@ant-design/icons";
+import NormalLoginForm from "./loginForm";
+import SocialLogin from "./socialLogin";
 import login from '../images/pablo-sign-in.png';
 
 const { Text } = Typography;
@@ -95,7 +96,7 @@ function App(props) {
 
         <div style={{ textAlign: "center" }}>
           <Text strong>Don't have an account?</Text>
-          <a href="/signup" style={{fontSize:"2.5vmin"}}> Sign Up here</a>
+          <a href="/signup">Sign Up here</a>
         </div>
 
 

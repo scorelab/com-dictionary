@@ -10,70 +10,74 @@ import {
   Tabs,
 } from "antd";
 import { useSelector } from "react-redux";
-import { useFirestoreConnect } from "react-redux-firebase";
+import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
 
 import Word from "./word";
 import LetterHead from "./letterHead";
+import AlphaIndex from ".";
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 function WordHome() {
   const [activeKey, setActiveKey] = useState("A");
+  const [headTerms, setHeadTerms] = useState([]);
+  const [headTermIds, setHeadTermIds] = useState(["1"]);
+  const [words, setWords] = useState([]);
 
-  useFirestoreConnect([
-    {
-      type: "child_changed",
-      collection: "headTerms",
-      where: ["alphabetical", "==", activeKey],
-    },
-  ]);
+  const firestore = useFirestore();
 
-  // Fetch data
-  const headTerms = useSelector((state) => state.firestore.ordered.headTerms);
-  const headTermsIDs =
-    headTerms &&
-    headTerms.map((val) => {
-      return val.head_term_id;
-    });
-  console.log(headTermsIDs);
-  useFirestoreConnect([
-    {
-      type: "child_changed",
-      collection: "definitions",
-      where: [
-        "head_term_id",
-        "in",
-        headTermsIDs && headTermsIDs.length > 0 ? headTermsIDs : ["1"],
-      ],
-    },
-  ]);
+  useEffect(() => {
+    firestore
+      .collection("headTerms")
+      .where("alphabetical", "==", activeKey)
+      .onSnapshot(
+        (querySnapshot) => {
+          const htms = querySnapshot.docs.map((doc) => {
+            return doc.data();
+          });
+          console.log(htms);
+          const ids = htms.map((val) => val.head_term_id);
+          firestore
+            .collection("definitions")
+            .where("head_term_id", "in", htms.length > 0 ? ids : ["1"])
+            .get()
+            .then((result) => {
+              console.log(headTermIds);
+              console.log(result.docs.map((val) => val.data()));
+              setWords(result.docs.map((val) => val.data()));
+            });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+  }, [activeKey]);
 
-  const words = useSelector((state) => state.firestore.ordered.definitions);
+  console.log(words);
 
   return (
-    <Row>
-    <Col span={3}></Col>
-     <Col span={18}>
+    <>
       <Tabs
         onChange={(key) => setActiveKey(key)}
         defaultActiveKey="1"
         type="card"
-        tabBarGutter="4px"
+        size="small"
+        className="index"
       >
         {[...Array(26).keys()].map((i) => (
           <TabPane
             tab={`${String.fromCharCode(i + 65)}`}
             key={String.fromCharCode(i + 65)}
           >
-            
             <LetterHead letter={String.fromCharCode(i + 65)} />
-            <Row>{words && words.map((val, i) => <Word data={val} />)}</Row>
+            <Row>
+              {words.length > 0
+                ? words.map((val, i) => <Word data={val} />)
+                : "Nothing to show here"}
+            </Row>
           </TabPane>
         ))}
       </Tabs>
-      </Col>
-      <Col span={3}></Col>
-      </Row>
- 
+    </>
   );
 }
 

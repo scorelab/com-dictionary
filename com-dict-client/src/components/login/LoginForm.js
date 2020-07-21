@@ -1,17 +1,17 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import { useFirestore } from "react-redux-firebase";
+import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { signIn } from "../../store/actions";
 
 const NormalLoginForm = () => {
-  const firestore = useFirestore();
+  const firebase = useFirebase();
   const history = useHistory();
 
   const onSubmit = (values) => {
     console.log("Received values of form: ", values);
-    signIn(values)(firestore, history);
+    signIn(values)(firebase, history);
   };
 
   return (

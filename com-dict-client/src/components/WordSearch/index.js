@@ -5,15 +5,17 @@ import WordSimple from "./wordSimple";
 
 const { Title, Text } = Typography;
 
-function WordHome() {
+function WordSearch(props) {
   const firestore = useFirestore();
   const [words, setWords] = useState([]);
   const [trending, setTrending] = useState([]);
+  const { keyword } = props;
 
   useEffect(() => {
     firestore
       .collection("definitions")
       .orderBy("createdAt")
+      .where("head_term", "==", keyword)
       .startAfter(new Date().getTime())
       .limit(10)
       .onSnapshot(
@@ -86,4 +88,4 @@ function WordHome() {
   );
 }
 
-export default WordHome;
+export default WordSearch;

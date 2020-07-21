@@ -6,50 +6,42 @@ import HomePage from "./containers/home/home";
 import SignUp from "./containers/signup/signup";
 import AddWord from "./containers/addWord/addWord";
 import LetterBased from "./containers/dictionary/letterDict";
-import CommentWord from "./containers/comment/comment"
+import Browse from "./containers/browse/browse";
 import Categories from "./containers/categories/categories";
-import Report from "./containers/reportWord/reportWord";
-
-
-const fakeAuth = {
-  isAuthenticated: true,
-  authenticate(cb) {
-    fakeAuth.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
-  },
-  signout(cb) {
-    fakeAuth.isAuthenticated = false;
-    setTimeout(cb, 100);
-  },
-};
+import Search from "./containers/search/search";
+import { useSelector } from "react-redux";
+import { isLoaded, isEmpty } from "react-redux-firebase";
+// import { auth } from "./config";
 
 export default function Routes() {
   return (
     <Router>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/browse" component={Browse} />
+      <Route path="/search/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>
       <Route path="/letter" component={LetterBased} />
-      <Route path="/comment" component={CommentWord} />
-      <Route path="/report" component={Report} />
     </Router>
   );
 }
 
 function PrivateRoute({ children, ...rest }) {
+  const auth = useSelector((state) => state.firebase.auth); // isLoaded(auth) && !isEmpty(auth)
+  // console.log(auth);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        fakeAuth.isAuthenticated ? (
+        auth ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: "/",
+              pathname: "/signup",
               state: { from: location },
             }}
           />
