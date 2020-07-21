@@ -17,7 +17,8 @@ import {
 } from "@ant-design/icons";
 
 import SelectLang from "../Search/SelectLang";
-import SocialShare from "./SocialShare";
+import SocialShare from "./socialShare";
+import { Link } from "react-router-dom";
 
 const { Title, Text } = Typography;
 
@@ -94,10 +95,10 @@ function Word()
                             <Col xl={0} lg={0} md={6} sm={6} xs={6}></Col>
                             <Col xl={12} lg={12} md={18} sm={18} xs={18} style={{ textAlign: "right" }}>
                                 <Button type="link" style={{ color: "green" }}>
-                                Comment
+                                <Link to="/comment">Comment</Link>
                                 </Button>
                                 <Button type="link" style={{ color: "red" }}>
-                                Report inappropriate
+                                <Link to="/report">Report inappropriate</Link>
                                 </Button>
                             </Col>
                         </Row>

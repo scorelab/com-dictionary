@@ -14,7 +14,6 @@ import { useFirestoreConnect } from "react-redux-firebase";
 
 import Word from "./word";
 import LetterHead from "./letterHead";
-import AlphaIndex from ".";
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 function WordHome() {
@@ -65,7 +64,7 @@ function WordHome() {
             tab={`${String.fromCharCode(i + 65)}`}
             key={String.fromCharCode(i + 65)}
           >
-      
+            
             <LetterHead letter={String.fromCharCode(i + 65)} />
             <Row>{words && words.map((val, i) => <Word data={val} />)}</Row>
           </TabPane>

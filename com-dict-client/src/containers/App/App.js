@@ -9,7 +9,7 @@ import './App.css'
 import HomePage from "../home/home"
 import SignUp from "../signup/signup";
 import AddWord from "../addWord/addWord";
-import Categories from "../categories/categories";
+import categories from "../categories/categories";
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
        <Route exact path="/" component={HomePage} />
        <Route exact path="/signup" component={SignUp} />
        <Route exact path="/add" component={AddWord} />
-       <Route exact path="/categories" component={Categories}/>
+       <Route exact path="/category" component={categories} />
       </Router>
 
     );

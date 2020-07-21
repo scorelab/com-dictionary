@@ -40,20 +40,15 @@ function TitleBar() {
       <Menu.Item key="1">
           <Link to="/letter">Dictionary</Link>
         </Menu.Item>
-        <SubMenu title="Categories">
-          <Menu.Item key="cat:0">
-            <Link to="/categories">All categories </Link>
-          </Menu.Item>
-          <Menu.Item key="cat:1">Politics</Menu.Item>
-          <Menu.Item key="cat:2">Food</Menu.Item>
-          <Menu.Item key="cat:3">Sports</Menu.Item>
-         </SubMenu>
+        <Menu.Item key="2">
+            <Link to="/Categories">All categories </Link>
+        </Menu.Item>
+           
         <Menu.Item key="3">
           <Link to="/letter">Vote</Link>
         </Menu.Item>
         <Menu.Item key="4">
           <Link to="/add">
-            {/* <PlusCircleOutlined style={{ color: "black"}} /> */}
             <span class="icons8-add"></span>
           </Link>
         </Menu.Item>

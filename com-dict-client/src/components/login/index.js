@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Modal,Avatar, Button, Card, Divider, Typography, Row, Col } from "antd";
-import { UserOutlined } from "@ant-design/icons";
 import NormalLoginForm from "./LoginForm";
 import SocialLogin from "./SocialLogin";
 import login from '../images/pablo-sign-in.png';

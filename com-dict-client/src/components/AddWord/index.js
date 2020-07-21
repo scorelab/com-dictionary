@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Typography, Form, Input, Select, Button, Row, Col} from "antd";
 import WordClass from "../WordClass";
 import EditableTagGroup from "../RelatedWords";
+import add_word from '../images/pablo-addWord.png';
 
 import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
 
@@ -31,18 +32,18 @@ function WordForm() {
     <div>
       <Card
         bordered
-        title="Add New Word"
+        title="Add a new word to your everyday dictionary..."
         style={{
           backgroundColor: "#FFFFFF ",
           border: 0,
-          width: "80%",
-          marginLeft: "10%",
-          marginRight: "10%",
+          width: "90%",
+          marginLeft: "5%",
+          marginRight: "5%",
         }}
         headStyle={{
           backgroundColor: "#FFFFFF",
           fontSize: "x-large",
-          color: "black",
+          color: "#639bb4",
           border: 0,
           textAlign: "center",
         }}
@@ -52,7 +53,12 @@ function WordForm() {
           All the definitions and transaltions on Community Dictionary were
           written by people just like you. Now's your chance to add your own!
         </Text>
-        <Form onFinish={onSubmit} style={{ paddingTop: "4vmin"}}>
+        <Row align="middle">
+          <Col xl={8} lg={8} md={0} sm={0} xs={0}>
+          <img class="add_word_anime" style={{maxWidth:"90%",alignContent:"center",height:"auto"}} src={add_word} />
+          </Col>
+          <Col xl={16} lg={16} md={24} sm={24} xs={24}>
+          <Form onFinish={onSubmit} style={{ paddingTop: "4vmin"}}>
           <Form.Item label="Select the language">
             <Select
               showSearch
@@ -129,6 +135,10 @@ function WordForm() {
             </Row>
           </Form.Item>
           </Form>
+
+          </Col>
+        </Row>
+        
       </Card>
     </div>
   );

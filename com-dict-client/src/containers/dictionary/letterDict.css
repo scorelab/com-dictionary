@@ -1,8 +1,8 @@
 .letter_div
 {
-  margin-top: 3vmin;
+  /* margin-top: 3vmin; */
   text-align: center;
-  background-color:black;
+  /* background-color:black; */
 }
 
 
@@ -24,8 +24,26 @@
 }
 
 
-.trending
+.word_title
 {
-  /* margin-top:10%; */
-  /* width:100%; */
+ color: #639bb4;
+ filter: contrast(100%);
+
 }
+
+
+.language_span
+{
+  font-weight: bold;
+  background-color: #e7ca52;
+  padding: 4px;
+}
+
+.type_span
+{
+  font-weight: bold;
+  background-color: #7dbf94;
+  padding: 4px;
+  
+}
+
