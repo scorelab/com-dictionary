@@ -12,7 +12,7 @@ import {
 import { UserOutlined } from "@ant-design/icons";
 import NormalLoginForm from "./loginForm";
 import SocialLogin from "./socialLogin";
-import login from "../images/pablo-sign-in.png";
+import login from "../../images/pablo-sign-in.png";
 
 const { Text } = Typography;
 const { Meta } = Card;

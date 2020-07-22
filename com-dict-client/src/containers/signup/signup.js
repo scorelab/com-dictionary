@@ -1,10 +1,10 @@
 import React from "react";
 import "../home/home.css";
-import "./signup.css"
+import "./signup.css";
 import { Layout } from "antd";
-import TitleBar from "../../components/navbar/TitleBar";
+import TitleBar from "../../components/Navbar/TitleBar";
 import Signup from "../../components/Signup/SignUp";
-import FooterPage from "../../components/footer/FooterPage";
+import FooterPage from "../../components/Footer/FooterPage";
 
 const { Header, Footer, Content } = Layout;
 
@@ -15,7 +15,7 @@ function SignUp() {
         <TitleBar />
       </Header>
       <Content className="body">
-        <Signup/>
+        <Signup />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

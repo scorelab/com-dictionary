@@ -4,9 +4,9 @@ import { Layout } from "antd";
 import TitleBar from "../../components/Header";
 import WordHome from "../../components/WordHome";
 // import WordBook from "../../components/WordHome/book";
-import FooterPage from "../../components/footer";
+import FooterPage from "../../components/Footer";
 
-const {Header,Footer, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
 function HomePage() {
   return (
@@ -15,13 +15,13 @@ function HomePage() {
         <TitleBar />
       </Header>
       <Content className="body">
-      <WordHome />
+        <WordHome />
       </Content>
       <Footer className="footer_div">
         <FooterPage />
       </Footer>
-  </Layout>
+    </Layout>
   );
 }
 
-export default HomePage
+export default HomePage;

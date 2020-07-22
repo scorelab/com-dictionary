@@ -4,7 +4,7 @@ import "./addWord.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
 import WordForm from "../../components/AddWord";
-import FooterPage from "../../components/footer/FooterPage";
+import FooterPage from "../../components/Footer/FooterPage";
 
 const { Header, Footer, Content } = Layout;
 

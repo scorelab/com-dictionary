@@ -15,7 +15,7 @@ import SocialShare from "./socialShare";
 
 const { Title, Text } = Typography;
 
-function Word() {
+function Word({ data }) {
   return (
     <Row>
       <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>

@@ -5,10 +5,10 @@ import {
   LikeOutlined,
   DislikeOutlined,
 } from "@ant-design/icons";
-import SelectLang from "../Search/SelectLang";
+// import SelectLang from "../Search/SelectLang";
 import SocialShare from "./SocialShare";
-import { useSelector } from "react-redux";
-import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
+// import { useSelector } from "react-redux";
+import { useFirestore } from "react-redux-firebase";
 const { Title, Text } = Typography;
 
 function WordSimple(props) {

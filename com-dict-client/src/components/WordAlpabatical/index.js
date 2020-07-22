@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
 import {
   Typography,
-  Card,
+  // Card,
   Row,
-  Col,
-  Divider,
-  Button,
-  Pagination,
+  // Col,
+  // Divider,
+  // Button,
+  // Pagination,
   Tabs,
 } from "antd";
-import { useSelector } from "react-redux";
-import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
+// import { useSelector } from "react-redux";
+import { useFirestore } from "react-redux-firebase";
 
 import Word from "./word";
 import LetterHead from "./letterHead";
 import AlphaIndex from ".";
-const { Title, Text } = Typography;
+// const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 function WordHome() {
   const [activeKey, setActiveKey] = useState("A");
-  const [headTerms, setHeadTerms] = useState([]);
+  // const [headTerms, setHeadTerms] = useState([]);
   const [headTermIds, setHeadTermIds] = useState(["1"]);
   const [words, setWords] = useState([]);
 

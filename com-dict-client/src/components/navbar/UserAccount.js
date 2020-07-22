@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, Button, Card, Divider, Typography } from "antd";
 import { UserOutlined } from "@ant-design/icons";
-import NormalLoginForm from "../login/loginForm";
-import SocialLogin from "../login/socialLogin";
+import NormalLoginForm from "../Login/loginForm";
+import SocialLogin from "../Login/socialLogin";
 
 const { Text } = Typography;
 

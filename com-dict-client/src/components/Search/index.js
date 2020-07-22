@@ -2,55 +2,95 @@ import algoliasearch from "algoliasearch/lite";
 import React from "react";
 import {
   InstantSearch,
-  Hits,
+  connectHits,
   SearchBox,
   Pagination,
   Highlight,
   ClearRefinements,
   RefinementList,
   Configure,
+  HitsPerPage,
 } from "react-instantsearch-dom";
+import { Row, Col } from "antd";
 import PropTypes from "prop-types";
+import WordSimple from "../WordHome/wordSimple";
+import Word from "../WordHome/word";
 const searchClient = algoliasearch(
   "B1G2GM9NG0",
   "aadef574be1f9252bb48d4ea09b5cfe5"
 );
 export default function FullTextSearch() {
   return (
-    <div className="ais-InstantSearch">
-      <h1>React InstantSearch e-commerce demo</h1>
-      <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
-        <div className="left-panel">
+    <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
+      <Row>
+        <Col span={12} offset={6}>
+          Searching results for ...
+        </Col>
+      </Row>
+      <Row gutter={2}>
+        <Col span={4}>
+          <HitsPerPage
+            defaultRefinement={1}
+            items={[
+              { value: 5, label: "Show 5 hits" },
+              { value: 10, label: "Show 10 hits" },
+            ]}
+          />
+        </Col>
+        <Col span={4}>
+          <ClearRefinements />
+        </Col>
+        <Col span={8} offset={8}>
+          <SearchBox defaultRefinement={"string"} />
+
+          {/* <div className="left-panel">
           <ClearRefinements />
           <h2>Brands</h2>
           <RefinementList attribute="brand" />
-          <Configure hitsPerPage={8} />
+          
         </div>
         <div className="right-panel">
-          <SearchBox />
-          <Hits hitComponent={Hit} />
+         
+        </div> */}
+        </Col>
+      </Row>
+      <Row align="middle" justify="center">
+        <CustomHits />
+      </Row>
+      <Row align="middle" justify="center">
+        <Col span={12}>
           <Pagination />
-        </div>
-      </InstantSearch>
-    </div>
+          <Configure hitsPerPage={4} />
+        </Col>
+      </Row>
+    </InstantSearch>
   );
 }
 
-function Hit(props) {
+const Hits = ({ hits }) => {
+  console.log(hits);
   return (
-    <div>
-      <img src={props.hit.image} align="left" alt={props.hit.name} />
-      <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
-      </div>
-      <div className="hit-description">
-        <Highlight attribute="description" hit={props.hit} />
-      </div>
-      <div className="hit-price">${props.hit.price}</div>
-    </div>
-  );
-}
+    <ol>
+      {hits.map((hit) => (
+        <Word key={hit.objectID} data={hit.name} />
+      ))}
+    </ol>
 
-Hit.propTypes = {
+    // <div>
+    //   <img src={props.hit.image} align="left" alt={props.hit.name} />
+    //   <div className="hit-name">
+    //     <Highlight attribute="name" hit={props.hit} />
+    //   </div>
+    //   <div className="hit-description">
+    //     <Highlight attribute="description" hit={props.hit} />
+    //   </div>
+    //   <div className="hit-price">${props.hit.price}</div>
+    // </div>
+  );
+};
+
+const CustomHits = connectHits(Hits);
+
+Hits.propTypes = {
   hit: PropTypes.object.isRequired,
 };

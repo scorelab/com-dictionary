@@ -2,8 +2,9 @@ import React from "react";
 import "./home.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import FooterPage from "../../components/footer";
+import FooterPage from "../../components/Footer";
 import WordSearch from "../../components/WordSearch";
+import FullTextSearch from "../../components/Search";
 const { Header, Footer, Content } = Layout;
 
 function HomePage(props) {
@@ -13,7 +14,7 @@ function HomePage(props) {
         <TitleBar />
       </Header>
       <Content className="body">
-        <WordSearch keyword={props.match.params.keyword} />
+        <FullTextSearch />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

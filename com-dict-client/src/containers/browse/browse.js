@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import FooterPage from "../../components/footer";
+import FooterPage from "../../components/Footer";
 
 // import AlphaIndex from "../../components/AlphaIndex";
 const { Header, Footer, Content } = Layout;
