@@ -1,9 +1,5 @@
 export const addWord = (definition) => async (firestore) => {
   try {
-    definition["likes"] = 0;
-    definition["dislikes"] = 0;
-    definition["head_term_id"] = "0";
-    definition["other_language_id"] = "0";
     await firestore.add("definitions", definition);
     console.log("success");
   } catch (e) {

@@ -5,7 +5,7 @@ import { Layout } from "antd";
 import TitleBar from "../../components/Header";
 import LetterHead from "../../components/WordAlpabatical/letterHead";
 import AlphaIndex from "../../components/WordAlpabatical";
-import FooterPage from "../../components/footer/FooterPage";
+import FooterPage from "../../components/Footer/FooterPage";
 // import Word from "../../components/dictionaryView/word_dict";
 import Word from "../../components/WordHome/word";
 

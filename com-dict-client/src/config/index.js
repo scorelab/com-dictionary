@@ -3,6 +3,7 @@ import "firebase/auth";
 import "firebase/database"; // <- needed if using firebase rtdb
 import "firebase/firestore"; // <- needed if using firestore
 
+console.log(process.env);
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.firebaseapp.com`,
@@ -17,8 +18,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Initialize other services on firebase instance
-firebase.firestore(); // <- needed if using firestore
+// firebase.firestore(); // <- needed if using firestore
 
-export const firebaseAuth = firebase.auth();
+export const auth = firebase.auth();
+
+export const firestore = firebase.firestore();
 
 export default firebase;

@@ -1,11 +1,10 @@
-import React from 'react';
-import { Modal, Button, Card, Divider, Typography} from 'antd';
-import { UserOutlined} from '@ant-design/icons';
-import NormalLoginForm from '../login/LoginForm'
-import SocialLogin from '../login/SocialLogin'
+import React from "react";
+import { Modal, Button, Card, Divider, Typography } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import NormalLoginForm from "../Login/loginForm";
+import SocialLogin from "../Login/socialLogin";
 
-
-const {Text} = Typography;
+const { Text } = Typography;
 
 class App extends React.Component {
   state = {
@@ -32,53 +31,69 @@ class App extends React.Component {
   };
 
   handleCancel = () => {
-    console.log('Clicked cancel button');
+    console.log("Clicked cancel button");
     this.setState({
       visible: false,
     });
   };
 
   render() {
-    const { visible, confirmLoading} = this.state;
+    const { visible, confirmLoading } = this.state;
     return (
       <div>
-        <Button type='link' size='large'  icon={<UserOutlined style={{color:"black", fontSize:"28px", backgroundColor:"transparent"}} />} onClick={this.showModal}>
-        
-        </Button>
+        <Button
+          type="link"
+          size="large"
+          icon={
+            <UserOutlined
+              style={{
+                color: "black",
+                fontSize: "28px",
+                backgroundColor: "transparent",
+              }}
+            />
+          }
+          onClick={this.showModal}
+        ></Button>
         <Modal
-          style={{width:'100%'}}
+          style={{ width: "100%" }}
           footer={null}
           visible={visible}
           onOk={this.handleOk}
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
         >
-
-        <Card
+          <Card
             title="Sign In"
-            style={{backgroundColor: '#FFFFFF ', border: 0, padding:"1.5vmin"}}
-            headStyle={{backgroundColor: '#E9E9E9', fontSize:"x-large", color:"#4FD5DE", border: 0, textAlign:"center" }}
-            bodyStyle={{backgroundColor: '#F7F8F8', border: 0}}
-            >
-
-
+            style={{
+              backgroundColor: "#FFFFFF ",
+              border: 0,
+              padding: "1.5vmin",
+            }}
+            headStyle={{
+              backgroundColor: "#E9E9E9",
+              fontSize: "x-large",
+              color: "#4FD5DE",
+              border: 0,
+              textAlign: "center",
+            }}
+            bodyStyle={{ backgroundColor: "#F7F8F8", border: 0 }}
+          >
             <NormalLoginForm />
-            
+
             <Divider> OR </Divider>
 
             <SocialLogin />
+          </Card>
 
-        </Card>
-        
-        <div style={{ textAlign: "center" }}>
-          <Text strong>Don't have an account?</Text>
-          <a href="/signup">Sign Up here</a>
-        </div>
+          <div style={{ textAlign: "center" }}>
+            <Text strong>Don't have an account?</Text>
+            <a href="/signup">Sign Up here</a>
+          </div>
         </Modal>
       </div>
     );
   }
 }
 
-
-export default App
+export default App;

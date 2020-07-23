@@ -5,10 +5,24 @@ import {
   TwitterOutlined,
   GoogleOutlined,
 } from "@ant-design/icons";
-
+import { useSelector } from "react-redux";
+import { useFirebase, isLoaded, isEmpty } from "react-redux-firebase";
+import { signInWithGoogle, signInWithProviderID } from "../../store/actions";
+import { useHistory } from "react-router-dom";
 const { Text } = Typography;
 
 function SocialLogin() {
+  const firebase = useFirebase();
+  const history = useHistory;
+  // const auth = useSelector((state) => state.firebase.auth);
+
+  const loginWithGoogle = async () => {
+    await signInWithGoogle()(firebase, history);
+  };
+
+  const loginWithProviderID = async (provider) => {
+    await signInWithProviderID(provider)(firebase, history);
+  };
   return (
     <div>
       <Row gutter={[16, 16]}>
@@ -18,31 +32,55 @@ function SocialLogin() {
       </Row>
 
       <Row gutter={[16, 16]}>
-        <Col xl={8} lg={8} md={24} sm={24} xs={24} style={{ textAlign: "center" }}>
+        <Col
+          xl={8}
+          lg={8}
+          md={24}
+          sm={24}
+          xs={24}
+          style={{ textAlign: "center" }}
+        >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#0284E1", width:"100%" }}
+            style={{ backgroundColor: "#0284E1", width: "100%" }}
             icon={<FacebookFilled />}
             // size="large"
+            onClick={() => loginWithProviderID("facebook")}
           >
             Facebook
           </Button>
         </Col>
-        <Col xl={8} lg={8} md={24} sm={24} xs={24} style={{ textAlign: "center" }}>
+        <Col
+          xl={8}
+          lg={8}
+          md={24}
+          sm={24}
+          xs={24}
+          style={{ textAlign: "center" }}
+        >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#64CFF6",width:"100%"}}
+            style={{ backgroundColor: "#64CFF6", width: "100%" }}
             icon={<TwitterOutlined />}
             // size="large"
+            onClick={() => loginWithProviderID("twitter")}
           >
             Twitter
           </Button>
         </Col>
-        <Col xl={8} lg={8} md={24} sm={24} xs={24} style={{ textAlign: "center" }}>
+        <Col
+          xl={8}
+          lg={8}
+          md={24}
+          sm={24}
+          xs={24}
+          style={{ textAlign: "center" }}
+        >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#F4414B",width:"100%"}}
+            style={{ backgroundColor: "#F4414B", width: "100%" }}
             icon={<GoogleOutlined />}
+            onClick={loginWithGoogle}
             // size="large"
           >
             Google
