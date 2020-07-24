@@ -1,4 +1,4 @@
-import React from "./node_modules/react";
+import React from "react";
 import {
   Radio,
   Input,
@@ -6,7 +6,7 @@ import {
   Button,
   Row,
   Col,
-} from "./node_modules/antd";
+} from "antd";
 
 class Report_word extends React.Component {
   state = {
@@ -31,15 +31,15 @@ class Report_word extends React.Component {
     const { Text } = Typography;
     return (
       <div>
-        <Row>
-          <Radio.Group onChange={this.onChange} value={value} size="large">
+        <Row style={{backgroundColor:'#f2f2f2'}}>
+          <Radio.Group onChange={this.onChange} value={value} size="large" style={{alignContent:'center',fontWeight:'bold'}}>
             <Radio style={radioStyle} value={1}>
-              <Text style={{ fontSize: "large" }}>
+              <Text style={{ fontSize: "large"}}>
                 Are inside jokes with no context
               </Text>
             </Radio>
             <Radio style={radioStyle} value={2}>
-              <Text style={{ fontSize: "large" }}>
+              <Text style={{ fontSize: "large"}}>
                 Include terms that don’t actually seem real
               </Text>
             </Radio>
@@ -62,14 +62,19 @@ class Report_word extends React.Component {
           </Radio.Group>
         </Row>
         <Row>
+          <Col span={12}></Col>
+          <Col span={12}>
           <Button
             type="primary"
-            // size="large"
+            size="large"
             htmlType="submit"
             block
+            style={{backgroundColor:'#df815a',border:'none',width:'100%',fontSize:'2vmin',fontWeight:'bold'}}
           >
             Submit your report here... Our team will look into it
           </Button>
+          </Col>
+
         </Row>
       </div>
     );

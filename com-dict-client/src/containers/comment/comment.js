@@ -2,8 +2,8 @@ import React from "react";
 import "../home/home.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import Comments from "../../components/comments"
-import FooterPage from "../../components/footer/FooterPage";
+import Comments from "../../components/Comments"
+import FooterPage from "../../components/Footer/FooterPage";
 
 const { Header, Footer, Content } = Layout;
 

@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import { Tabs } from "./node_modules/antd";
+import React from "react";
+import { Tabs } from "antd";
 
 const { TabPane } = Tabs;
 
@@ -10,7 +10,7 @@ function AlphaIndex() {
         defaultActiveKey="1"
         tabBarGutter="6px"
         type="card"
-        size="small"
+        size="large"
         className="index"
       >
         {[...Array(26).keys()].map((i) => (

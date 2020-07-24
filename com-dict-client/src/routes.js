@@ -1,13 +1,14 @@
 // App routes
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-
 import HomePage from "./containers/home/home";
 import SignUp from "./containers/signup/signup";
 import AddWord from "./containers/addWord/addWord";
 import LetterBased from "./containers/dictionary/letterDict";
 import Browse from "./containers/browse/browse";
 import Categories from "./containers/categories/categories";
+import CommentWord from "./containers/comment/comment"
+import Report from "./containers/reportWord/reportWord";
 import Search from "./containers/search/search";
 import { useSelector } from "react-redux";
 import { isLoaded, isEmpty } from "react-redux-firebase";
@@ -25,6 +26,8 @@ export default function Routes() {
         <AddWord />
       </PrivateRoute>
       <Route path="/letter" component={LetterBased} />
+      <Route path="/comment" component={CommentWord} />
+      <Route path="/report" component={Report} />
     </Router>
   );
 }
