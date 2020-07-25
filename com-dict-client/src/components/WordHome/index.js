@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Typography, Card, Row, Col, Divider, Button, Pagination } from "antd";
 import { useFirestore, isLoaded, isEmpty } from "react-redux-firebase";
 import WordSimple from "./wordSimple";
+import WordDay from "./wordDay";
+import AlphaIndex from "../Home/AlphaIndex";
 
 const { Title, Text } = Typography;
 
@@ -49,15 +51,19 @@ function WordHome() {
   return (
     <>
       <Row>
-        <Col lg={4} md={0} sm={0}></Col>
-        <Col lg={12} md={24} sm={24} xs={24}>
+        <WordDay />
+      </Row>
+
+      <Row style={{backgroundColor:'#f2f2f2',padding:'2vmin'}}>
+        <Col xl={2} lg={2} md={0} sm={0}></Col>
+        <Col xl={20} lg={20} md={24} sm={24} xs={24}>
           {words.length > 0
             ? words.map((val, i) => <WordSimple data={val} />)
             : "Nothing to show here"}
         </Col>
-        <Col lg={1} md={0} sm={0}></Col>
+        <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
 
-        <Col lg={6} md={24} sm={24} xs={24}>
+        {/* <Col lg={6} md={24} sm={24} xs={24}>
           <Card className="trending">
             <Row justify="space-around">
               <Title level={3}>Trending Words</Title>
@@ -67,7 +73,7 @@ function WordHome() {
             </Row>
             <Row>{trending.map((val) => val.other_language_term)}</Row>
           </Card>
-        </Col>
+        </Col> */}
 
         <Col lg={1} md={0} sm={0}></Col>
       </Row>
@@ -82,6 +88,20 @@ function WordHome() {
         </Col> */}
         {/* <Col lg={4} md={4} sm={4}></Col> */}
       </Row>
+      <Row style={{backgroundColor:'#f2f2f2',lineHeight:'5vmin'}}>
+        <Row>
+          <Col span={24}>
+          <Text style={{fontSize:'4vmin'}} >Browse Community Dictionary</Text>
+          </Col>
+          
+        </Row>
+        <Col span={24}>
+        <AlphaIndex />
+        </Col>
+        
+      </Row>
+
+
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "../home/home.css";
 import "./signup.css";
 import { Layout } from "antd";
-import TitleBar from "../../components/Navbar/TitleBar";
+import TitleBar from "../../components/Header";
 import Signup from "../../components/Signup/SignUp";
 import FooterPage from "../../components/Footer/FooterPage";
 

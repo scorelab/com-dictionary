@@ -1,4 +1,4 @@
-import React from "./node_modules/react";
+import React from "react";
 import {
   Typography,
   Card,
@@ -6,7 +6,7 @@ import {
   Col,
   Divider,
   Button,
-} from "./node_modules/antd";
+} from "antd";
 import Word from "../WordHome/word";
 const { Title } = Typography;
 
