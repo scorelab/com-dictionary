@@ -11,9 +11,9 @@
 
 .title_bar
 {
-  background-color: white;
+  background-color:#f2f2f2 !important;
   padding-top: 1vmin; 
-  /* padding-bottom: 1vmin; */
+  padding-bottom: 1.5vmin;
   position: 'fixed';
   z-index: 100;
   width: 100%;
@@ -22,13 +22,16 @@
 }
 
 
-.title
+.title 
 {
-  /* float: left; */
-  /* resize: both; */
+  /* float: left;
+  resize: both; */
   max-width: 100%;
+  background-color: #f2f2f2 !important;
   max-height: 100vh;
-  display: grid;
+  width:100% !important;
+  height: 100% !important;
+  /* display: grid; */
 
 }
 
@@ -66,9 +69,10 @@
   color: black;
   /* border-color: #A9A9A9; */
   padding-top: 2vmin;
-  border: 1px solid #cdcdcd ;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 4vmin;
+  border-width: 3vmin;
+  border-color: #639bb4;
+
   
 }
 
@@ -151,3 +155,15 @@
       background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdodD0iNDgiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGc+PHBhdGggZD0iTTE1Ny42NjY2Nyw4NmMwLDM5LjU3NzkyIC0zMi4wODg3NSw3MS42NjY2NyAtNzEuNjY2NjcsNzEuNjY2NjdjLTM5LjU3NzkyLDAgLTcxLjY2NjY3LC0zMi4wODg3NSAtNzEuNjY2NjcsLTcxLjY2NjY3YzAsLTM5LjU3NzkyIDMyLjA4ODc1LC03MS42NjY2NyA3MS42NjY2NywtNzEuNjY2NjdjMzkuNTc3OTIsMCA3MS42NjY2NywzMi4wODg3NSA3MS42NjY2Nyw3MS42NjY2N3oiIGZpbGw9IiNjYTZiNjciPjwvcGF0aD48cGF0aCBkPSJNNzguODMzMzMsNTMuNzVoMTQuMzMzMzN2NjQuNWgtMTQuMzMzMzN6IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PHBhdGggZD0iTTUzLjc1LDc4LjgzMzMzaDY0LjV2MTQuMzMzMzNoLTY0LjV6IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=') 50% 50% no-repeat;
       background-size: 100%; }
 
+      .ant-carousel .slick-slide {
+        text-align: center;
+        height: 12vmin;
+        line-height: 6vmin;
+        background: white;
+        overflow: hidden;
+      }
+      
+      .ant-carousel .slick-slide h2 {
+        color:#639bb4;
+        background-color: #f2f2f2;
+      }

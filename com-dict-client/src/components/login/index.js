@@ -9,9 +9,8 @@ import {
   Row,
   Col,
 } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import NormalLoginForm from "./loginForm";
-import SocialLogin from "./socialLogin";
+import NormalLoginForm from "./LoginForm";
+import SocialLogin from "./SocialLogin";
 import login from "../../images/pablo-sign-in.png";
 
 const { Text } = Typography;

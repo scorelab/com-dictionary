@@ -5,7 +5,7 @@ import {
   LikeOutlined,
   DislikeOutlined,
 } from "@ant-design/icons";
-import SelectLang from "../Search/SelectLang";
+import { Link} from "react-router-dom";
 import SocialShare from "./socialShare";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
@@ -65,10 +65,10 @@ function WordSimple(props) {
   }, []);
 
   return (
-    <Card hoverable bordered className="word_index">
+    <Card bordered className="word_index">
       <Row>
         <Col span={24}>
-          <Title level={3}>Word of the Day - 13 of June 2020</Title>
+          <Title level={2}>13 of June 2020</Title>
         </Col>
         <Divider></Divider>
       </Row>
@@ -153,7 +153,7 @@ function WordSimple(props) {
             Comment
           </Button> */}
           <Button type="link" style={{ color: "red" }}>
-            Report inappropriate
+            <Link to="/report">Report inappropriate</Link>
           </Button>
         </Col>
       </Row>
