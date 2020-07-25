@@ -3,7 +3,7 @@ import "../home/home.css";
 import "./letterDict.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import LetterHead from "../../components/WordAlpabatical/letterHead";
+// import LetterHead from "../../components/WordAlpabatical/letterHead";
 import AlphaIndex from "../../components/WordAlpabatical";
 import FooterPage from "../../components/Footer/FooterPage";
 // import Word from "../../components/dictionaryView/word_dict";

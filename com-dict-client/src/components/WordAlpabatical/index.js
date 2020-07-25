@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  Typography,
+  // Typography,
   // Card,
   Row,
   // Col,
@@ -14,7 +14,7 @@ import { useFirestore } from "react-redux-firebase";
 
 import Word from "./word";
 import LetterHead from "./letterHead";
-import AlphaIndex from ".";
+
 // const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 function WordHome() {
@@ -44,13 +44,14 @@ function WordHome() {
               console.log(headTermIds);
               console.log(result.docs.map((val) => val.data()));
               setWords(result.docs.map((val) => val.data()));
+              setHeadTermIds(["1"]);
             });
         },
         (err) => {
           console.log(err);
         }
       );
-  }, [activeKey]);
+  }, [activeKey, firestore, headTermIds]);
 
   console.log(words);
 

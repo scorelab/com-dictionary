@@ -1,11 +1,11 @@
 import React from "react";
 import {
   Typography,
-  Card,
-  Row,
-  Col,
-  Divider,
-  Button,
+  // Card,
+  // Row,
+  // Col,
+  // Divider,
+  // Button,
 } from "antd";
 import Word from "../WordHome/word";
 const { Title } = Typography;
