@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Typography, Card, Row, Col, Divider, Button } from "antd";
 import {
   SoundOutlined,
@@ -22,7 +22,7 @@ function WordSimple(props) {
     other_language_def,
     other_language_term,
     example,
-    tags,
+    // tags,
     createdAt,
     user_id,
     pronunciation,

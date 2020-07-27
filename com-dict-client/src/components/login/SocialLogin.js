@@ -5,8 +5,8 @@ import {
   TwitterOutlined,
   GoogleOutlined,
 } from "@ant-design/icons";
-import { useSelector } from "react-redux";
-import { useFirebase, isLoaded, isEmpty } from "react-redux-firebase";
+// import { useSelector } from "react-redux";
+import { useFirebase } from "react-redux-firebase";
 import { signInWithGoogle, signInWithProviderID } from "../../store/actions";
 import { useHistory } from "react-router-dom";
 const { Text } = Typography;

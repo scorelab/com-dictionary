@@ -9,7 +9,7 @@ import { addWord } from "../../store/actions";
 import { useSelector } from "react-redux";
 
 const { Text } = Typography;
-var optionText;
+// var optionText;
 
 function WordForm() {
   const firestore = useFirestore();
@@ -21,8 +21,6 @@ function WordForm() {
   const [example, setExample] = useState("");
   const [category, setCategory] = useState("");
   const [relatedWords, setRelatedWords] = useState([]);
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
 
   useFirestoreConnect([
     { collection: "languages" },
@@ -41,8 +39,8 @@ function WordForm() {
       word_classes: wordClass,
       example: example,
       related_words: relatedWords,
-      likes: likes,
-      dislikes: dislikes,
+      likes: 0,
+      dislikes: 0,
       userId: user,
     };
     console.log(data);
@@ -173,7 +171,7 @@ function WordForm() {
           </Form.Item>
 
           <Form.Item name="related_words" label="Add related words (if any)">
-            <EditableTagGroup onChange={(val) => console.log(val)} />
+            <EditableTagGroup onChange={(val) => setRelatedWords(val)} />
           </Form.Item>
 
           <Form.Item name="likes">

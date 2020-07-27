@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import { useFirestore, useFirebase } from "react-redux-firebase";
+import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { signIn } from "../../store/actions";
 

@@ -5,15 +5,15 @@ import {
   connectHits,
   SearchBox,
   Pagination,
-  Highlight,
+  // Highlight,
   ClearRefinements,
-  RefinementList,
+  // RefinementList,
   Configure,
   HitsPerPage,
 } from "react-instantsearch-dom";
 import { Row, Col } from "antd";
 import PropTypes from "prop-types";
-import WordSimple from "../WordHome/wordSimple";
+// import WordSimple from "../WordHome/wordSimple";
 import Word from "../WordHome/word";
 const searchClient = algoliasearch(
   "B1G2GM9NG0",

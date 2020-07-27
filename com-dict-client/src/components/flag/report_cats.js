@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Radio,
-  Input,
+  // Input,
   Typography,
   Button,
   Row,
@@ -31,15 +31,20 @@ class Report_word extends React.Component {
     const { Text } = Typography;
     return (
       <div>
-        <Row style={{backgroundColor:'#f2f2f2'}}>
-          <Radio.Group onChange={this.onChange} value={value} size="large" style={{alignContent:'center',fontWeight:'bold'}}>
+        <Row style={{ backgroundColor: "#f2f2f2" }}>
+          <Radio.Group
+            onChange={this.onChange}
+            value={value}
+            size="large"
+            style={{ alignContent: "center", fontWeight: "bold" }}
+          >
             <Radio style={radioStyle} value={1}>
-              <Text style={{ fontSize: "large"}}>
+              <Text style={{ fontSize: "large" }}>
                 Are inside jokes with no context
               </Text>
             </Radio>
             <Radio style={radioStyle} value={2}>
-              <Text style={{ fontSize: "large"}}>
+              <Text style={{ fontSize: "large" }}>
                 Include terms that don’t actually seem real
               </Text>
             </Radio>
@@ -64,17 +69,22 @@ class Report_word extends React.Component {
         <Row>
           <Col span={12}></Col>
           <Col span={12}>
-          <Button
-            type="primary"
-            size="large"
-            htmlType="submit"
-            block
-            style={{backgroundColor:'#df815a',border:'none',width:'100%',fontSize:'2vmin',fontWeight:'bold'}}
-          >
-            Submit your report here... Our team will look into it
-          </Button>
+            <Button
+              type="primary"
+              size="large"
+              htmlType="submit"
+              block
+              style={{
+                backgroundColor: "#df815a",
+                border: "none",
+                width: "100%",
+                fontSize: "2vmin",
+                fontWeight: "bold",
+              }}
+            >
+              Submit your report here... Our team will look into it
+            </Button>
           </Col>
-
         </Row>
       </div>
     );

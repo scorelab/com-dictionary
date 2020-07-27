@@ -8,8 +8,6 @@ import rootReducer from "./reducers";
 
 import firebase from "../config";
 
-import { auth } from "../config";
-
 // react-redux-firebase config
 const rrfConfig = {
   userProfile: "users",

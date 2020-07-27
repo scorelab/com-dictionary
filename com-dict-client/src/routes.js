@@ -7,11 +7,10 @@ import AddWord from "./containers/addWord/addWord";
 import LetterBased from "./containers/dictionary/letterDict";
 import Browse from "./containers/browse/browse";
 import Categories from "./containers/categories/categories";
-import CommentWord from "./containers/comment/comment"
+import CommentWord from "./containers/comment/comment";
 import Report from "./containers/reportWord/reportWord";
 import Search from "./containers/search/search";
 import { useSelector } from "react-redux";
-import { isLoaded, isEmpty } from "react-redux-firebase";
 // import { auth } from "./config";
 
 export default function Routes() {

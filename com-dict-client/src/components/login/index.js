@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   Modal,
-  Avatar,
+  // Avatar,
   Button,
   Card,
   Divider,
@@ -9,12 +9,12 @@ import {
   Row,
   Col,
 } from "antd";
-import NormalLoginForm from "./LoginForm";
-import SocialLogin from "./SocialLogin";
+import NormalLoginForm from "./loginForm";
+import SocialLogin from "./socialLogin";
 import login from "../../images/pablo-sign-in.png";
 
 const { Text } = Typography;
-const { Meta } = Card;
+// const { Meta } = Card;
 
 function App(props) {
   const [state, setState] = useState({
@@ -74,6 +74,7 @@ function App(props) {
           >
             <Row justify="space-around" align="middle">
               <img
+                ALT="LOGIN"
                 class="login_anime"
                 style={{
                   maxWidth: "110%",

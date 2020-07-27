@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Form,
   Input,
@@ -8,7 +8,7 @@ import {
   Col,
   Checkbox,
   Button,
-  AutoComplete,
+  // AutoComplete,
 } from "antd";
 import { Typography } from "antd";
 import signup from "../../images/pablo-sign-up.png";
@@ -16,7 +16,7 @@ import { QuestionCircleOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 const { Title } = Typography;
-const AutoCompleteOption = AutoComplete.Option;
+// const AutoCompleteOption = AutoComplete.Option;
 
 const formItemLayout = {
   labelCol: {
@@ -71,7 +71,7 @@ const RegistrationForm = () => {
       </Select>
     </Form.Item>
   );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+  // const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
   return (
     <Row>
@@ -87,7 +87,11 @@ const RegistrationForm = () => {
         <Col xl={1} lg={0}></Col>
         <Col xl={7} lg={8} md={0} sm={0} xs={0} style={{ textAlign: "center" }}>
           <Row align="middle">
-            <img style={{ maxWidth: "120%", paddingTop: "5%" }} src={signup} />
+            <img
+              alt="signup"
+              style={{ maxWidth: "120%", paddingTop: "5%" }}
+              src={signup}
+            />
           </Row>
         </Col>
         <Col xl={0} lg={1} md={1} sm={1} xs={1}></Col>
@@ -238,7 +242,7 @@ const RegistrationForm = () => {
                   {...formItemLayout}
                 >
                   <Checkbox>
-                    I have read the <a href="">agreement</a>
+                    I have read the <a href="#1">agreement</a>
                   </Checkbox>
                 </Form.Item>
               </Col>

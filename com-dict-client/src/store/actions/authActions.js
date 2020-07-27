@@ -35,7 +35,8 @@ export const signInWithProviderID = (providerID) => async (
     });
   } catch (e) {
     if (e.code === "auth/account-exists-with-different-credential") {
-      const methods = await firebase.auth().fetchSignInMethodsForEmail(e.email);
+      // const methods = await firebase.auth().fetchSignInMethodsForEmail(e.email);
+      console.log(e);
     } else {
       // dispatch({ type: actions.SIGN_IN_FAIL, payload: e });
     }

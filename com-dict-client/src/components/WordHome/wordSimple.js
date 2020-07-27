@@ -5,10 +5,10 @@ import {
   LikeOutlined,
   DislikeOutlined,
 } from "@ant-design/icons";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import SocialShare from "./socialShare";
-import { useSelector } from "react-redux";
-import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
+// import { useSelector } from "react-redux";
+import { useFirestore } from "react-redux-firebase";
 const { Title, Text } = Typography;
 
 function WordSimple(props) {
@@ -21,7 +21,7 @@ function WordSimple(props) {
     other_language_def,
     other_language_term,
     example,
-    tags,
+    // tags,
     createdAt,
     user_id,
     pronunciation,
@@ -62,7 +62,7 @@ function WordSimple(props) {
           setOtherLanguages(doc.data());
         });
       });
-  }, []);
+  }, [firestore, headTerms, head_term_id, other_language_id]);
 
   return (
     <Card bordered className="word_index">

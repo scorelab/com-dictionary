@@ -6,7 +6,7 @@ function EditableTagGroup({ onChange }) {
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [input, setInput] = useState("");
-
+  console.log(input);
   const handleClose = (removedTag) => {
     const newTags = tags.filter((tag) => tag !== removedTag);
     setTags(newTags);

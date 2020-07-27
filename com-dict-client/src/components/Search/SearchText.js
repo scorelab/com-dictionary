@@ -6,7 +6,8 @@ const { Search } = Input;
 
 function SearchText(props) {
   const history = useHistory();
-  const { keyWord, handleSearch, setKeyWord } = props;
+  // keyWord, handleSearch,
+  const { setKeyWord } = props;
   return (
     <Search
       style={{ background: "transparent" }}
