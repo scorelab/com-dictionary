@@ -12,10 +12,10 @@ function wordCarousel() {
       <Col
         xl={4}
         lg={4}
-        md={24}
-        sm={24}
-        xs={24}
-        style={{ textAlign: "center" }}
+        md={20}
+        sm={20}
+        xs={20}
+        style={{ textAlign: "left" }}
       >
         <Text
           style={{

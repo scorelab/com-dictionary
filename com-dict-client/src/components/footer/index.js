@@ -5,7 +5,7 @@ import { Typography } from 'antd';
 import {InfoCircleOutlined, LockOutlined, FileTextOutlined, BugOutlined,
 GithubOutlined, ExclamationCircleOutlined, PhoneOutlined,
 UnorderedListOutlined,MailOutlined, EnvironmentOutlined}
- from '@ant-design/icons';
+ from '/@ant-design/icons';
 import "../../containers/home/footer.css";
 
 

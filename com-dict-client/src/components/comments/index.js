@@ -2,20 +2,30 @@ import React from "react";
 import {
   Typography,
   // Card,
-  // Row,
-  // Col,
+  Row,
+  Col,
   // Divider,
   // Button,
 } from "antd";
-import Word from "../WordHome/word";
+import WordNew from "../WordHome/Word_new";
+import Reply from "./reply_editor";
+import CommentDisplay from "./comment_list";
 const { Title } = Typography;
 
 function comment_section() {
   return (
-    <>
-      <Word />
-      <Title>Add comment section, add new comment button</Title>
-    </>
+    <Row>
+      <Col span={24}>
+      <WordNew />
+      </Col>
+      <Col span={18}>
+      <Reply />
+      </Col>
+      <Col span={24}>
+      <CommentDisplay />
+      </Col>
+      
+    </Row>
   );
 }
 
