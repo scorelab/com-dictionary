@@ -7,7 +7,7 @@ import {
   // Divider,
   // Button,
 } from "antd";
-import WordNew from "../WordHome/Word_new";
+import WordSimple from "../WordHome/wordSimple";
 import Reply from "./reply_editor";
 import CommentDisplay from "./comment_list";
 const { Title } = Typography;
@@ -16,9 +16,9 @@ function comment_section() {
   return (
     <Row>
       <Col span={24}>
-      <WordNew />
+      <WordSimple />
       </Col>
-      <Col span={18}>
+      <Col span={22}>
       <Reply />
       </Col>
       <Col span={24}>

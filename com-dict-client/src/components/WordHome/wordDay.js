@@ -48,17 +48,25 @@ function wordDay() {
 
   return (
     <>
+    <wordCarousel />
       <div
-        style={{ backgroundColor: "#7dbf94", width: "100%", padding: "10vmin" }}
+        style={{ backgroundColor: "#7dbf94", width: "100%", padding: "11vmin" }}
       >
-        <Row align="middle">
-          <Col xl={3} lg={3} md={0} sm={0} xs={0}></Col>
-          <Col xl={8} lg={8} md={0} sm={0} xs={0}>
+        <Row>
+          <Col xl={2} lg={2} md={0} sm={0} xs={0} style={{textAlign:"center"}}>
+            <div id="rotate-text">
+            <Text style={{fontSize:'3vmin'}}>DISCOVER MORE</Text>
+            </div>
+          
+              <div class="arrows"></div>
+          </Col>
+          <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
+          <Col xl={9} lg={9} md={0} sm={0} xs={0}>
             <Row>
-              <Col style={{ textAlign: "right" }}>
+              <Col>
                 <Text
                   style={{
-                    textAlign: "right",
+                    textAlign: "center",
                     fontSize: "6vmin",
                     color: "white",
                     fontWeight: "bold",
@@ -91,7 +99,8 @@ function wordDay() {
             </Col>
           </Row>
           <Col></Col>
-          <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
+          <Col xl={1} lg={1} md={0} sm={0} xs={0}>
+          </Col>
           <Col xl={10} lg={10} md={24} sm={24} xs={24}>
             <Row>
               <Col span={24}>
@@ -170,8 +179,15 @@ function wordDay() {
           </Col>
           <Col span={2}></Col>
         </Row>
+        
+
+
+
+
+
+
       </div>
-      <wordCarousel />
+      
     </>
   );
 }

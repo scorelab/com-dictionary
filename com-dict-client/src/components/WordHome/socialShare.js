@@ -13,17 +13,17 @@ function SocialShare() {
   return (
     <span>
       <FacebookShareButton url={"shareUrl"} quote={"title"}>
-        <FacebookIcon size={32} round />
+        <FacebookIcon size={40} round />
       </FacebookShareButton>
       <TwitterShareButton url={"shareUrl"} quote={"title"}>
-        <TwitterIcon size={32} round />
+        <TwitterIcon size={40} round />
       </TwitterShareButton>
 
       <Button
         type="link"
         icon={
           <ShareAltOutlined
-            style={{ fontSize: "24pt", color: "gray"}}
+            style={{ fontSize: "32pt", color: "gray"}}
           />
         }
         size="large"

@@ -71,10 +71,9 @@ const state = {
     const { comments, submitting, value } = state;
 
     return (
-      
       <Row>
-          <Col span={2}></Col>
-          <Col span={20}>
+          <Col span={3}></Col>
+          <Col span={21}>
           {comments.length > 0 && <CommentList comments={comments} />}
         <Comment
           avatar={
