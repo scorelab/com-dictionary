@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import { Select } from "./node_modules/antd";
+import React from "react";
+import { Select } from "antd";
 
 const { Option } = Select;
 var optionText;
