@@ -3,8 +3,10 @@ import { Layout } from "antd";
 import "./categories.css";
 import TitleBar from "../../components/Header";
 import FooterPage from "../../components/Footer/FooterPage";
-import CatHead from "../../components/Categories/catHead";
-import CatView from "../../components/Categories/catView";
+import AllCats from "../../components/Categories";
+
+
+
 const { Header, Footer, Content } = Layout;
 
 function Categories() {
@@ -14,8 +16,7 @@ function Categories() {
         <TitleBar />
       </Header>
       <Content className="body">
-        <CatHead />
-        <CatView />
+        <AllCats />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

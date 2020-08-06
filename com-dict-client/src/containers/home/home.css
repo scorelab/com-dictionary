@@ -35,6 +35,21 @@
 
 }
 
+#date-rotate
+{
+
+  display: block;
+  transform: rotate(270deg);
+  line-height: 8vh;
+  width: 50vh;
+  text-align: center;
+  margin-left: -20vmin;
+  margin-top: 25vmin;
+
+  /* background-color: aquamarine; */
+
+}
+
 
 .navbar
 {
@@ -70,10 +85,8 @@
   /* border-color: #A9A9A9; */
   padding-top: 2vmin;
   margin-top: 4vmin;
-  border-width: 3vmin;
+  border-width: 2vmin;
   border-color: #639bb4;
-
-  
 }
 
 .search_style
@@ -126,13 +139,6 @@
   width: 100%;
 }
 
-.book
-{
-  /* width:50vmin;
-  height:100vmin; */
-  background-color: rosybrown;
-}
-
 
 .icons8-customer { 
   vertical-align: middle;
@@ -167,3 +173,9 @@
         color:#639bb4;
         background-color: #f2f2f2;
       }
+
+
+      
+     
+
+

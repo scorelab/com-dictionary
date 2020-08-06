@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import "./arrow.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
 import WordHome from "../../components/WordHome";

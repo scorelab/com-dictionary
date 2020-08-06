@@ -65,26 +65,36 @@ function WordSimple(props) {
   }, [firestore, headTerms, head_term_id, other_language_id]);
 
   return (
-    <Card bordered className="word_index">
+    
       <Row>
-        <Col span={24}>
-          <Title level={2}>13 of June 2020</Title>
+        <Col span={2}>
+          <div id ="date-rotate">
+            <Text style={{fontSize:'5vmin',fontWeight:'bolder'}}>Word of the Day</Text>
+          </div>
         </Col>
-        <Divider></Divider>
+        
+        <Col span={20}>
+        <Card bordered className="word_index">
+        <Row>
+        <Col span={18}>
+          <Title level={4}>13 of June 2020</Title>
+        </Col>
+        <Col xl={6} lg={6} md={6} sm={6} xs={6} style={{ textAlign: "right" }}>
+          <SocialShare />
+        </Col>
       </Row>
-
       <Row>
-        <Col lg={6} md={6} sm={6} xs={8} style={{ textAlign: "left" }}>
-          <Title level={2}>{headTerms && headTerms.head_term}</Title>
+        <Col lg={24} md={24} sm={24} xs={24} style={{ textAlign: "left" }}>
+          <Title style={{color:"#639bb4"}}>{other_language_term}</Title>
         </Col>
 
         <Col lg={8} md={8} sm={8} xs={16} style={{ textAlign: "center" }}>
-          {/* {other_language_id} */}
+          {other_language_id}
         </Col>
 
-        <Col lg={10} md={10} sm={10} xs={24} style={{ textAlign: "right" }}>
+        {/* <Col lg={10} md={10} sm={10} xs={24} style={{ textAlign: "right" }}>
           <SocialShare />
-        </Col>
+        </Col> */}
       </Row>
       <Row>
         <Text>{otherLanguage && otherLanguage.language}</Text>
@@ -96,10 +106,10 @@ function WordSimple(props) {
           style={{ fontSize: "14pt" }}
         />
       </Row>
-
+{/* 
       <Row style={{ paddingTop: "2vmin" }}>
-        <Title level={2}>{other_language_term}</Title>
-      </Row>
+        <Title level={2} style={{color:"#639bb4"}}>{other_language_term}</Title>
+      </Row> */}
 
       <Row style={{ paddingTop: "2vmin" }}>
         <Text>{other_language_def}</Text>
@@ -149,15 +159,21 @@ function WordSimple(props) {
         </Col>
         <Col xl={0} lg={0} md={13} sm={13}></Col>
         <Col xl={13} lg={13} md={24} sm={24} style={{ textAlign: "right" }}>
-          {/* <Button type="link" style={{ color: "green" }}>
-            Comment
-          </Button> */}
+          <Button type="link" style={{ color: "green" }}>
+          <Link to="/comment">Comment</Link>
+          </Button>
           <Button type="link" style={{ color: "red" }}>
             <Link to="/report">Report inappropriate</Link>
           </Button>
         </Col>
       </Row>
-    </Card>
+      </Card>
+      </Col>
+      <Col span={2}></Col>
+      
+
+
+    </Row>
   );
 }
 

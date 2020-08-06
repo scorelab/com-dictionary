@@ -60,26 +60,29 @@ function WordForm() {
 
   return (
     <div>
-      <Card
+      <Row>
+        <Col span={2}></Col>
+        <Col span={20}>
+        <Card
         bordered
         title="Add New Word"
         style={{
-          backgroundColor: "#FFFFFF ",
+          backgroundColor: "#FFFFFF",
           border: 0,
           width: "80%",
           marginLeft: "10%",
-          marginRight: "10%",
+          marginRight: "5%",
         }}
         headStyle={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#4CBDD5",
           fontSize: "x-large",
-          color: "black",
+          color: "white",
           border: 0,
           textAlign: "center",
         }}
-        bodyStyle={{ backgroundColor: "#FFFFFF", border: 0 }}
+        bodyStyle={{ backgroundColor: "#FFFFFF", border: 0}}
       >
-        <Text style={{ fontSize: "18px" }}>
+        <Text style={{ fontSize: "3vmin"}}>
           All the definitions and transaltions on Community Dictionary were
           written by people just like you. Now's your chance to add your own!
         </Text>
@@ -203,7 +206,10 @@ function WordForm() {
           </Form.Item>
         </Form>
       </Card>
+        </Col>
+      </Row>
     </div>
+
   );
 }
 
