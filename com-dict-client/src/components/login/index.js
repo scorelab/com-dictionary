@@ -53,7 +53,7 @@ function App(props) {
   return (
     <div>
       <Button type="link" size="large" onClick={showModal}>
-        <span class="icons8-customer"></span>
+        <span className="icons8-customer"></span>
       </Button>
       <Modal
         width="80%"
@@ -75,7 +75,7 @@ function App(props) {
             <Row justify="space-around" align="middle">
               <img
                 ALT="LOGIN"
-                class="login_anime"
+                className="login_anime"
                 style={{
                   maxWidth: "110%",
                   height: "auto",

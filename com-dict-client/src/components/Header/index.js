@@ -53,7 +53,7 @@ function TitleBar() {
             </Menu.Item>
             <Menu.Item key="4">
               <Link to="/add">
-                <span class="icons8-add"></span>
+                <span className="icons8-add"></span>
               </Link>
             </Menu.Item>
 

@@ -33,12 +33,12 @@ export default function Routes() {
 
 function PrivateRoute({ children, ...rest }) {
   const auth = useSelector((state) => state.firebase.auth); // isLoaded(auth) && !isEmpty(auth)
-  // console.log(auth);
+  console.log(auth);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth ? (
+        auth.uid ? (
           children
         ) : (
           <Redirect

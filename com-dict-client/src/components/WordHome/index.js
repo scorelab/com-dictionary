@@ -10,7 +10,7 @@ const { Text } = Typography;
 function WordHome() {
   const firestore = useFirestore();
   const [words, setWords] = useState([]);
-  const [trending, setTrending] = useState([]);
+  const [endAt, setEndAt] = useState("");
 
   useEffect(() => {
     firestore
@@ -21,33 +21,31 @@ function WordHome() {
       .onSnapshot(
         (querySnapshot) => {
           console.log(querySnapshot.docs);
-          setWords(
-            querySnapshot.docs.map((doc) => {
-              return doc.data();
-            })
-          );
-        },
-        (err) => {
-          console.log(err);
-          console.log(trending);
-        }
-      );
-
-    firestore
-      .collection("definitions")
-      .orderBy("likes")
-      .onSnapshot(
-        (querySnapshot) => {
-          const defs = querySnapshot.docs.map((doc) => {
-            return doc.data();
+          let lastItem = "";
+          const defs = [];
+          querySnapshot.docs.map((doc) => {
+            lastItem = doc.id;
+            defs.push(doc.data());
           });
-          setTrending(defs);
+          setWords(defs);
+          setEndAt(lastItem);
         },
         (err) => {
           console.log(err);
         }
       );
-  }, [firestore, trending]);
+    // eslint-disable-next-line
+  }, []);
+
+  const loadMore = (event) => {
+    const target = event.target;
+    console.log("hello");
+    if (target.scrollHeight - target.scrollTop === target.clientHeight) {
+      alert("Bottom");
+    }
+  };
+
+  document.getElementById("root").onscroll = loadMore;
 
   return (
     <>
@@ -64,30 +62,10 @@ function WordHome() {
         </Col>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
 
-        {/* <Col lg={6} md={24} sm={24} xs={24}>
-          <Card className="trending">
-            <Row justify="space-around">
-              <Title level={3}>Trending Words</Title>
-            </Row>
-            <Row>
-              <Divider></Divider>
-            </Row>
-            <Row>{trending.map((val) => val.other_language_term)}</Row>
-          </Card>
-        </Col> */}
-
         <Col lg={1} md={0} sm={0}></Col>
       </Row>
       <Row style={{ paddingTop: "2vmin" }}>
         <Col lg={4} md={0} sm={0}></Col>
-        {/* <Col lg={12} md={24} sm={24} xs={24} style={{ textAlign: "center" }}>
-          <Pagination
-            defaultCurrent={1}
-            total={words && words.length}
-            onChange={(page, pageSize) => setPage(page)}
-          />
-        </Col> */}
-        {/* <Col lg={4} md={4} sm={4}></Col> */}
       </Row>
       <Row style={{ backgroundColor: "#f2f2f2", lineHeight: "5vmin" }}>
         <Row>

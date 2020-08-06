@@ -57,7 +57,7 @@ function FlagWord() {
           <Col span={8}>
             <img
               alt="remove-anime"
-              class="remove_anime"
+              className="remove_anime"
               style={{ maxWidth: "100%", maxHeight: "100vh" }}
               src={report}
             />

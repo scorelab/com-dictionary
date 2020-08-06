@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel, Typography, Row, Col } from "antd";
 import { Link } from "react-router-dom";
+
 // import "./home.css";
 
 const { Text } = Typography;

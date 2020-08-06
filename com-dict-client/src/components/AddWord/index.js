@@ -8,6 +8,8 @@ import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
 import { addWord } from "../../store/actions";
 import { useSelector } from "react-redux";
 
+import { languages } from "../../constants";
+
 const { Text } = Typography;
 // var optionText;
 
@@ -19,7 +21,7 @@ function WordForm() {
   const [wordClass, setWordClass] = useState([]);
   const [meaning, setMeaning] = useState("");
   const [example, setExample] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Food");
   const [relatedWords, setRelatedWords] = useState([]);
 
   useFirestoreConnect([
@@ -41,22 +43,19 @@ function WordForm() {
       related_words: relatedWords,
       likes: 0,
       dislikes: 0,
-      userId: user,
+      userId: user.uid,
+      uname: user.displayName,
+      createdAt: new Date().getTime(),
     };
     console.log(data);
-    return addWord(data)(firestore);
+    // return addWord(data)(firestore);
   };
 
-  const languages = useSelector((state) => state.firestore.ordered.languages);
-  console.log(languages);
-
   const categories = useSelector((state) => state.firestore.ordered.categories);
-  console.log(categories);
 
   const headTerms = useSelector((state) => state.firestore.ordered.headTerms);
-  console.log(headTerms);
 
-  const user = useSelector((state) => state.firebase.auth.uid);
+  const user = useSelector((state) => state.firebase.auth);
 
   return (
     <div>
@@ -95,8 +94,8 @@ function WordForm() {
             >
               {languages &&
                 languages.map((lng, i) => (
-                  <Select.Option key={i} value={lng.language}>
-                    {lng.language}
+                  <Select.Option key={i} value={lng}>
+                    {lng}
                   </Select.Option>
                 ))}
             </Select>

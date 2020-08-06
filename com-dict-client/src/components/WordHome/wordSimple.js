@@ -7,75 +7,39 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import SocialShare from "./socialShare";
-// import { useSelector } from "react-redux";
-import { useFirestore } from "react-redux-firebase";
+import moment from "moment";
 const { Title, Text } = Typography;
 
 function WordSimple(props) {
-  const firestore = useFirestore();
   const {
-    head_term_id,
+    head_term,
     likes,
     dislikes,
-    other_language_id,
+    other_language,
     other_language_def,
     other_language_term,
     example,
-    // tags,
+    uname,
     createdAt,
-    user_id,
+    // user_id,
     pronunciation,
+    word_classes,
   } = props.data;
-
-  const [headTerms, setHeadTerms] = useState(undefined);
-  const [otherLanguages, setOtherLanguages] = useState(undefined);
-  const [otherLanguage, setOtherLanguage] = useState(undefined);
-  console.log(props.data);
-  useEffect(() => {
-    firestore
-      .collection("headTerms")
-      .where("head_term_id", "==", `${head_term_id}`)
-      .get()
-      .then((result) => {
-        result.forEach((doc) => {
-          console.log(doc.data());
-          setHeadTerms(doc.data());
-        });
-      });
-    firestore
-      .collection("languages")
-      .where("language_id", "==", `${other_language_id}`)
-      .get()
-      .then((result) => {
-        result.forEach((doc) => {
-          console.log(doc.data());
-          setOtherLanguage(doc.data());
-        });
-      });
-    firestore
-      .collection("languages")
-      .where("language_id", "in", headTerms ? headTerms.available_langs : ["1"])
-      .get()
-      .then((result) => {
-        result.forEach((doc) => {
-          console.log(doc.data());
-          setOtherLanguages(doc.data());
-        });
-      });
-  }, [firestore, headTerms, head_term_id, other_language_id]);
 
   return (
     <Card bordered className="word_index">
       <Row>
         <Col span={24}>
-          <Title level={2}>13 of June 2020</Title>
+          <Title level={2}>
+            {moment(createdAt.toDate()).format("dddd, MMMM Do YYYY")}
+          </Title>
         </Col>
         <Divider></Divider>
       </Row>
 
       <Row>
         <Col lg={6} md={6} sm={6} xs={8} style={{ textAlign: "left" }}>
-          <Title level={2}>{headTerms && headTerms.head_term}</Title>
+          <Title level={2}>{head_term}</Title>
         </Col>
 
         <Col lg={8} md={8} sm={8} xs={16} style={{ textAlign: "center" }}>
@@ -87,9 +51,9 @@ function WordSimple(props) {
         </Col>
       </Row>
       <Row>
-        <Text>{otherLanguage && otherLanguage.language}</Text>
+        <Text>{other_language}</Text>
         <Divider type="vertical" flex style={{ height: "4vmin" }}></Divider>
-        <Text>Noun</Text>
+        <Text>{word_classes.map((val, i) => `${val} `)}</Text>
         <Divider flex type="vertical" style={{ height: "4vmin" }}></Divider>
         <SoundOutlined
           onClick={() => new Audio(pronunciation).play()}
@@ -105,28 +69,17 @@ function WordSimple(props) {
         <Text>{other_language_def}</Text>
       </Row>
       <Row style={{ paddingTop: "2vmin" }}>
-        <Text>{example}</Text>
+        <Text style={{ fontStyle: "italic", fontWeight: "bold" }}>
+          {example}
+        </Text>
       </Row>
+
       <Row style={{ paddingTop: "2vmin" }}>
-        <Text>Available language: </Text>
-        {otherLanguages &&
-          otherLanguages.map((val, i) => (
-            <Text
-              key={i}
-              style={{ color: "blue", textUnderlinePosition: "under" }}
-            >
-              {val.language + " "}
-            </Text>
-          ))}
-      </Row>
-      <Row style={{ paddingTop: "2vmin" }}>
-        <Text>
-          Created by {user_id} on{" "}
-          {createdAt.toDate().getFullYear() +
-            "/" +
-            (createdAt.toDate().getMonth() + 1) +
-            "/" +
-            createdAt.toDate().getDate()}
+        <Text style={{ flexDirection: "row" }}>
+          Created by <Text style={{ fontWeight: "bold" }}>{uname} </Text>on{" "}
+          <Text style={{ fontWeight: "bold" }}>
+            {moment(createdAt.toDate()).format("dddd, MMMM Do YYYY")}
+          </Text>
         </Text>
       </Row>
       <Row style={{ paddingTop: "2vmin", paddingLeft: "10vmin" }}>
@@ -153,7 +106,7 @@ function WordSimple(props) {
             Comment
           </Button> */}
           <Button type="link" style={{ color: "red" }}>
-            <Link to="/report">Report inappropriate</Link>
+            <Link to="/report">Report</Link>
           </Button>
         </Col>
       </Row>
