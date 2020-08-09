@@ -7,13 +7,14 @@ import FullTextSearch from "../../components/Search";
 const { Header, Footer, Content } = Layout;
 
 function HomePage(props) {
+  console.log(props);
   return (
     <Layout>
       <Header className="title_bar">
         <TitleBar />
       </Header>
       <Content className="body">
-        <FullTextSearch />
+        <FullTextSearch params={props.match.params} />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

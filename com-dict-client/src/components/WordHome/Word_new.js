@@ -1,4 +1,3 @@
-// import React from "./node_modules/react";
 import React from "react";
 import { Typography, Card, Row, Col, Divider, Button } from "antd";
 
@@ -10,20 +9,18 @@ import {
 } from "@ant-design/icons";
 
 import SelectLang from "../Search/SelectLang";
-import SocialShare from "./SocialShare";
+import SocialShare from "./socialShare";
 
 const { Title, Text } = Typography;
 
 function Word() {
   return (
-    <div>
+
       <Row>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
         <Col xl={20} lg={20} md={24} sm={24} xs={24}>
-          <Card bordered>
             <Row>
                 <Col xl={2} lg={2} md={0} sm={0} xs={0} >
-        
                 </Col>
                 <Col xl={20} lg={20} md={24} sm={24} xs={24}>
                     <Card bordered style={{boxShadow:"2px 2px 4px rgba(0, 0, 0, 0.15)"}}>
@@ -112,7 +109,7 @@ function Word() {
                         <Col xl={5} lg={5} md={24} sm={24} xs={24}>
                             <Row>
                                 <Col span={12} style={{ textAlign: "right" }}>
-                                    <Text style={{ fontSize: "large" }}>Available translations</Text>
+                                    <Text style={{ fontSize: "large" }}>Translations</Text>
                                 </Col>
 
                                 <Col span={12} style={{ textAlign: "center" }}>
@@ -140,11 +137,11 @@ function Word() {
                  
                 </Col>
             </Row>
-          </Card>
+
         </Col>
         <Col span={2} xl={2} lg={2} md={0} sm={0} xs={0}></Col>
       </Row>
-    </div>
+
   );
 }
 

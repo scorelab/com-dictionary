@@ -4,7 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import { Menu, Typography } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import UserAccount from "../Login/index";
-import SelectLang from "../Search/SelectLang";
 import SearchText from "../Search/SearchText";
 import cover from "../../images/logo/cover.png";
 import { useSelector } from "react-redux";
@@ -89,18 +88,8 @@ function TitleBar() {
           </Menu>
         </Col>
       </Row>
-      <Row style={{ paddingTop: "2vmin" }}>
-        <Col xl={2} lg={2} md={2} sm={0} xs={0}></Col>
-        <Col xl={6} lg={6} md={6} sm={24} xs={24}>
-          <SelectLang />
-        </Col>
-
-        {location.pathname.includes("search") ? null : (
-          <Col xl={12} lg={12} md={12} sm={24} xs={24}>
-            <SearchText />
-          </Col>
-        )}
-        <Col xl={6} lg={6} md={6} sm={0} xs={0}></Col>
+      <Row justify="center" style={{ paddingBottom: "1vmin" }}>
+        <SearchText />
       </Row>
     </nav>
   );

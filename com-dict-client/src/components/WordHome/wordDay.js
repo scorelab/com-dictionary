@@ -8,9 +8,11 @@ import {
 // import { useSelector } from "react-redux";
 // import { useFirestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
+import moment from "moment";
+
 const { Text } = Typography;
 
-function wordDay() {
+function wordDay({ data }) {
   //   const {
   //     head_term_id,
   //     likes,
@@ -49,16 +51,30 @@ function wordDay() {
   return (
     <>
       <div
-        style={{ backgroundColor: "#7dbf94", width: "100%", padding: "10vmin" }}
+        style={{ backgroundColor: "#7dbf94", width: "100%", padding: "11vmin" }}
       >
-        <Row align="middle">
-          <Col xl={3} lg={3} md={0} sm={0} xs={0}></Col>
-          <Col xl={8} lg={8} md={0} sm={0} xs={0}>
+        <Row>
+          <Col
+            xl={2}
+            lg={2}
+            md={0}
+            sm={0}
+            xs={0}
+            style={{ textAlign: "center" }}
+          >
+            <div id="rotate-text">
+              <Text style={{ fontSize: "3vmin" }}>DISCOVER MORE</Text>
+            </div>
+
+            <div class="arrows"></div>
+          </Col>
+          <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
+          <Col xl={9} lg={9} md={0} sm={0} xs={0}>
             <Row>
-              <Col style={{ textAlign: "right" }}>
+              <Col>
                 <Text
                   style={{
-                    textAlign: "right",
+                    textAlign: "center",
                     fontSize: "6vmin",
                     color: "white",
                     fontWeight: "bold",
@@ -113,21 +129,28 @@ function wordDay() {
                         fontWeight: "bold",
                       }}
                     >
-                      Word
+                      {data && data.head_term}
                     </Text>
                   </Row>
                   <Row style={{ paddingTop: "3vmin" }}>
                     <Text style={{ fontSize: "2.5vmin", fontWeight: "bold" }}>
-                      Language
+                      {data && data.other_language}
                     </Text>
                     <Divider
                       type="vertical"
                       flex
                       style={{ height: "4vmin" }}
                     ></Divider>
-                    <Text style={{ fontSize: "2.5vmin", fontWeight: "bold" }}>
-                      Noun
-                    </Text>
+                    {data &&
+                      data.word_classes.map((val, i) => (
+                        <Text
+                          key={i}
+                          style={{ fontSize: "2.5vmin", fontWeight: "bold" }}
+                        >
+                          {val}{" "}
+                        </Text>
+                      ))}
+
                     <Divider
                       flex
                       type="vertical"
@@ -139,17 +162,17 @@ function wordDay() {
                   </Row>
                   <Row style={{ paddingTop: "4vmin" }}>
                     <Col xl={16} lg={16} md={16} sm={24} xs={24}>
-                      <Link to="/">
-                        <Text
-                          style={{
-                            color: "#df815a",
-                            fontSize: "2.5vmin",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          See definitions and examples
-                        </Text>
-                      </Link>{" "}
+                      {/* <Link to="/"> */}
+                      <Text
+                        style={{
+                          color: "#df815a",
+                          fontSize: "2.5vmin",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        See definitions and examples below
+                      </Text>
+                      {/* </Link>{" "} */}
                     </Col>
                     <Col xl={8} lg={8} md={8} sm={24} xs={24}>
                       <Text
@@ -160,7 +183,10 @@ function wordDay() {
                         }}
                         span={12}
                       >
-                        23rd July 2020
+                        {data &&
+                          moment(data.word_of_the_day).format(
+                            "dddd, MMMM Do YYYY"
+                          )}
                       </Text>
                     </Col>
                   </Row>
@@ -171,7 +197,6 @@ function wordDay() {
           <Col span={2}></Col>
         </Row>
       </div>
-      <wordCarousel />
     </>
   );
 }
