@@ -47,9 +47,9 @@ function TitleBar() {
               <Link to="/Categories">All categories </Link>
             </Menu.Item>
 
-            <Menu.Item key="3">
+            {/* <Menu.Item key="3">
               <Link to="/letter">Vote</Link>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item key="4">
               <Link to="/add">
                 <span className="icons8-add"></span>

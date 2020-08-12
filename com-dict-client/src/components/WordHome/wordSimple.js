@@ -77,9 +77,9 @@ function WordSimple(props) {
           </Row>
           <Row>
             <Text>{other_language}</Text>
-            <Divider type="vertical" flex style={{ height: "4vmin" }}></Divider>
+            <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
             <Text>{word_classes.map((val, i) => `${val} `)}</Text>
-            <Divider flex type="vertical" style={{ height: "4vmin" }}></Divider>
+            <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
             <SoundOutlined
               onClick={() => new Audio(pronunciation).play()}
               style={{ fontSize: "14pt" }}

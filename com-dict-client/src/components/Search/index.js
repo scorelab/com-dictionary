@@ -17,9 +17,8 @@ export default function FullTextSearch({ params }) {
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
-          const defs = [];
-          querySnapshot.docs.map((doc) => {
-            defs.push(doc.data());
+          const defs = querySnapshot.docs.map((doc) => {
+            return doc.data();
           });
           console.log(defs);
           setWords(defs);

@@ -11,7 +11,7 @@ const { Text } = Typography;
 function WordHome() {
   const firestore = useFirestore();
   const [words, setWords] = useState([]);
-  const [endAt, setEndAt] = useState("");
+  // const [endAt, setEndAt] = useState("");
   const [wordOfTheDay, setWordOfTheDay] = useState({ word_classes: [] });
   const [trending, setTrending] = useState([{}]);
   const past_10_days = Array.from(Array(10), (x, index) =>
@@ -22,19 +22,21 @@ function WordHome() {
     firestore
       .collection("definitions")
       .orderBy("createdAt")
-      .where("word_of_the_day", "in", past_10_days)
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
           console.log(querySnapshot.docs);
-          let lastItem = "";
+          // let lastItem = "";
           const defs = [];
-          querySnapshot.docs.map((doc) => {
-            lastItem = doc.id;
-            defs.push(doc.data());
+          querySnapshot.docs.filter((doc) => {
+            if (doc.data().word_of_the_day !== "null") {
+              // lastItem = doc.id;
+              defs.push(doc.data());
+            }
+            return null;
           });
           setWords(defs);
-          setEndAt(lastItem);
+          // setEndAt(lastItem);
         },
         (err) => {
           console.log(err);
@@ -50,6 +52,7 @@ function WordHome() {
           const defs = [];
           querySnapshot.docs.map((doc) => {
             defs.push(doc.data());
+            return null;
           });
           setTrending(defs);
         },
@@ -69,6 +72,7 @@ function WordHome() {
           const defs = [];
           querySnapshot.docs.map((doc) => {
             defs.push(doc.data());
+            return null;
           });
           console.log(defs[0]);
           setWordOfTheDay(defs[0]);
@@ -101,7 +105,7 @@ function WordHome() {
         <Col xl={2} lg={2} md={0} sm={0}></Col>
         <Col xl={20} lg={20} md={24} sm={24} xs={24}>
           {words.length > 0
-            ? words.map((val, i) => <WordSimple data={val} />)
+            ? words.map((val, i) => <WordSimple key={i} data={val} />)
             : ""}
         </Col>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>

@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 // import { useSelector } from "react-redux";
 // import { useFirestoreConnect } from "react-redux-firebase";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import moment from "moment";
 
 const { Text } = Typography;
@@ -66,7 +66,7 @@ function wordDay({ data }) {
               <Text style={{ fontSize: "3vmin" }}>DISCOVER MORE</Text>
             </div>
 
-            <div class="arrows"></div>
+            <div className="arrows"></div>
           </Col>
           <Col xl={1} lg={1} md={0} sm={0} xs={0}></Col>
           <Col xl={9} lg={9} md={0} sm={0} xs={0}>
@@ -138,7 +138,6 @@ function wordDay({ data }) {
                     </Text>
                     <Divider
                       type="vertical"
-                      flex
                       style={{ height: "4vmin" }}
                     ></Divider>
                     {data &&
@@ -152,7 +151,6 @@ function wordDay({ data }) {
                       ))}
 
                     <Divider
-                      flex
                       type="vertical"
                       style={{ height: "4vmin" }}
                     ></Divider>

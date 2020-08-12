@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Typography } from "antd";
 import sports from "../../images/pablo-sports.png";
 import music from "../../images/pablo-music.png";
 import work from "../../images/pablo-work.png";
-import { useSelector } from "react-redux";
-import { useFirestoreConnect } from "react-redux-firebase";
+import { useFirestore } from "react-redux-firebase";
 
 const { Title } = Typography;
 
 function CatView() {
-  useFirestoreConnect([{ collection: "categories" }]);
-  const categories = useSelector((state) => state.firestore.ordered.categories);
+  const firestore = useFirestore();
+  const [cats, setCats] = useState({ Food: [] });
+
+  useEffect(() => {
+    firestore
+      .collection("headTerms")
+      .limit(50)
+      .onSnapshot(
+        (querySnapshot) => {
+          const defs = querySnapshot.docs.map((doc) => {
+            return doc.data();
+          });
+          console.log(defs);
+          let groupedItems = defs.reduce(function (r, a) {
+            r[a.category] = r[a.category] || [];
+            r[a.category].push(a);
+            return r;
+          }, Object.create(null));
+          console.log(groupedItems);
+          setCats(groupedItems);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
@@ -28,7 +53,11 @@ function CatView() {
       </Row>
       <Row>
         <Col span={6}>
-          <img style={{ maxWidth: "100%", maxHeight: "auto" }} src={sports} />
+          <img
+            alt="1"
+            style={{ maxWidth: "100%", maxHeight: "auto" }}
+            src={sports}
+          />
         </Col>
         <Col span={17}>
           <Card
@@ -41,10 +70,12 @@ function CatView() {
             }}
           >
             <Row>
-              <Col span={6}>word(1)</Col>
-              <Col span={6}>word(2)</Col>
-              <Col span={6}>word(3)</Col>
-              <Col span={6}>word(4)</Col>
+              {cats["Sports"] &&
+                cats["Sports"].map((val, i) => (
+                  <Col key={i} span={6}>
+                    {val.head_term}
+                  </Col>
+                ))}
             </Row>
           </Card>
         </Col>
@@ -57,7 +88,7 @@ function CatView() {
             style={{ textAlign: "center", backgroundColor: "#df815a" }}
           >
             <Title level={1} style={{ color: "white" }}>
-              Entertainment
+              Internet
             </Title>
           </div>
         </Col>
@@ -74,15 +105,17 @@ function CatView() {
             }}
           >
             <Row>
-              <Col span={6}>word(1)</Col>
-              <Col span={6}>word(2)</Col>
-              <Col span={6}>word(3)</Col>
-              <Col span={6}>word(4)</Col>
+              {cats["Internet"] &&
+                cats["Internet"].map((val, i) => (
+                  <Col key={i} span={6}>
+                    {val.head_term}
+                  </Col>
+                ))}
             </Row>
           </Card>
         </Col>
         <Col span={6}>
-          <img style={{ maxWidth: "100%" }} src={music} />
+          <img alt="1" style={{ maxWidth: "100%" }} src={music} />
         </Col>
       </Row>
 
@@ -93,14 +126,14 @@ function CatView() {
             style={{ textAlign: "center", backgroundColor: "#7dbf94" }}
           >
             <Title level={1} style={{ color: "white" }}>
-              Work
+              Food
             </Title>
           </div>
         </Col>
       </Row>
       <Row>
         <Col span={6}>
-          <img style={{ maxWidth: "100%" }} src={work} />
+          <img alt="1" style={{ maxWidth: "100%" }} src={work} />
         </Col>
 
         <Col span={1}></Col>
@@ -114,10 +147,12 @@ function CatView() {
             }}
           >
             <Row>
-              <Col span={6}>word(1)</Col>
-              <Col span={6}>word(2)</Col>
-              <Col span={6}>word(3)</Col>
-              <Col span={6}>word(4)</Col>
+              {cats["Food"] &&
+                cats["Food"].map((val, i) => (
+                  <Col key={i} span={6}>
+                    {val.head_term}
+                  </Col>
+                ))}
             </Row>
           </Card>
         </Col>
