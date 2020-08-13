@@ -9,6 +9,8 @@
     "algoliasearch": "^4.3.1",
     "antd": "^4.2.5",
     "firebase": "^7.13.1",
+    "firebase-functions": "^3.8.0",
+    "puppeteer": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-instantsearch-dom": "^6.7.0",

@@ -1,22 +1,16 @@
 import React from "react";
 import { Carousel, Typography, Row, Col } from "antd";
 import { Link } from "react-router-dom";
+
 // import "./home.css";
 
 const { Text } = Typography;
 
-function wordCarousel() {
+function wordCarousel({ data }) {
   return (
     <Row>
       <Col span={2}></Col>
-      <Col
-        xl={4}
-        lg={4}
-        md={20}
-        sm={20}
-        xs={20}
-        style={{ textAlign: "left" }}
-      >
+      <Col xl={4} lg={4} md={20} sm={20} xs={20} style={{ textAlign: "left" }}>
         <Text
           style={{
             fontSize: "3vmin",
@@ -32,99 +26,20 @@ function wordCarousel() {
         <Carousel autoplay speed={8000} dots={false}>
           <div>
             <Row>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <Link to="/">First word</Link>
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Second word
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Third word
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Fourth word
-                </Text>
-              </Col>
-            </Row>
-          </div>
-
-          <div>
-            <Row>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Fifth word
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Sixth word
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Seventh word
-                </Text>
-              </Col>
-              <Col span={6}>
-                <Text
-                  style={{
-                    color: "#639bb4",
-                    fontSize: "2.5vmin",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Eighth word
-                </Text>
-              </Col>
+              {data &&
+                data.map((val, i) => (
+                  <Col key={i} span={6}>
+                    <Text
+                      style={{
+                        color: "#639bb4",
+                        fontSize: "2.5vmin",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      <Link to="/">{val.head_term}</Link>
+                    </Text>
+                  </Col>
+                ))}
             </Row>
           </div>
         </Carousel>

@@ -4,42 +4,55 @@ import { useFirestore } from "react-redux-firebase";
 import WordSimple from "./wordSimple";
 import WordDay from "./wordDay";
 import AlphaIndex from "../Home/AlphaIndex";
-
+import moment from "moment";
+import WordCarousel from "./wordCarousel";
 const { Text } = Typography;
 
 function WordHome() {
   const firestore = useFirestore();
   const [words, setWords] = useState([]);
-  const [trending, setTrending] = useState([]);
-
+  // const [endAt, setEndAt] = useState("");
+  const [wordOfTheDay, setWordOfTheDay] = useState({ word_classes: [] });
+  const [trending, setTrending] = useState([{}]);
+  const past_10_days = Array.from(Array(10), (x, index) =>
+    moment().subtract(index, "days").format("YYYY-MM-DD")
+  );
+  console.log(past_10_days);
   useEffect(() => {
     firestore
       .collection("definitions")
       .orderBy("createdAt")
-      .startAfter(new Date().getTime())
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
           console.log(querySnapshot.docs);
-          setWords(
-            querySnapshot.docs.map((doc) => {
-              return doc.data();
-            })
-          );
+          // let lastItem = "";
+          const defs = [];
+          querySnapshot.docs.filter((doc) => {
+            if (doc.data().word_of_the_day !== "null") {
+              // lastItem = doc.id;
+              defs.push(doc.data());
+            }
+            return null;
+          });
+          setWords(defs);
+          // setEndAt(lastItem);
         },
         (err) => {
           console.log(err);
-          console.log(trending);
         }
       );
 
     firestore
       .collection("definitions")
-      .orderBy("likes")
+      .orderBy("trending_factor")
+      .limit(10)
       .onSnapshot(
         (querySnapshot) => {
-          const defs = querySnapshot.docs.map((doc) => {
-            return doc.data();
+          const defs = [];
+          querySnapshot.docs.map((doc) => {
+            defs.push(doc.data());
+            return null;
           });
           setTrending(defs);
         },
@@ -47,47 +60,60 @@ function WordHome() {
           console.log(err);
         }
       );
-  }, [firestore, trending]);
+
+    const today = moment().format("YYYY-MM-DD");
+    console.log(today);
+    firestore
+      .collection("definitions")
+      .where("word_of_the_day", "==", today)
+      .limit(1)
+      .onSnapshot(
+        (querySnapshot) => {
+          const defs = [];
+          querySnapshot.docs.map((doc) => {
+            defs.push(doc.data());
+            return null;
+          });
+          console.log(defs[0]);
+          setWordOfTheDay(defs[0]);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    // eslint-disable-next-line
+  }, []);
+
+  // const loadMore = (event) => {
+  //   const target = event.target;
+  //   console.log("hello");
+  //   if (target.scrollHeight - target.scrollTop === target.clientHeight) {
+  //     alert("Bottom");
+  //   }
+  // };
+
+  // document.getElementById("root").onscroll = loadMore;
 
   return (
     <>
+      <WordCarousel data={trending} />
       <Row>
-        <WordDay />
+        <WordDay data={wordOfTheDay} />
       </Row>
 
       <Row style={{ backgroundColor: "#f2f2f2", padding: "2vmin" }}>
         <Col xl={2} lg={2} md={0} sm={0}></Col>
         <Col xl={20} lg={20} md={24} sm={24} xs={24}>
           {words.length > 0
-            ? words.map((val, i) => <WordSimple data={val} />)
-            : "Nothing to show here"}
+            ? words.map((val, i) => <WordSimple key={i} data={val} />)
+            : ""}
         </Col>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
-
-        {/* <Col lg={6} md={24} sm={24} xs={24}>
-          <Card className="trending">
-            <Row justify="space-around">
-              <Title level={3}>Trending Words</Title>
-            </Row>
-            <Row>
-              <Divider></Divider>
-            </Row>
-            <Row>{trending.map((val) => val.other_language_term)}</Row>
-          </Card>
-        </Col> */}
 
         <Col lg={1} md={0} sm={0}></Col>
       </Row>
       <Row style={{ paddingTop: "2vmin" }}>
         <Col lg={4} md={0} sm={0}></Col>
-        {/* <Col lg={12} md={24} sm={24} xs={24} style={{ textAlign: "center" }}>
-          <Pagination
-            defaultCurrent={1}
-            total={words && words.length}
-            onChange={(page, pageSize) => setPage(page)}
-          />
-        </Col> */}
-        {/* <Col lg={4} md={4} sm={4}></Col> */}
       </Row>
       <Row style={{ backgroundColor: "#f2f2f2", lineHeight: "5vmin" }}>
         <Row>

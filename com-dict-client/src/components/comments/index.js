@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Typography,
+  // Typography,
   // Card,
   Row,
   Col,
@@ -10,21 +10,20 @@ import {
 import WordSimple from "../WordHome/wordSimple";
 import Reply from "./reply_editor";
 import CommentDisplay from "./comment_list";
-const { Title } = Typography;
+// const { Title } = Typography;
 
 function comment_section() {
   return (
     <Row>
       <Col span={24}>
-      <WordSimple />
+        <WordSimple />
       </Col>
       <Col span={22}>
-      <Reply />
+        <Reply />
       </Col>
       <Col span={24}>
-      <CommentDisplay />
+        <CommentDisplay />
       </Col>
-      
     </Row>
   );
 }

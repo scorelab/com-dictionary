@@ -19,7 +19,7 @@ export default function Routes() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/browse" component={Browse} />
-      <Route path="/search/:keyword" component={Search} />
+      <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
       <PrivateRoute path="/add">
         <AddWord />
@@ -33,12 +33,12 @@ export default function Routes() {
 
 function PrivateRoute({ children, ...rest }) {
   const auth = useSelector((state) => state.firebase.auth); // isLoaded(auth) && !isEmpty(auth)
-  // console.log(auth);
+  console.log(auth);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth ? (
+        auth.uid ? (
           children
         ) : (
           <Redirect

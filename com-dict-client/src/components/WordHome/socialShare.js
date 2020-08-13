@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "antd";
-import { ShareAltOutlined } from "@ant-design/icons";
+// import { Button } from "antd";
+// import { ShareAltOutlined } from "@ant-design/icons";
 
 import {
   TwitterShareButton,
@@ -19,7 +19,7 @@ function SocialShare() {
         <TwitterIcon size={40} round />
       </TwitterShareButton>
 
-      <Button
+      {/* <Button
         type="link"
         icon={
           <ShareAltOutlined
@@ -27,7 +27,7 @@ function SocialShare() {
           />
         }
         size="large"
-      ></Button>
+      ></Button> */}
     </span>
   );
 }
