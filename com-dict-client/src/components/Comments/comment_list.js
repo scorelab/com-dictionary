@@ -56,7 +56,7 @@ function comment_list()
 // ReactDOM.render(
 return (
 <Row>
-    <Col span={4}></Col>
+   
 <List
     className="comment-list"
     header={`${data.length} replies`}
@@ -74,7 +74,7 @@ return (
       </li>
     )}
   />
-  <Col span={2}></Col>
+ 
 </Row>
 
 );
