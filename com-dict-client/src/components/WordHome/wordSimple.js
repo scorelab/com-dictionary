@@ -48,9 +48,9 @@ function WordSimple(props) {
         <Card bordered className="word_index">
           <Row>
             <Col span={18}>
-              <Title level={4}>
+              {/* <Title level={4}>
                 {moment(word_of_the_day).format("dddd, MMMM Do YYYY")}
-              </Title>
+              </Title> */}
             </Col>
             <Col
               xl={6}
@@ -64,12 +64,12 @@ function WordSimple(props) {
             </Col>
           </Row>
           <Row>
-            <Col lg={6} md={6} sm={6} xs={8} style={{ textAlign: "left" }}>
-              <Title level={2}>{head_term}</Title>
-            </Col>
             <Col lg={24} md={24} sm={24} xs={24} style={{ textAlign: "left" }}>
-              <Title style={{ color: "#639bb4" }}>{other_language_term}</Title>
+              <Title style={{ color: "#639bb4" }}>{head_term}</Title>
             </Col>
+            {/* <Col lg={24} md={24} sm={24} xs={24} style={{ textAlign: "left" }}>
+              <Title style={{ color: "#639bb4" }}>{other_language_term}</Title>
+            </Col> */}
 
             {/* <Col lg={10} md={10} sm={10} xs={24} style={{ textAlign: "right" }}>
           <SocialShare />
