@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Typography, List } from "antd";
 import report from "../../images/pablo-word-remove.png";
-import Word from "../WordHome/word";
+import Word from "../dictionaryView/word_summary";
 import ReportWord from "../Flag/report_cats";
 
 const { Text } = Typography;
@@ -93,13 +93,12 @@ function FlagWord() {
           <Text
             style={{ fontSize: "6vmin", color: "#639bb4", fontWeight: "bold" }}
           >
-            Why should this conent be removed?
+            Why should this content be removed?
           </Text>
         </Col>
       </Row>
-      <Row style={{ padding: "3vmin", backgroundColor: "#f2f2f2" }}>
-        <Col span={2}></Col>
-        <Col>
+      <Row style={{ padding: "2vmin", backgroundColor: "#f2f2f2" }}>
+        <Col span={24}>
           <ReportWord />
         </Col>
       </Row>
