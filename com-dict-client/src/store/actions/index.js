@@ -7,3 +7,4 @@ export {
   signInWithProviderID,
 } from "./authActions";
 export { addWord, updateWord, getWords } from "./wordActions";
+export { addComment } from "./commentActions";

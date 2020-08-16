@@ -31,10 +31,14 @@ function WordHome() {
           querySnapshot.docs.filter((doc) => {
             if (doc.data().word_of_the_day !== "null") {
               // lastItem = doc.id;
-              defs.push(doc.data());
+              let tempObj = {};
+              tempObj = doc.data();
+              tempObj["id"] = doc.id;
+              defs.push(tempObj);
             }
             return null;
           });
+          console.log(defs);
           setWords(defs);
           // setEndAt(lastItem);
         },

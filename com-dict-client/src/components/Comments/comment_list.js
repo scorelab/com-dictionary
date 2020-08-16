@@ -1,82 +1,58 @@
-import React from "react";
-import { Comment, Tooltip, List, Row, Col } from 'antd';
-import moment from 'moment';
+import React, { useState, useEffect } from "react";
+import { Comment, List, Row } from "antd";
+import { useFirestore } from "react-redux-firebase";
+import moment from "moment";
 
-const data = [
-  {
-    actions: [<span key="comment-list-reply-to-0">Reply to</span>],
-    author: 'Anonymus',
-    avatar: 'https://img.icons8.com/bubbles/500/000000/user.png',
-    content: (
-      <p>
-       What the hell is this?
-      </p>
-    ),
-    datetime: (
-      <Tooltip
-        title={moment()
-          .subtract(1, 'days')
-          .format('YYYY-MM-DD HH:mm:ss')}
-      >
-        <span>
-          {moment()
-            .subtract(1, 'days')
-            .fromNow()}
-        </span>
-      </Tooltip>
-    ),
-  },
-  {
-    actions: [<span key="comment-list-reply-to-0">Reply to</span>],
-    author: 'VinuriB',
-    avatar: 'https://img.icons8.com/bubbles/500/000000/user.png',
-    content: (
-      <p>
-        Why am i doing this?
-      </p>
-    ),
-    datetime: (
-      <Tooltip
-        title={moment()
-          .subtract(2, 'days')
-          .format('YYYY-MM-DD HH:mm:ss')}
-      >
-        <span>
-          {moment()
-            .subtract(2, 'days')
-            .fromNow()}
-        </span>
-      </Tooltip>
-    ),
-  },
-];
-
-function comment_list()
-{
-// ReactDOM.render(
-return (
-<Row>
-   
-<List
-    className="comment-list"
-    header={`${data.length} replies`}
-    itemLayout="horizontal"
-    dataSource={data}
-    renderItem={item => (
-      <li>
-        <Comment
-          actions={item.actions}
-          author={item.author}
-          avatar={item.avatar}
-          content={item.content}
-          datetime={item.datetime}
-        />
-      </li>
-    )}
-  />
- 
-</Row>
-
-);
-    }
-export default comment_list;
+function CommentList({ data }) {
+  const firestore = useFirestore();
+  const [comments, setComments] = useState([]);
+  console.log(data.id);
+  useEffect(() => {
+    firestore
+      .collection("comments")
+      .orderBy("createdAt")
+      .where("definition_id", "==", data.id)
+      .onSnapshot(
+        (querySnapshot) => {
+          console.log(querySnapshot.docs);
+          const defs = querySnapshot.docs.map((doc) => {
+            console.log(
+              doc.data().definition_id,
+              data.id,
+              doc.data().definition_id.toString() === data.id.toString()
+            );
+            return doc.data();
+          });
+          setComments(defs);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    // eslint-disable-next-line
+  }, []);
+  return (
+    <Row>
+      <List
+        className="comment-list"
+        header={`${comments.length} replies`}
+        itemLayout="horizontal"
+        dataSource={comments}
+        renderItem={(item) => (
+          <li>
+            <Comment
+              // actions={item.actions}
+              author={item.uname}
+              avatar={item.uphoto}
+              content={item.comment}
+              datetime={moment(item.createdAt).format(
+                "dddd, MMMM Do YYYY, h:mm:ss a"
+              )}
+            />
+          </li>
+        )}
+      />
+    </Row>
+  );
+}
+export default CommentList;
