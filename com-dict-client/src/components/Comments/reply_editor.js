@@ -1,17 +1,11 @@
-import React from "react";
-import { Comment, Avatar, Form, Button, List, Input, Row, Col } from "antd";
+import React, { useState } from "react";
+import { Comment, Avatar, Form, Button, Input, Row, Col } from "antd";
 import moment from "moment";
+import { addComment } from "../../store/actions";
+import { useFirestore } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
 const { TextArea } = Input;
-
-const CommentList = ({ comments }) => (
-  <List
-    dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
-    itemLayout="horizontal"
-    renderItem={(props) => <Comment {...props} />}
-  />
-);
 
 const Editor = ({ onChange, onSubmit, submitting, value }) => (
   <>
@@ -31,65 +25,39 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
   </>
 );
 
-function reply_editor(props) {
-  const state = {
-    comments: [],
-    submitting: false,
-    value: "",
-  };
-
+function ReplyEditor({ data }) {
+  const [value, setValue] = useState("");
+  const firestore = useFirestore();
   const handleSubmit = () => {
-    if (!this.state.value) {
+    if (!value) {
       return;
     }
-
-    this.setState({
-      submitting: true,
-    });
-
-    setTimeout(() => {
-      this.setState({
-        submitting: false,
-        value: "",
-        comments: [
-          {
-            author: "Han Solo",
-            avatar: "",
-            content: <p>{this.state.value}</p>,
-            datetime: moment().fromNow(),
-          },
-          ...this.state.comments,
-        ],
-      });
-    }, 1000);
+    let tempComment = {
+      comment: value,
+      createdAt: moment().format(),
+      definition_id: data.id,
+      uid: user.uid,
+      uname: user.displayName,
+      uphoto: user.photoURL,
+    };
+    addComment(tempComment)(firestore);
   };
 
   const handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
+    setValue(e.target.value);
   };
 
-  //   render() {
-  const { comments, submitting, value } = state;
-
+  const user = useSelector((state) => state.firebase.auth);
   return (
     <Row>
       <Col span={3}></Col>
       <Col span={21}>
-        {comments.length > 0 && <CommentList comments={comments} />}
         <Comment
-          avatar={
-            <Avatar
-              src="https://img.icons8.com/bubbles/500/000000/user.png"
-              alt="VinuriB"
-            />
-          }
+          avatar={<Avatar src={user.photoURL} alt={user.displayName} />}
           content={
             <Editor
               onChange={handleChange}
               onSubmit={handleSubmit}
-              submitting={submitting}
               value={value}
             />
           }
@@ -103,4 +71,4 @@ function reply_editor(props) {
 
 // ReactDOM.render(<App />, mountNode);
 
-export default reply_editor;
+export default ReplyEditor;

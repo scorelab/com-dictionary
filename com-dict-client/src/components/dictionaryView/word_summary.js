@@ -1,22 +1,12 @@
 import React from "react";
-import {
-  Typography,
-  Card,
-  Row,
-  Col,
-  Divider,
+import { Typography, Card, Row, Col, Divider } from "antd";
 
-} from "antd";
-
-import {
-  SoundOutlined,
-
-} from "@ant-design/icons";
-
+import { SoundOutlined } from "@ant-design/icons";
+// import moment from "moment";
 
 const { Title, Text } = Typography;
 
-function Word() {
+function Word({ data }) {
   return (
     <div>
       <Row>
@@ -24,6 +14,9 @@ function Word() {
         <Col xl={16} lg={20} md={24} sm={24} xs={24}>
           <Card>
             <Row>
+              <Col span={18}>
+                <Title level={4}>{data.head_term}</Title>
+              </Col>
               <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                 <Row>
                   <Col
@@ -34,18 +27,21 @@ function Word() {
                     xs={12}
                     style={{ textAlign: "left" }}
                   >
-                    <Title level={1} style={{}}>Word</Title>
+                    <Title level={1} style={{}}>
+                      {data.head_term}
+                    </Title>
                   </Col>
-                  
                 </Row>
                 <Row>
-                  <Text>English</Text>
+                  <Text>{data.other_language}</Text>
                   <Divider
                     type="vertical"
-                    flex
+                    flex="true"
                     style={{ height: "5vmin" }}
                   ></Divider>
-                  <Text>Noun</Text>
+                  {data.word_classes.map((val, i) => (
+                    <Text key={i}>{val} </Text>
+                  ))}
                   <Divider
                     flex
                     type="vertical"
@@ -55,23 +51,28 @@ function Word() {
                 </Row>
 
                 <Row style={{ paddingTop: "2vmin" }}>
-                  <Text style={{ color: "#C3C6C6" }}>Definition</Text>
-                </Row>
-                <Row style={{ paddingTop: "2vmin" }}>
-                  <Text style={{ color: "#C3C6C6" }}>Example on usage</Text>
-                </Row>
-                <Row style={{ paddingTop: "2vmin" }}>
                   <Text style={{ color: "#C3C6C6" }}>
-                    Created by "user" on "date"
+                    {data.other_language_def}
                   </Text>
                 </Row>
-             
-                </Col>
+                <Row style={{ paddingTop: "2vmin" }}>
+                  <Text style={{ fontStyle: "italic", fontWeight: "bold" }}>
+                    {data.example}
+                  </Text>
                 </Row>
-            
+                <Row style={{ paddingTop: "2vmin" }}>
+                  <Text style={{ flexDirection: "row" }}>
+                    Created by{" "}
+                    <Text style={{ fontWeight: "bold" }}>{data.uname} </Text>
+                    {/* <Text style={{ fontWeight: "bold" }}>
+                      {moment(data.createdAt).format("dddd, MMMM Do YYYY")}
+                    </Text> */}
+                  </Text>
+                </Row>
+              </Col>
+            </Row>
           </Card>
         </Col>
-
       </Row>
     </div>
   );
