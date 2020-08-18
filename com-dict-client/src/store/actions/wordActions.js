@@ -7,6 +7,16 @@ export const addWord = (definition) => async (firestore) => {
   }
 };
 
+export const addReport = (report) => async (firestore, history) => {
+  try {
+    await firestore.add("reports", report);
+    console.log("success");
+    history.push("/");
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
 export const getWords = (start, size) => async (firestore) => {
   try {
     return await firestore.get({

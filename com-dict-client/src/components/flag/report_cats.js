@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Radio,
   // Input,
@@ -7,91 +7,78 @@ import {
   Row,
   Col,
 } from "antd";
+import { addReport } from "../../store/actions";
+import { useFirestore } from "react-redux-firebase";
+import moment from "moment";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-class Report_word extends React.Component {
-  state = {
-    value: 1,
+const { Text } = Typography;
+function ReportWord({ data, reasons }) {
+  const [value, setValue] = useState(0);
+  const firestore = useFirestore();
+  const onChange = (e) => {
+    setValue(e.target.value);
   };
-
-  onChange = (e) => {
-    console.log("radio checked", e.target.value);
-    this.setState({
-      value: e.target.value,
-    });
+  const radioStyle = {
+    display: "block",
+    // height: "6vmin",
+    lineHeight: "5vmin",
   };
-
-  render() {
-    const radioStyle = {
-      display: "block",
-      // height: "6vmin",
-      lineHeight: "5vmin"
+  const handleSubmit = () => {
+    let tempReport = {
+      reason: reasons[value],
+      createdAt: moment().format(),
+      definition_id: data.id,
+      uid: user.uid,
+      uname: user.displayName,
     };
-    const { value } = this.state;
-
-    const { Text } = Typography;
-    return (
-      <div>
-        <Row style={{ backgroundColor: "#f2f2f2" }}>
+    addReport(tempReport)(firestore, history);
+  };
+  const user = useSelector((state) => state.firebase.auth);
+  const history = useHistory();
+  return (
+    <div>
+      <Row style={{ backgroundColor: "#f2f2f2" }}>
         <Col xl={4} lg={4} md={0} sm={0} xs={0}></Col>
         <Col xl={18} lg={18} md={24} sm={24} xs={24}>
           <Radio.Group
-            onChange={this.onChange}
+            onChange={onChange}
             value={value}
             size="medium"
-            style={{ alignContent: "center", fontWeight: "bold"}}
+            style={{ alignContent: "center", fontWeight: "bold" }}
           >
-            <Radio style={radioStyle} value={1}>
-              <Text style={{ fontSize: "large",display:'inline'}}>
-                Are inside jokes with no context
-              </Text>
-            </Radio>
-            <Radio style={radioStyle} value={2}>
-              <Text style={{ fontSize: "large",display:'inline'}}>
-                Include terms that don’t actually seem real
-              </Text>
-            </Radio>
-            <Radio style={radioStyle} value={3}>
-              <Text style={{ fontSize: "large",display:'inline'}}>
-                Include full names or other personal information
-              </Text>
-            </Radio>
-            <Radio style={radioStyle} value={4}>
-              <Text style={{ fontSize: "large",display:'inline'}}>
-                Hate speech, bullying or statements meant to
-                discriminate others
-              </Text>
-            </Radio>
-            <Radio style={radioStyle} value={5}>
-              <Text style={{ fontSize: "large",display:'inline'}}>
-                Go against any of our other content guidelines
-              </Text>
-            </Radio>
+            {reasons.map((val, i) => (
+              <Radio key={i} style={radioStyle} value={i}>
+                <Text style={{ fontSize: "large", display: "inline" }}>
+                  {val}
+                </Text>
+              </Radio>
+            ))}
           </Radio.Group>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={12}></Col>
-          <Col span={12}>
-            <Button
-              type="primary"
-              size="large"
-              htmlType="submit"
-            
-              style={{
-                backgroundColor: "#df815a",
-                border: "none",
-                width: "80%",
-                fontSize: "2vmin",
-                fontWeight: "bold",
-              }}
-            >
-              Submit your report here... Our team will look into it
-            </Button>
-            </Col>
-        </Row>
-      </div>
-    );
-  }
+        </Col>
+      </Row>
+      <Row>
+        <Col span={12}></Col>
+        <Col span={12}>
+          <Button
+            type="primary"
+            size="large"
+            htmlType="submit"
+            onClick={handleSubmit}
+            style={{
+              backgroundColor: "#df815a",
+              border: "none",
+              width: "80%",
+              fontSize: "2vmin",
+              fontWeight: "bold",
+            }}
+          >
+            Submit your report here... Our team will look into it
+          </Button>
+        </Col>
+      </Row>
+    </div>
+  );
 }
-
-export default Report_word;
+export default ReportWord;
