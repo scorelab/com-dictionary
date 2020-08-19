@@ -3,7 +3,7 @@ import {
   // Typography,
   // Card,
   Row,
-  // Col,
+  Col,
   // Divider,
   // Button,
   // Pagination,
@@ -12,7 +12,7 @@ import {
 // import { useSelector } from "react-redux";
 import { useFirestore } from "react-redux-firebase";
 import LetterHead from "./letterHead";
-import WordSimple from "../WordHome/wordSimple";
+import WordCutom from "./word";
 
 // const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -57,7 +57,7 @@ function WordHome(props) {
         onChange={(key) => setActiveKey(key)}
         defaultActiveKey={activeKey}
         type="card"
-        size="small"
+        size="large"
         className="index"
       >
         {[...Array(26).keys()].map((i) => (
@@ -66,11 +66,18 @@ function WordHome(props) {
             key={String.fromCharCode(i + 65)}
           >
             <LetterHead letter={String.fromCharCode(i + 65)} />
-            <Row>
-              {words.length > 0
-                ? words.map((val, j) => <WordSimple key={j} data={val} />)
-                : ""}
-            </Row>
+
+            {words.length > 0
+              ? words.map((val, j) => (
+                  <Row>
+                    <Col span={4}></Col>
+                    <Col span={16}>
+                      <WordCutom key={j} data={val} />
+                    </Col>
+                    <Col span={4}></Col>
+                  </Row>
+                ))
+              : ""}
           </TabPane>
         ))}
       </Tabs>

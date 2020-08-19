@@ -1,1 +1,0 @@
-export { getTrendingWords } from "./trendingWords";
