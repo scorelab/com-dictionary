@@ -7,19 +7,19 @@ import TitleBar from "../../components/Header";
 import AlphaIndex from "../../components/WordAlpabatical";
 import FooterPage from "../../components/Footer/FooterPage";
 // import Word from "../../components/dictionaryView/word_dict";
-import Word from "../../components/WordHome/word";
 
 const { Header, Footer, Content } = Layout;
 
-function LetterBased() {
+function LetterBased(props) {
+  const activeKey =
+    props.history.location.state && props.history.location.state.activeKey;
   return (
     <Layout>
       <Header className="title_bar">
         <TitleBar />
       </Header>
       <Content className="body">
-        <AlphaIndex />
-        <Word />
+        <AlphaIndex activeKey={activeKey} />
       </Content>
       <Footer className="footer_div">
         <FooterPage />

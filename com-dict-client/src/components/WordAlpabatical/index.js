@@ -11,47 +11,43 @@ import {
 } from "antd";
 // import { useSelector } from "react-redux";
 import { useFirestore } from "react-redux-firebase";
-
-import Word from "./word";
 import LetterHead from "./letterHead";
+import WordSimple from "../WordHome/wordSimple";
 
 // const { Title, Text } = Typography;
 const { TabPane } = Tabs;
-function WordHome() {
-  const [activeKey, setActiveKey] = useState("A");
+function WordHome(props) {
+  const defaultKey = props.activeKey || "A";
+  const [activeKey, setActiveKey] = useState(defaultKey);
   // const [headTerms, setHeadTerms] = useState([]);
-  const [headTermIds, setHeadTermIds] = useState(["1"]);
   const [words, setWords] = useState([]);
 
   const firestore = useFirestore();
 
   useEffect(() => {
     firestore
-      .collection("headTerms")
-      .where("alphabetical", "==", activeKey)
+      .collection("definitions")
+      .orderBy("createdAt")
+      .where("alphabatical", "==", activeKey)
+      .limit(10)
       .onSnapshot(
         (querySnapshot) => {
-          const htms = querySnapshot.docs.map((doc) => {
-            return doc.data();
+          console.log(querySnapshot.docs);
+          // let lastItem = "";
+          const defs = querySnapshot.docs.map((doc) => {
+            let tempObj = {};
+            tempObj = doc.data();
+            tempObj["id"] = doc.id;
+            return tempObj;
           });
-          console.log(htms);
-          const ids = htms.map((val) => val.head_term_id);
-          firestore
-            .collection("definitions")
-            .where("head_term_id", "in", htms.length > 0 ? ids : ["1"])
-            .get()
-            .then((result) => {
-              console.log(headTermIds);
-              console.log(result.docs.map((val) => val.data()));
-              setWords(result.docs.map((val) => val.data()));
-              setHeadTermIds(["1"]);
-            });
+          setWords(defs);
+          // setEndAt(lastItem);
         },
         (err) => {
           console.log(err);
         }
       );
-  }, [activeKey, firestore, headTermIds]);
+  }, [activeKey, firestore]);
 
   console.log(words);
 
@@ -59,7 +55,7 @@ function WordHome() {
     <>
       <Tabs
         onChange={(key) => setActiveKey(key)}
-        defaultActiveKey="1"
+        defaultActiveKey={activeKey}
         type="card"
         size="small"
         className="index"
@@ -72,8 +68,8 @@ function WordHome() {
             <LetterHead letter={String.fromCharCode(i + 65)} />
             <Row>
               {words.length > 0
-                ? words.map((val, i) => <Word data={val} />)
-                : "Nothing to show here"}
+                ? words.map((val, j) => <WordSimple key={j} data={val} />)
+                : ""}
             </Row>
           </TabPane>
         ))}

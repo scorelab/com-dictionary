@@ -5,7 +5,7 @@ import {
   LikeOutlined,
   DislikeOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import SocialShare from "./socialShare";
 import moment from "moment";
 const { Title, Text } = Typography;
@@ -26,6 +26,8 @@ function WordSimple(props) {
     word_classes,
     word_of_the_day,
   } = props.data;
+
+  const history = useHistory();
 
   return (
     <Row>
@@ -48,9 +50,7 @@ function WordSimple(props) {
         <Card bordered className="word_index">
           <Row>
             <Col span={18}>
-              {/* <Title level={4}>
-                {moment(word_of_the_day).format("dddd, MMMM Do YYYY")}
-              </Title> */}
+              <Title level={4}>{head_term}</Title>
             </Col>
             <Col
               xl={6}
@@ -65,7 +65,7 @@ function WordSimple(props) {
           </Row>
           <Row>
             <Col lg={24} md={24} sm={24} xs={24} style={{ textAlign: "left" }}>
-              <Title style={{ color: "#639bb4" }}>{head_term}</Title>
+              <Title style={{ color: "#639bb4" }}>{other_language_term}</Title>
             </Col>
             {/* <Col lg={24} md={24} sm={24} xs={24} style={{ textAlign: "left" }}>
               <Title style={{ color: "#639bb4" }}>{other_language_term}</Title>
@@ -127,11 +127,19 @@ function WordSimple(props) {
             </Col>
             <Col xl={0} lg={0} md={13} sm={13}></Col>
             <Col xl={13} lg={13} md={24} sm={24} style={{ textAlign: "right" }}>
-              <Button type="link" style={{ color: "green" }}>
-                <Link to="/comment">Comment</Link>
+              <Button
+                onClick={() => history.push("/comment", { data: props.data })}
+                type="link"
+                style={{ color: "green" }}
+              >
+                Comment
               </Button>
-              <Button type="link" style={{ color: "red" }}>
-                <Link to="/report">Report</Link>
+              <Button
+                onClick={() => history.push("/report", { data: props.data })}
+                type="link"
+                style={{ color: "red" }}
+              >
+                Report
               </Button>
             </Col>
           </Row>

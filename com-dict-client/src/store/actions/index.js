@@ -6,4 +6,5 @@ export {
   signInWithGoogle,
   signInWithProviderID,
 } from "./authActions";
-export { addWord, updateWord, getWords } from "./wordActions";
+export { addWord, updateWord, getWords, addReport } from "./wordActions";
+export { addComment } from "./commentActions";

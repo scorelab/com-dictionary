@@ -1,12 +1,12 @@
 import React from "react";
 import { Row, Col, Typography, List } from "antd";
 import report from "../../images/pablo-word-remove.png";
-import Word from "../dictionaryView/word_summary";
+import Word from "../DictionaryView/word_summary";
 import ReportWord from "../Flag/report_cats";
 
 const { Text } = Typography;
 
-const data = [
+const dataLines = [
   "Are inside jokes with no context",
   "Include terms that don’t actually seem real",
   "Include full names or other personal information",
@@ -14,7 +14,8 @@ const data = [
   "Go against any of our other content guidelines",
 ];
 
-function FlagWord() {
+function FlagWord({ data }) {
+  console.log(data);
   return (
     <div style={{ backgroundColor: "white" }}>
       <Row style={{ paddingBottom: "3vmin" }}>
@@ -48,7 +49,7 @@ function FlagWord() {
                 padding: "2vmin",
               }}
               // size="large"
-              dataSource={data}
+              dataSource={dataLines}
               renderItem={(item) => (
                 <List.Item style={{ fontSize: "large" }}>{item}</List.Item>
               )}
@@ -83,7 +84,7 @@ function FlagWord() {
           </Text>
         </Col>
         <Col span={24}>
-          <Word />
+          <Word data={data} />
         </Col>
       </Row>
 
@@ -99,7 +100,7 @@ function FlagWord() {
       </Row>
       <Row style={{ padding: "2vmin", backgroundColor: "#f2f2f2" }}>
         <Col span={24}>
-          <ReportWord />
+          <ReportWord reasons={dataLines} data={data} />
         </Col>
       </Row>
     </div>

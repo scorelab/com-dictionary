@@ -21,7 +21,7 @@ function WordSimple(props) {
     other_language_def,
     other_language_term,
     example,
-    tags,
+    // tags,
     createdAt,
     user_id,
     pronunciation,
