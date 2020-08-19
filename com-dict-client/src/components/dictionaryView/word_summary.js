@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Card, Row, Col, Divider } from "antd";
 
-import { SoundOutlined } from "@ant-design/icons";
+// import { SoundOutlined } from "@ant-design/icons";
 // import moment from "moment";
 
 const { Title, Text } = Typography;
@@ -43,11 +43,11 @@ function Word({ data }) {
                     <Text key={i}>{val} </Text>
                   ))}
                   <Divider
-                    flex
+                    flex="true"
                     type="vertical"
                     style={{ height: "5vmin" }}
                   ></Divider>
-                  <SoundOutlined style={{ fontSize: "4vmin" }} />
+                  {/* <SoundOutlined style={{ fontSize: "4vmin" }} /> */}
                 </Row>
 
                 <Row style={{ paddingTop: "2vmin" }}>

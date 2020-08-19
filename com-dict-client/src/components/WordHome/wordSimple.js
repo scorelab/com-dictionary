@@ -5,7 +5,7 @@ import {
   LikeOutlined,
   DislikeOutlined,
 } from "@ant-design/icons";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import SocialShare from "./socialShare";
 import moment from "moment";
 const { Title, Text } = Typography;
@@ -132,10 +132,14 @@ function WordSimple(props) {
                 type="link"
                 style={{ color: "green" }}
               >
-                <Link>Comment</Link>
+                Comment
               </Button>
-              <Button type="link" style={{ color: "red" }}>
-                <Link to="/report">Report</Link>
+              <Button
+                onClick={() => history.push("/report", { data: props.data })}
+                type="link"
+                style={{ color: "red" }}
+              >
+                Report
               </Button>
             </Col>
           </Row>
