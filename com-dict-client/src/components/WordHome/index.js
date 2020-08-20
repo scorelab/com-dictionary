@@ -3,7 +3,7 @@ import { Typography, Row, Col } from "antd";
 import { useFirestore } from "react-redux-firebase";
 import WordSimple from "./wordSimple";
 import WordDay from "./wordDay";
-import AlphaIndex from "../Home/AlphaIndex";
+import IndexHome from "../Home/AlphaIndexHome";
 import moment from "moment";
 import WordCarousel from "./wordCarousel";
 const { Text } = Typography;
@@ -119,18 +119,22 @@ function WordHome() {
       <Row style={{ paddingTop: "2vmin" }}>
         <Col lg={4} md={0} sm={0}></Col>
       </Row>
-      <Row style={{ backgroundColor: "#f2f2f2", lineHeight: "5vmin" }}>
-        <Row>
-          <Col span={24}>
-            <Text style={{ fontSize: "4vmin" }}>
+
+    <div>
+      <Row>
+        <Col span={1}></Col>
+          <Col span={23}>
+            <Text style={{fontSize:"5vmin",width:'80%',color:'#7dbf94',fontWeight:'bolder'}}>
               Browse Community Dictionary
             </Text>
           </Col>
-        </Row>
+      </Row>
+      <Row>
         <Col span={24}>
-          <AlphaIndex />
+          <IndexHome />
         </Col>
       </Row>
+      </div>
     </>
   );
 }
