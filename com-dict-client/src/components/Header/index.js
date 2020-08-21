@@ -65,7 +65,10 @@ function TitleBar() {
           }
         ></SubMenu> */}
             {user.uid ? (
-              <SubMenu title={<UserOutlined size={24} />} key="profile">
+              <SubMenu
+                title={<span className="icons8-customer"></span>}
+                key="profile"
+              >
                 <Menu.Item key="cat:0">
                   <Link to="/#">{user.displayName}</Link>
                 </Menu.Item>
