@@ -174,8 +174,13 @@
         background-color: #f2f2f2;
       }
 
+.index_home
+{
+  position: relative;
+  margin-top: 2vmin;
+  width:80%;
+  margin-left: 10%;
+  color :#df815a;
 
-      
-     
-
+}
 
