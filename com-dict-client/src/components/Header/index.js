@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import { Link, useHistory } from "react-router-dom";
 import { Menu, Typography } from "antd";
-import { MenuOutlined, UserOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import UserAccount from "../Login/index";
 import SearchText from "../Search/SearchText";
 import cover from "../../images/logo/cover.png";

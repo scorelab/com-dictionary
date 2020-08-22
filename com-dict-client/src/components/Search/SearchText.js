@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Input, Col } from "antd";
 import { useHistory } from "react-router-dom";
 import SelectLang from "./SelectLang";
+import { toTitleCase } from "../../utils.js/toTitleCase";
 
 const { Search } = Input;
 
@@ -9,6 +10,7 @@ function SearchText(props) {
   const history = useHistory();
   const [language, setLanguage] = useState("English");
   // keyWord, handleSearch,
+
   const { setKeyWord } = props;
   return (
     <>
@@ -24,7 +26,9 @@ function SearchText(props) {
           // width ="500px"
           required={true}
           size="large"
-          onSearch={(value) => history.push(`/search/${language}/${value}`)}
+          onSearch={(value) =>
+            history.push(`/search/${language}/${toTitleCase(value)}`)
+          }
           className="search_style"
           onChange={setKeyWord}
         />

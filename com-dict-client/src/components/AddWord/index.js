@@ -56,7 +56,7 @@ function WordForm() {
       related_words: relatedWords,
       likes: 0,
       dislikes: 0,
-      userId: user.uid,
+      user_id: user.uid,
       uname: user.displayName,
       createdAt: new Date().getTime(),
       alphabatical: headTerm[0].toUpperCase(),
