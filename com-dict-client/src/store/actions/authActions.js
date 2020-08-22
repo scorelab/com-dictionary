@@ -66,6 +66,7 @@ export const createNewUser = (email, password, username) => async (
     await firebase.createUser({ email, password }, { username, email });
     history.goBack();
     console.log(history);
+    message.success("User registraion successfull!");
   } catch (e) {
     console.log(e.message);
     alert(e.message);
@@ -78,6 +79,7 @@ export const addNewUser = (user) => async (firestore, history) => {
     const { email, username, phone_number } = user;
     await firestore.add("users", { email, username, phone_number });
     console.log("success");
+    message.success("User registraion successfull!");
   } catch (e) {
     console.log(e.message);
   }

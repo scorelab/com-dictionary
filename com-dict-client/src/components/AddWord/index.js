@@ -82,6 +82,7 @@ function WordForm() {
     let newHdTm = {
       head_term: newHeadTerm,
       category: category,
+      trending_factor: 0,
     };
     console.log(newHdTm);
     addHeadTerm(newHdTm)(firestore, setHeadTerm);

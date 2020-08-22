@@ -46,7 +46,7 @@ function WordHome() {
 
     firestore
       .collection("definitions")
-      .orderBy("trending_factor")
+      .orderBy("trending_factor", "desc")
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
