@@ -1,0 +1,17 @@
+.submit_btn
+{
+  background-color:#DCD9D9;
+  width: 40%;
+  border-radius: 20px;
+  color:#4CBDD5;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.word_class
+{
+  font-size: small;
+}
+
