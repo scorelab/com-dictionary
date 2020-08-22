@@ -8,7 +8,7 @@ import religion from "../../images/pablo-religion.png";
 import internet from "../../images/pablo-internet.png";
 import college from "../../images/pablo-school.png";
 import { useFirestore } from "react-redux-firebase";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { toTitleCase } from "../../utils.js/toTitleCase";
 const { Title } = Typography;
 
@@ -79,7 +79,7 @@ function CatView() {
               {cats["Sports"] &&
                 cats["Sports"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -88,7 +88,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -123,7 +123,7 @@ function CatView() {
               {cats["Internet"] &&
                 cats["Internet"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -132,7 +132,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -174,7 +174,7 @@ function CatView() {
               {cats["Food"] &&
                 cats["Food"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -183,7 +183,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -217,7 +217,7 @@ function CatView() {
               {cats["Work"] &&
                 cats["Work"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -226,7 +226,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -272,7 +272,7 @@ function CatView() {
               {cats["Religion"] &&
                 cats["Religion"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -281,7 +281,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -316,7 +316,7 @@ function CatView() {
               {cats["Music"] &&
                 cats["Music"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -325,7 +325,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -372,7 +372,7 @@ function CatView() {
               {cats["College"] &&
                 cats["College"].map((val, i) => (
                   <Col key={i} span={6}>
-                    <Link
+                    <Typography.Link
                       style={{ color: "white" }}
                       onClick={() =>
                         history.push(
@@ -381,7 +381,7 @@ function CatView() {
                       }
                     >
                       {val.head_term}
-                    </Link>
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>

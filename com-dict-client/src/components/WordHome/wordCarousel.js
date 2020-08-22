@@ -1,12 +1,13 @@
 import React from "react";
 import { Carousel, Typography, Row, Col } from "antd";
-import { Link } from "react-router-dom";
-
+import { toTitleCase } from "../../utils.js/toTitleCase";
+import { useHistory } from "react-router-dom";
 // import "./home.css";
 
 const { Text } = Typography;
 
-function wordCarousel({ data }) {
+function WordCarousel({ data }) {
+  const history = useHistory();
   return (
     <Row>
       <Col span={2}></Col>
@@ -36,7 +37,15 @@ function wordCarousel({ data }) {
                         fontWeight: "bold",
                       }}
                     >
-                      <Link to="/">{val.head_term}</Link>
+                      <Typography.Link
+                        onClick={() =>
+                          history.push(
+                            `/search/English/${toTitleCase(val.head_term)}`
+                          )
+                        }
+                      >
+                        {val.head_term}
+                      </Typography.Link>
                     </Text>
                   </Col>
                 ))}
@@ -49,4 +58,4 @@ function wordCarousel({ data }) {
   );
 }
 
-export default wordCarousel;
+export default WordCarousel;

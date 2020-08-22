@@ -18,7 +18,10 @@ export default function FullTextSearch({ params }) {
       .onSnapshot(
         (querySnapshot) => {
           const defs = querySnapshot.docs.map((doc) => {
-            return doc.data();
+            let tempObj = {};
+            tempObj = doc.data();
+            tempObj["id"] = doc.id;
+            return tempObj;
           });
           console.log(defs);
           setWords(defs);

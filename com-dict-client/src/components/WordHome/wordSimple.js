@@ -157,7 +157,10 @@ function WordSimple(props) {
               xs={6}
               style={{ textAlign: "right" }}
             >
-              <SocialShare />
+              <SocialShare
+                other_language={other_language}
+                head_term={head_term}
+              />
             </Col>
           </Row>
           <Row>
