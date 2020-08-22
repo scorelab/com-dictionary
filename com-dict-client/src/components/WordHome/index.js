@@ -18,7 +18,7 @@ function WordHome() {
   useEffect(() => {
     firestore
       .collection("definitions")
-      .orderBy("createdAt")
+      .orderBy("createdAt", "desc")
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
@@ -26,7 +26,7 @@ function WordHome() {
           // let lastItem = "";
           const defs = [];
           querySnapshot.docs.filter((doc) => {
-            if (doc.data().word_of_the_day !== "null") {
+            if (doc.data().word_of_the_day) {
               // lastItem = doc.id;
               let tempObj = {};
               tempObj = doc.data();

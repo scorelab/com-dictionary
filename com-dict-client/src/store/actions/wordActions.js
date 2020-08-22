@@ -1,7 +1,9 @@
+import { message } from "antd";
 export const addWord = (definition) => async (firestore) => {
   try {
     await firestore.add("definitions", definition);
     console.log("success");
+    message.success("Definition added");
   } catch (e) {
     console.log(e.message);
   }
@@ -29,6 +31,7 @@ export const addReport = (report) => async (firestore, history) => {
   try {
     await firestore.add("reports", report);
     console.log("success");
+    message.success("Definition reported");
     history.push("/");
   } catch (e) {
     console.log(e.message);

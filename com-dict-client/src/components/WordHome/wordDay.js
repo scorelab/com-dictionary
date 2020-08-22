@@ -129,7 +129,7 @@ function wordDay({ data }) {
                         fontWeight: "bold",
                       }}
                     >
-                      {data && data.head_term}
+                      {data && data.other_language_term}
                     </Text>
                   </Row>
                   <Row style={{ paddingTop: "3vmin" }}>

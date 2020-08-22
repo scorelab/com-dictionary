@@ -122,11 +122,7 @@ function WordSimple(props) {
       <Row style={{ paddingTop: "2vmin" }}>
         <Text>
           Created by {user_id} on{" "}
-          {createdAt.toDate().getFullYear() +
-            "/" +
-            (createdAt.toDate().getMonth() + 1) +
-            "/" +
-            createdAt.toDate().getDate()}
+          {moment(createdAt).format("dddd, MMMM Do YYYY")}
         </Text>
       </Row>
       <Row style={{ paddingTop: "2vmin", paddingLeft: "10vmin" }}>

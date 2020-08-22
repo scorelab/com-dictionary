@@ -62,6 +62,7 @@ function WordForm() {
       alphabatical: headTerm[0].toUpperCase(),
       word_of_the_day: null,
       pronunciation: null,
+      trending_factor: 0,
     };
     console.log(data);
     return addWord(data)(firestore);

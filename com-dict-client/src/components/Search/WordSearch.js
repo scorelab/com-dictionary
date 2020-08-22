@@ -185,7 +185,7 @@ function WordSearch(props) {
             <Text style={{ flexDirection: "row" }}>
               Created by <Text style={{ fontWeight: "bold" }}>{uname} </Text>on{" "}
               <Text style={{ fontWeight: "bold" }}>
-                {moment(createdAt.toDate()).format("dddd, MMMM Do YYYY")}
+                {moment(createdAt).format("dddd, MMMM Do YYYY")}
               </Text>
             </Text>
           </Row>

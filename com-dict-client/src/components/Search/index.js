@@ -31,7 +31,7 @@ export default function FullTextSearch({ params }) {
         }
       );
     // eslint-disable-next-line
-  }, []);
+  }, [params]);
   return (
     <>
       <Row>
