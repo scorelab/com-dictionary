@@ -30,23 +30,22 @@ function WordHome(props) {
       .orderBy("createdAt")
       .where("alphabatical", "==", activeKey)
       .limit(10)
-      .onSnapshot(
-        (querySnapshot) => {
-          console.log(querySnapshot.docs);
-          // let lastItem = "";
-          const defs = querySnapshot.docs.map((doc) => {
-            let tempObj = {};
-            tempObj = doc.data();
-            tempObj["id"] = doc.id;
-            return tempObj;
-          });
-          setWords(defs);
-          // setEndAt(lastItem);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+      .get()
+      .then((querySnapshot) => {
+        console.log(querySnapshot.docs);
+        // let lastItem = "";
+        const defs = querySnapshot.docs.map((doc) => {
+          let tempObj = {};
+          tempObj = doc.data();
+          tempObj["id"] = doc.id;
+          return tempObj;
+        });
+        setWords(defs);
+        // setEndAt(lastItem);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [activeKey, firestore]);
 
   console.log(words);

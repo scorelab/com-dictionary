@@ -21,7 +21,7 @@ exports.scheduledFunctionCrontab = functions.pubsub
           return { ...doc.data(), id: doc.id };
         });
         const def = defs[0];
-        const the_day = moment().format("YYYY-MM-DD");
+        const the_day = moment().tz("Asia/Kolkata").format("YYYY-MM-DD");
         admin
           .firestore()
           .collection("definitions")

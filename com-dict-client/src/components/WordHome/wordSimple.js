@@ -4,6 +4,7 @@ import {
   SoundOutlined,
   LikeOutlined,
   DislikeOutlined,
+  AudioMutedOutlined,
 } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import SocialShare from "./socialShare";
@@ -180,10 +181,14 @@ function WordSimple(props) {
             <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
             <Text>{word_classes.map((val, i) => `${val} `)}</Text>
             <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
-            <SoundOutlined
-              onClick={() => new Audio(pronunciation).play()}
-              style={{ fontSize: "14pt" }}
-            />
+            {!pronunciation ? (
+              <SoundOutlined
+                onClick={() => new Audio(pronunciation).play()}
+                style={{ fontSize: "14pt" }}
+              />
+            ) : (
+              <AudioMutedOutlined style={{ fontSize: "14pt" }} />
+            )}
           </Row>
           {/* 
       <Row style={{ paddingTop: "2vmin" }}>

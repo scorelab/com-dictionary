@@ -18,7 +18,7 @@ function WordHome() {
   useEffect(() => {
     firestore
       .collection("definitions")
-      .orderBy("createdAt", "desc")
+      .orderBy("word_of_the_day", "desc")
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
