@@ -14,14 +14,11 @@ function WordHome() {
   // const [endAt, setEndAt] = useState("");
   const [wordOfTheDay, setWordOfTheDay] = useState({ word_classes: [] });
   const [trending, setTrending] = useState([{}]);
-  const past_10_days = Array.from(Array(10), (x, index) =>
-    moment().subtract(index, "days").format("YYYY-MM-DD")
-  );
-  console.log(past_10_days);
+
   useEffect(() => {
     firestore
       .collection("definitions")
-      .orderBy("createdAt")
+      .orderBy("word_of_the_day", "desc")
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
@@ -29,7 +26,7 @@ function WordHome() {
           // let lastItem = "";
           const defs = [];
           querySnapshot.docs.filter((doc) => {
-            if (doc.data().word_of_the_day !== "null") {
+            if (doc.data().word_of_the_day) {
               // lastItem = doc.id;
               let tempObj = {};
               tempObj = doc.data();
@@ -49,7 +46,7 @@ function WordHome() {
 
     firestore
       .collection("definitions")
-      .orderBy("trending_factor")
+      .orderBy("trending_factor", "desc")
       .limit(10)
       .onSnapshot(
         (querySnapshot) => {
@@ -120,20 +117,27 @@ function WordHome() {
         <Col lg={4} md={0} sm={0}></Col>
       </Row>
 
-    <div>
-      <Row>
-        <Col span={1}></Col>
+      <div>
+        <Row>
+          <Col span={1}></Col>
           <Col span={23}>
-            <Text style={{fontSize:"5vmin",width:'80%',color:'#7dbf94',fontWeight:'bolder'}}>
+            <Text
+              style={{
+                fontSize: "5vmin",
+                width: "80%",
+                color: "#7dbf94",
+                fontWeight: "bolder",
+              }}
+            >
               Browse Community Dictionary
             </Text>
           </Col>
-      </Row>
-      <Row>
-        <Col span={24}>
-          <IndexHome />
-        </Col>
-      </Row>
+        </Row>
+        <Row>
+          <Col span={24}>
+            <IndexHome />
+          </Col>
+        </Row>
       </div>
     </>
   );

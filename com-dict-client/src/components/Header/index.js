@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import { Link, useHistory } from "react-router-dom";
 import { Menu, Typography } from "antd";
-import { MenuOutlined, UserOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import UserAccount from "../Login/index";
 import SearchText from "../Search/SearchText";
 import cover from "../../images/logo/cover.png";
@@ -65,7 +65,10 @@ function TitleBar() {
           }
         ></SubMenu> */}
             {user.uid ? (
-              <SubMenu title={<span className="icons8-customer"></span>} key="profile">
+              <SubMenu
+                title={<span className="icons8-customer"></span>}
+                key="profile"
+              >
                 <Menu.Item key="cat:0">
                   <Link to="/#">{user.displayName}</Link>
                 </Menu.Item>

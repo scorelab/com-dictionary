@@ -2,8 +2,8 @@ import React from "react";
 import {
   Form,
   Input,
-  Tooltip,
-  Select,
+  // Tooltip,
+  // Select,
   Row,
   Col,
   Checkbox,
@@ -12,9 +12,12 @@ import {
 } from "antd";
 import { Typography } from "antd";
 import signup from "../../images/pablo-sign-up.png";
-import { QuestionCircleOutlined } from "@ant-design/icons";
+// import { QuestionCircleOutlined } from "@ant-design/icons";
+import { createNewUser } from "../../store/actions";
+import { useFirebase } from "react-redux-firebase";
+import { useHistory } from "react-router-dom";
 
-const { Option } = Select;
+// const { Option } = Select;
 const { Title } = Typography;
 // const AutoCompleteOption = AutoComplete.Option;
 
@@ -54,23 +57,29 @@ const formItemLayout = {
 
 const RegistrationForm = () => {
   const [form] = Form.useForm();
-
+  const firebase = useFirebase();
+  const history = useHistory();
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    createNewUser(
+      values.email,
+      values.password,
+      values.email
+    )(firebase, history);
   };
 
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+94</Option>
-        <Option value="87">+86</Option>
-      </Select>
-    </Form.Item>
-  );
+  // const prefixSelector = (
+  //   <Form.Item name="prefix" noStyle>
+  //     <Select
+  //       style={{
+  //         width: 70,
+  //       }}
+  //     >
+  //       <Option value="86">+94</Option>
+  //       <Option value="87">+86</Option>
+  //     </Select>
+  //   </Form.Item>
+  // );
   // const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
   return (
@@ -98,6 +107,7 @@ const RegistrationForm = () => {
         <Row></Row>
         <Col xl={14} lg={12} md={22} sm={22} xs={22}>
           <Form
+            autoComplete={false}
             {...formItemLayout}
             form={form}
             name="register"
@@ -161,7 +171,7 @@ const RegistrationForm = () => {
               <Input.Password />
             </Form.Item>
 
-            <Form.Item
+            {/* <Form.Item
               name="nickname"
               label={
                 <span>
@@ -180,9 +190,9 @@ const RegistrationForm = () => {
               ]}
             >
               <Input />
-            </Form.Item>
+            </Form.Item> */}
 
-            <Form.Item
+            {/* <Form.Item
               name="phone"
               label="Phone Number"
               rules={[
@@ -198,7 +208,7 @@ const RegistrationForm = () => {
                   width: "100%",
                 }}
               />
-            </Form.Item>
+            </Form.Item> */}
 
             <Row>
               <Col span={6}></Col>

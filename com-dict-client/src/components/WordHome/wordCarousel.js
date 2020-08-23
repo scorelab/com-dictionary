@@ -1,12 +1,13 @@
 import React from "react";
 import { Carousel, Typography, Row, Col } from "antd";
-import { Link } from "react-router-dom";
-
+import { toTitleCase } from "../../utils.js/toTitleCase";
+import { useHistory } from "react-router-dom";
 // import "./home.css";
 
 const { Text } = Typography;
 
-function wordCarousel({ data }) {
+function WordCarousel({ data }) {
+  const history = useHistory();
   return (
     <Row>
       <Col span={2}></Col>
@@ -27,7 +28,7 @@ function wordCarousel({ data }) {
           <div>
             <Row>
               {data &&
-                data.map((val, i) => (
+                data.slice(0, 4).map((val, i) => (
                   <Col key={i} span={6}>
                     <Text
                       style={{
@@ -36,7 +37,41 @@ function wordCarousel({ data }) {
                         fontWeight: "bold",
                       }}
                     >
-                      <Link to="/">{val.head_term}</Link>
+                      <Typography.Link
+                        onClick={() =>
+                          history.push(
+                            `/search/English/${toTitleCase(val.head_term)}`
+                          )
+                        }
+                      >
+                        {val.head_term}
+                      </Typography.Link>
+                    </Text>
+                  </Col>
+                ))}
+            </Row>
+          </div>
+          <div>
+            <Row>
+              {data &&
+                data.slice(4, 10).map((val, i) => (
+                  <Col key={i} span={4}>
+                    <Text
+                      style={{
+                        color: "#639bb4",
+                        fontSize: "2.5vmin",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      <Typography.Link
+                        onClick={() =>
+                          history.push(
+                            `/search/English/${toTitleCase(val.head_term)}`
+                          )
+                        }
+                      >
+                        {val.head_term}
+                      </Typography.Link>
                     </Text>
                   </Col>
                 ))}
@@ -49,4 +84,4 @@ function wordCarousel({ data }) {
   );
 }
 
-export default wordCarousel;
+export default WordCarousel;

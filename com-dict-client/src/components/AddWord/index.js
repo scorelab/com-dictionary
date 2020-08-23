@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import { Card, Typography, Form, Input, Select, Button, Row, Col } from "antd";
+import {
+  Card,
+  Typography,
+  Form,
+  Input,
+  Select,
+  Button,
+  Row,
+  Col,
+  message,
+} from "antd";
 import WordClass from "./WordClass";
 import EditableTagGroup from "./RelatedWords";
 
 import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
 
-import { addWord } from "../../store/actions";
+import { addWord, addHeadTerm } from "../../store/actions";
 import { useSelector } from "react-redux";
 
 import { languages } from "../../constants";
+import { toTitleCase } from "../../utils.js/toTitleCase";
 
 const { Text } = Typography;
 // var optionText;
@@ -21,8 +32,10 @@ function WordForm() {
   const [wordClass, setWordClass] = useState([]);
   const [meaning, setMeaning] = useState("");
   const [example, setExample] = useState("");
-  const [category, setCategory] = useState("Food");
+  const [category, setCategory] = useState("");
   const [relatedWords, setRelatedWords] = useState([]);
+
+  const [newHeadTerm, setNewHeadTerm] = useState("");
 
   useFirestoreConnect([
     { collection: "languages" },
@@ -43,12 +56,13 @@ function WordForm() {
       related_words: relatedWords,
       likes: 0,
       dislikes: 0,
-      userId: user.uid,
+      user_id: user.uid,
       uname: user.displayName,
       createdAt: new Date().getTime(),
       alphabatical: headTerm[0].toUpperCase(),
       word_of_the_day: null,
       pronunciation: null,
+      trending_factor: 0,
     };
     console.log(data);
     return addWord(data)(firestore);
@@ -60,6 +74,20 @@ function WordForm() {
 
   const user = useSelector((state) => state.firebase.auth);
 
+  const handleAddHeadTerm = () => {
+    if (category === "") {
+      return message.error("Please select a category");
+    }
+
+    let newHdTm = {
+      head_term: newHeadTerm,
+      category: category,
+      trending_factor: 0,
+    };
+    console.log(newHdTm);
+    addHeadTerm(newHdTm)(firestore, setHeadTerm);
+  };
+
   return (
     <div>
       <Row>
@@ -67,7 +95,7 @@ function WordForm() {
         <Col span={20}>
           <Card
             bordered
-            title="Add New Word"
+            title="Add New Definition"
             style={{
               backgroundColor: "#FFFFFF",
               border: 0,
@@ -107,24 +135,51 @@ function WordForm() {
                     ))}
                 </Select>
               </Form.Item>
-
-              <Form.Item
-                label="Head term"
-                rules={[{ required: true, message: "" }]}
-              >
-                <Select
-                  showSearch
-                  placeholder="New word in English"
-                  onChange={(val) => setHeadTerm(val)}
-                >
-                  {headTerms &&
-                    headTerms.map((ht, i) => (
-                      <Select.Option key={i} value={ht.head_term}>
-                        {ht.head_term}
-                      </Select.Option>
-                    ))}
-                </Select>
-              </Form.Item>
+              <Row>
+                <Col span={12}>
+                  <Form.Item
+                    label="Head term"
+                    rules={[{ required: true, message: "" }]}
+                  >
+                    <Select
+                      value={headTerm}
+                      showSearch
+                      placeholder="Select head term in English"
+                      onChange={(val) => setHeadTerm(val)}
+                    >
+                      {headTerms &&
+                        headTerms.map((ht, i) => (
+                          <Select.Option key={i} value={ht.head_term}>
+                            {ht.head_term}
+                          </Select.Option>
+                        ))}
+                    </Select>
+                  </Form.Item>
+                </Col>
+                <Col span={1}>
+                  <Button type="text">Or</Button>
+                </Col>
+                <Col span={6}>
+                  <Input
+                    value={newHeadTerm}
+                    onChange={(val) =>
+                      setNewHeadTerm(toTitleCase(val.target.value))
+                    }
+                    placeholder="New head term"
+                  />
+                </Col>
+                <Col span={5}>
+                  <Button
+                    type="primary"
+                    // size="large"
+                    onClick={handleAddHeadTerm}
+                    block
+                    // className="submit_btn"
+                  >
+                    Add Head Term
+                  </Button>
+                </Col>
+              </Row>
 
               <Form.Item
                 name="other_language_term"
@@ -185,17 +240,6 @@ function WordForm() {
               >
                 <EditableTagGroup onChange={(val) => setRelatedWords(val)} />
               </Form.Item>
-
-              <Form.Item name="likes">
-                <Input value={0} hidden={true} />
-              </Form.Item>
-              <Form.Item name="dilikes">
-                <Input value={0} hidden={true} />
-              </Form.Item>
-              <Form.Item name="user_id">
-                <Input value={user} hidden={true} />
-              </Form.Item>
-
               <Form.Item>
                 <Row>
                   <Col xl={6} ls={6} md={3} sm={0} xs={0}></Col>
@@ -207,7 +251,7 @@ function WordForm() {
                       block
                       // className="submit_btn"
                     >
-                      Add Word
+                      Add Definition
                     </Button>
                   </Col>
                   <Col xl={6} ls={6} md={3} sm={0} xs={0}></Col>

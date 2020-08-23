@@ -1,13 +1,23 @@
-import React from "react";
-import { Typography, Card, Row, Col, Divider, Button } from "antd";
+import React, { useState, useEffect } from "react";
+import { Typography, Card, Row, Col, Divider, Button, message } from "antd";
 import {
   SoundOutlined,
   LikeOutlined,
   DislikeOutlined,
+  AudioMutedOutlined,
 } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import SocialShare from "./socialShare";
 import moment from "moment";
+import {
+  updateWord,
+  addLikes,
+  addDislikes,
+  deleteDislikes,
+  deleteLikes,
+} from "../../store/actions";
+import { useFirestore } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 const { Title, Text } = Typography;
 
 function WordSimple(props) {
@@ -22,12 +32,100 @@ function WordSimple(props) {
     uname,
     createdAt,
     // user_id,
+    id,
     pronunciation,
     word_classes,
     word_of_the_day,
   } = props.data;
 
   const history = useHistory();
+  const firestore = useFirestore();
+  const user = useSelector((state) => state.firebase.auth);
+  const handleLike = () => {
+    if (!user.uid) {
+      return message.error("Please login");
+    }
+    let user_likes = {
+      definition_id: id,
+      uid: user.uid,
+    };
+    let new_likes = {
+      likes: parseInt(likes) + 1,
+      dislikes: dislikes > 0 ? parseInt(dislikes) - 1 : dislikes,
+    };
+    console.log(myLikes, user_likes, new_likes);
+    if (myLikes.length < 1) {
+      updateWord(id, new_likes)(firestore);
+      addLikes(user_likes)(firestore);
+      myDislikes.length > 0 && deleteDislikes(myDislikes[0].id)(firestore);
+    } else {
+      return message.error("You already liked.");
+    }
+  };
+  const handleDislike = () => {
+    if (!user.uid) {
+      return message.error("Please login");
+    }
+    let user_dislikes = {
+      definition_id: id,
+      uid: user.uid,
+    };
+    let new_dislikes = {
+      dislikes: parseInt(dislikes) + 1,
+      likes: likes > 0 ? parseInt(likes) - 1 : likes,
+    };
+    console.log(myDislikes, user_dislikes, new_dislikes);
+    if (myDislikes.length < 1) {
+      updateWord(id, new_dislikes)(firestore);
+      addDislikes(user_dislikes)(firestore);
+      myLikes.length > 0 && deleteLikes(myLikes[0].id)(firestore);
+    } else {
+      return message.error("You already disliked.");
+    }
+  };
+
+  const [myLikes, setMyLikes] = useState(0);
+  const [myDislikes, setMyDislikes] = useState(0);
+
+  useEffect(() => {
+    firestore
+      .collection("likes")
+      .where("uid", "==", user.uid ? user.uid : "1")
+      .where("definition_id", "==", id)
+      .limit(1)
+      .onSnapshot(
+        (querySnapshot) => {
+          const defs = querySnapshot.docs.map((doc) => {
+            let temp = doc.data();
+            temp["id"] = doc.id;
+            return temp;
+          });
+          setMyLikes(defs);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    firestore
+      .collection("dislikes")
+      .where("uid", "==", user.uid ? user.uid : "1")
+      .where("definition_id", "==", id)
+      .limit(1)
+      .onSnapshot(
+        (querySnapshot) => {
+          const defs = querySnapshot.docs.map((doc) => {
+            let temp = doc.data();
+            temp["id"] = doc.id;
+            return temp;
+          });
+          setMyDislikes(defs);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    // eslint-disable-next-line
+  }, [user.uid]);
 
   return (
     <Row>
@@ -60,7 +158,10 @@ function WordSimple(props) {
               xs={6}
               style={{ textAlign: "right" }}
             >
-              <SocialShare />
+              <SocialShare
+                other_language={other_language}
+                head_term={head_term}
+              />
             </Col>
           </Row>
           <Row>
@@ -80,10 +181,14 @@ function WordSimple(props) {
             <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
             <Text>{word_classes.map((val, i) => `${val} `)}</Text>
             <Divider type="vertical" style={{ height: "4vmin" }}></Divider>
-            <SoundOutlined
-              onClick={() => new Audio(pronunciation).play()}
-              style={{ fontSize: "14pt" }}
-            />
+            {!pronunciation ? (
+              <SoundOutlined
+                onClick={() => new Audio(pronunciation).play()}
+                style={{ fontSize: "14pt" }}
+              />
+            ) : (
+              <AudioMutedOutlined style={{ fontSize: "14pt" }} />
+            )}
           </Row>
           {/* 
       <Row style={{ paddingTop: "2vmin" }}>
@@ -103,14 +208,17 @@ function WordSimple(props) {
             <Text style={{ flexDirection: "row" }}>
               Created by <Text style={{ fontWeight: "bold" }}>{uname} </Text>on{" "}
               <Text style={{ fontWeight: "bold" }}>
-                {moment(createdAt.toDate()).format("dddd, MMMM Do YYYY")}
+                {moment(createdAt).format("dddd, MMMM Do YYYY")}
               </Text>
             </Text>
           </Row>
           <Row style={{ paddingTop: "2vmin", paddingLeft: "10vmin" }}>
             <Col xl={2} lg={2} md={2} sm={2}></Col>
             <Col xl={4} lg={4} md={4} sm={4} style={{ textAlign: "center" }}>
-              <LikeOutlined style={{ fontSize: "4vmin" }} />
+              <LikeOutlined
+                onClick={handleLike}
+                style={{ fontSize: "4vmin" }}
+              />
               <Text>{likes}</Text>
             </Col>
             <Col xl={1} lg={1} md={1} sm={1}>
@@ -122,7 +230,10 @@ function WordSimple(props) {
               ></Divider>
             </Col>
             <Col xl={4} lg={4} md={4} sm={4} style={{ textAlign: "center" }}>
-              <DislikeOutlined style={{ fontSize: "4vmin" }} />
+              <DislikeOutlined
+                onClick={handleDislike}
+                style={{ fontSize: "4vmin" }}
+              />
               <Text>{dislikes}</Text>
             </Col>
             <Col xl={0} lg={0} md={13} sm={13}></Col>

@@ -16,6 +16,7 @@ const NormalLoginForm = () => {
 
   return (
     <Form
+      autoComplete={false}
       name="normal_login"
       className="login-form"
       initialValues={{

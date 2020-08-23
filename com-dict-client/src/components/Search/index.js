@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Typography } from "antd";
 import { useFirestore } from "react-redux-firebase";
 import WordSearch from "./WordSearch";
+import { updateWord } from "../../store/actions";
 const { Title } = Typography;
 
 export default function FullTextSearch({ params }) {
@@ -11,24 +12,33 @@ export default function FullTextSearch({ params }) {
   useEffect(() => {
     firestore
       .collection("definitions")
-      .orderBy("createdAt")
+      .orderBy("likes", "desc")
       .where("head_term", "==", params.keyword)
       .where("other_language", "==", params.language)
       .limit(10)
-      .onSnapshot(
-        (querySnapshot) => {
-          const defs = querySnapshot.docs.map((doc) => {
-            return doc.data();
-          });
-          console.log(defs);
-          setWords(defs);
-        },
-        (err) => {
-          console.log(err);
+      .get()
+      .then((querySnapshot) => {
+        const defs = querySnapshot.docs.map((doc) => {
+          let tempObj = {};
+          tempObj = doc.data();
+          tempObj["id"] = doc.id;
+          return tempObj;
+        });
+        console.log(defs);
+        if (defs.length > 0) {
+          const topDef = defs[0];
+          const newTrendingFactor = parseInt(topDef.trending_factor) + 1;
+          updateWord(topDef.id, { trending_factor: newTrendingFactor })(
+            firestore
+          );
         }
-      );
+        setWords(defs);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     // eslint-disable-next-line
-  }, []);
+  }, [params]);
   return (
     <>
       <Row>

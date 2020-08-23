@@ -8,12 +8,14 @@ import religion from "../../images/pablo-religion.png";
 import internet from "../../images/pablo-internet.png";
 import college from "../../images/pablo-school.png";
 import { useFirestore } from "react-redux-firebase";
-
+import { useHistory } from "react-router-dom";
+import { toTitleCase } from "../../utils.js/toTitleCase";
 const { Title } = Typography;
 
 function CatView() {
   const firestore = useFirestore();
   const [cats, setCats] = useState({ Food: [] });
+  const history = useHistory();
 
   useEffect(() => {
     firestore
@@ -77,7 +79,16 @@ function CatView() {
               {cats["Sports"] &&
                 cats["Sports"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -112,7 +123,16 @@ function CatView() {
               {cats["Internet"] &&
                 cats["Internet"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -154,7 +174,16 @@ function CatView() {
               {cats["Food"] &&
                 cats["Food"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -188,7 +217,16 @@ function CatView() {
               {cats["Work"] &&
                 cats["Work"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -198,7 +236,6 @@ function CatView() {
           <img alt="1" style={{ maxWidth: "100%" }} src={work} />
         </Col>
       </Row>
-
 
       <Row>
         <Col span={24}>
@@ -213,7 +250,7 @@ function CatView() {
         </Col>
       </Row>
       <Row>
-      <Col span={1}></Col>
+        <Col span={1}></Col>
         <Col span={6}>
           <img
             alt="1"
@@ -235,7 +272,16 @@ function CatView() {
               {cats["Religion"] &&
                 cats["Religion"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -270,7 +316,16 @@ function CatView() {
               {cats["Music"] &&
                 cats["Music"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>
@@ -280,7 +335,6 @@ function CatView() {
           <img alt="1" style={{ maxWidth: "100%" }} src={music} />
         </Col>
       </Row>
-      
 
       <Row>
         <Col span={24}>
@@ -295,7 +349,7 @@ function CatView() {
         </Col>
       </Row>
       <Row>
-      <Col span={1}></Col>
+        <Col span={1}></Col>
         <Col span={6}>
           <img
             alt="1"
@@ -303,7 +357,7 @@ function CatView() {
             src={college}
           />
         </Col>
-        
+
         <Col span={17}>
           <Card
             borderd
@@ -318,7 +372,16 @@ function CatView() {
               {cats["College"] &&
                 cats["College"].map((val, i) => (
                   <Col key={i} span={6}>
-                    {val.head_term}
+                    <Typography.Link
+                      style={{ color: "white" }}
+                      onClick={() =>
+                        history.push(
+                          `/search/English/${toTitleCase(val.head_term)}`
+                        )
+                      }
+                    >
+                      {val.head_term}
+                    </Typography.Link>
                   </Col>
                 ))}
             </Row>

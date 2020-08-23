@@ -8,14 +8,22 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
-
-function SocialShare() {
+function SocialShare({ other_language, head_term }) {
+  const siteUrl = `https://community-dictionary-dev.firebaseapp.com/search/${other_language}/${encodeURIComponent(
+    head_term
+  )}`;
   return (
     <span>
-      <FacebookShareButton url={"shareUrl"} quote={"title"}>
+      <FacebookShareButton
+        url={siteUrl}
+        quote={`Meaning of ${head_term} in ${other_language}`}
+      >
         <FacebookIcon size={40} round />
       </FacebookShareButton>
-      <TwitterShareButton url={"shareUrl"} quote={"title"}>
+      <TwitterShareButton
+        url={siteUrl}
+        quote={`Meaning of ${head_term} in ${other_language}`}
+      >
         <TwitterIcon size={40} round />
       </TwitterShareButton>
 
