@@ -9,6 +9,7 @@ import {
 // import { useFirestoreConnect } from "react-redux-firebase";
 // import { Link } from "react-router-dom";
 import moment from "moment";
+import textToSpeech from "../../utils.js/textToSpeech";
 
 const { Text } = Typography;
 
@@ -47,6 +48,11 @@ function wordDay({ data }) {
   //     (state) => state.firestore.ordered.languages
   //   );
   //   console.log(otherLanguages);
+
+  function pronunceNow() {
+    //console.log(data.other_language_term)
+    textToSpeech(data.other_language_term)
+  }
 
   return (
     <>
@@ -156,7 +162,8 @@ function wordDay({ data }) {
                       style={{ height: "4vmin" }}
                     ></Divider>
                     <SoundOutlined
-                      style={{ fontSize: "3.5vmin", fontWeight: "bold" }}
+                      style={{ fontSize: "3.5vmin", fontWeight: "bold", cursor: 'pointer' }}
+                      onClick={pronunceNow}
                     />
                   </Row>
                   <Row style={{ paddingTop: "4vmin" }}>
