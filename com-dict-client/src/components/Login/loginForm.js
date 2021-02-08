@@ -38,6 +38,7 @@ const NormalLoginForm = () => {
           placeholder="Email"
         />
       </Form.Item>
+
       <Form.Item
         name="password"
         rules={[
@@ -46,8 +47,9 @@ const NormalLoginForm = () => {
             message: "Please input your Password!",
           },
         ]}
+        hasFeedback
       >
-        <Input
+        <Input.Password
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
           placeholder="Password"
