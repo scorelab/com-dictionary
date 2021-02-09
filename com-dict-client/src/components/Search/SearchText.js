@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Col } from "antd";
+import { Input, Col, message } from "antd";
 import { useHistory } from "react-router-dom";
 import SelectLang from "./SelectLang";
 import { toTitleCase } from "../../utils.js/toTitleCase";
@@ -26,8 +26,11 @@ function SearchText(props) {
           // width ="500px"
           required={true}
           size="large"
-          onSearch={(value) =>
-            history.push(`/search/${language}/${toTitleCase(value)}`)
+          onSearch={(value) => {
+            if (value.length > 0) history.push(`/search/${language}/${toTitleCase(value)}`)
+            else message.warning('Please Type Your Word');
+          }
+
           }
           className="search_style"
           onChange={setKeyWord}
