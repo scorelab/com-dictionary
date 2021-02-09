@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import HomePage from "./containers/home/home";
 import SignUp from "./containers/signup/signup";
+import PasswordRest from "./containers/passwordRest/passwordrest";
 import AddWord from "./containers/addWord/addWord";
 import LetterBased from "./containers/dictionary/letterDict";
 import Browse from "./containers/browse/browse";
@@ -18,6 +19,7 @@ export default function Routes() {
     <Router>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/passwordrest" component={PasswordRest} />
       <Route exact path="/browse" component={Browse} />
       <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />

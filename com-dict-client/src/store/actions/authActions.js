@@ -1,4 +1,5 @@
 import { message } from "antd";
+
 export const signIn = (credentials) => async (firebase, history) => {
   try {
     await firebase.login(credentials);
@@ -80,6 +81,18 @@ export const addNewUser = (user) => async (firestore, history) => {
     await firestore.add("users", { email, username, phone_number });
     console.log("success");
     message.success("User registraion successfull!");
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+export const passwordRest = (email) => async (firebase, history) => {
+  try {
+    await firebase.resetPassword(email);
+    console.log("Password");
+    message.success(
+      "Password reset email send succsfully.Please check your email"
+    );
   } catch (e) {
     console.log(e.message);
   }

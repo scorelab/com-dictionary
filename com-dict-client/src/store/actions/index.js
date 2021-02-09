@@ -5,6 +5,7 @@ export {
   addNewUser,
   signInWithGoogle,
   signInWithProviderID,
+  passwordRest,
 } from "./authActions";
 export {
   addWord,

@@ -1,22 +1,21 @@
 import React from "react";
 import "../home/home.css";
-import "./signup.css";
+import "./passwordrest.css";
 import { Layout } from "antd";
 import TitleBar from "../../components/Header";
-import Signup from "../../components/Signup/SignUp";
-
+import Passwordrest from "../../components/PasswordRest/PasswordRest";
 import FooterPage from "../../components/Footer/FooterPage";
 
 const { Header, Footer, Content } = Layout;
 
-function SignUp() {
+function PasswordRest() {
   return (
     <Layout>
       <Header className="title_bar">
         <TitleBar />
       </Header>
       <Content className="body">
-        <Signup />
+        <Passwordrest />
       </Content>
       <Footer className="footer_div">
         <FooterPage />
@@ -25,4 +24,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default PasswordRest;
