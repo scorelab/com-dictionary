@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Alert } from "antd";
 import { Link, useHistory } from "react-router-dom";
 import { Menu, Typography } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -79,20 +79,23 @@ function TitleBar() {
                 </Menu.Item>
               </SubMenu>
             ) : (
-              <SubMenu
-                key="account"
-                title={
-                  <span>
-                    <UserAccount />
-                  </span>
-                }
-              ></SubMenu>
-            )}
+                <SubMenu
+                  key="account"
+                  title={
+                    <span>
+                      <UserAccount />
+                    </span>
+                  }
+                ></SubMenu>
+              )}
           </Menu>
         </Col>
       </Row>
       <Row justify="center" style={{ paddingBottom: "1vmin" }}>
         <SearchText />
+        {
+          !user.emailVerified && !user.isEmpty ? <Alert message="Please Verify Your Email" type="error" showIcon style={{ marginLeft: '50px' }} /> : null
+        }
       </Row>
     </nav>
   );
