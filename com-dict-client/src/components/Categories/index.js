@@ -160,7 +160,6 @@ function CatView() {
           <img alt="1" style={{ maxWidth: "100%" }} src={food} />
         </Col>
 
-        <Col span={1}></Col>
         <Col span={17}>
           <Card
             style={{
@@ -189,6 +188,7 @@ function CatView() {
             </Row>
           </Card>
         </Col>
+        <Col span={1}></Col>
       </Row>
       <Row style={{ paddingTop: "2vmin" }}>
         <Col span={24}>
@@ -251,13 +251,14 @@ function CatView() {
       </Row>
       <Row>
         <Col span={1}></Col>
-        <Col span={6}>
+        <Col span={3}>
           <img
             alt="1"
             style={{ maxWidth: "100%", maxHeight: "auto" }}
             src={religion}
           />
         </Col>
+        <Col span={2}></Col>
         <Col span={17}>
           <Card
             borderd
@@ -287,6 +288,7 @@ function CatView() {
             </Row>
           </Card>
         </Col>
+        <Col span={1}></Col>
       </Row>
 
       <Row style={{ paddingTop: "2vmin" }}>
@@ -331,9 +333,10 @@ function CatView() {
             </Row>
           </Card>
         </Col>
-        <Col span={6}>
+        <Col span={5}>
           <img alt="1" style={{ maxWidth: "100%" }} src={music} />
         </Col>
+        <Col span={1}></Col>
       </Row>
 
       <Row>
@@ -350,14 +353,14 @@ function CatView() {
       </Row>
       <Row>
         <Col span={1}></Col>
-        <Col span={6}>
+        <Col span={4}>
           <img
             alt="1"
             style={{ maxWidth: "100%", maxHeight: "auto" }}
             src={college}
           />
         </Col>
-
+        <Col span={1}></Col>
         <Col span={17}>
           <Card
             borderd
@@ -387,6 +390,7 @@ function CatView() {
             </Row>
           </Card>
         </Col>
+        <Col span={1}></Col>
       </Row>
     </>
   );
