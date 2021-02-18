@@ -6,6 +6,7 @@ import WordDay from "./wordDay";
 import IndexHome from "../Home/AlphaIndexHome";
 import moment from "moment";
 import WordCarousel from "./wordCarousel";
+import SpinnerLoader from "../../utils.js/SpinnerLoader";
 const { Text } = Typography;
 
 function WordHome() {
@@ -107,7 +108,9 @@ function WordHome() {
         <Col xl={20} lg={20} md={24} sm={24} xs={24}>
           {words.length > 0
             ? words.map((val, i) => <WordSimple key={i} data={val} />)
-            : ""}
+            : 
+            <SpinnerLoader />
+            }
         </Col>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
 
