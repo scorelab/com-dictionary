@@ -75,7 +75,7 @@ function WordForm() {
   const user = useSelector((state) => state.firebase.auth);
 
   const handleAddHeadTerm = () => {
-    if (category === "") {
+    if (category === "" || category == null) {
       return message.error("Please select a category");
     }
 
@@ -120,7 +120,9 @@ function WordForm() {
             <Form onFinish={onSubmit} style={{ paddingTop: "4vmin" }}>
               <Form.Item
                 label="Select the language"
-                rules={[{ required: true, message: "" }]}
+                rules={[
+                  { required: true, message: "Please select a language" },
+                ]}
               >
                 <Select
                   showSearch
@@ -183,7 +185,7 @@ function WordForm() {
 
               <Form.Item
                 name="other_language_term"
-                rules={[{ required: true, message: "" }]}
+                rules={[{ required: true, message: "Please inut a word" }]}
               >
                 <Input
                   onChange={(val) => setOtherLanguageTerm(val.target.value)}
@@ -192,7 +194,9 @@ function WordForm() {
               </Form.Item>
 
               <Form.Item
-                // rules={[{ required: true, message: "" }]}
+                rules={[
+                  { required: true, message: "Please input a word class" },
+                ]}
                 name="classes"
                 label="Select the word class"
               >
@@ -201,7 +205,9 @@ function WordForm() {
 
               <Form.Item
                 name="other_laguage_def"
-                rules={[{ required: true, message: "" }]}
+                rules={[
+                  { required: true, message: "Please input the definition" },
+                ]}
               >
                 <Input
                   onChange={(val) => setMeaning(val.target.value)}
@@ -211,7 +217,13 @@ function WordForm() {
 
               <Form.Item
                 name="example"
-                rules={[{ required: true, message: "" }]}
+                rules={[
+                  {
+                    required: true,
+                    message:
+                      "Please input an example on using the word in a sentence",
+                  },
+                ]}
               >
                 <Input
                   onChange={(val) => setExample(val.target.value)}
@@ -219,7 +231,15 @@ function WordForm() {
                 />
               </Form.Item>
 
-              <Form.Item name="category">
+              <Form.Item
+                name="category"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please select a category",
+                  },
+                ]}
+              >
                 <Select
                   showSearch
                   placeholder="Select the category"
