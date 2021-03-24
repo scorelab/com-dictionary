@@ -137,8 +137,9 @@ function WordForm() {
                     ))}
                 </Select>
               </Form.Item>
+
               <Row>
-                <Col span={12}>
+                <Col xs={24} xl={8}>
                   <Form.Item
                     label="Head term"
                     rules={[{ required: true, message: "" }]}
@@ -158,10 +159,10 @@ function WordForm() {
                     </Select>
                   </Form.Item>
                 </Col>
-                <Col span={1}>
+                <Col xs={24} xl={2}>
                   <Button type="text">Or</Button>
                 </Col>
-                <Col span={6}>
+                <Col xs={24} xl={7}>
                   <Input
                     value={newHeadTerm}
                     onChange={(val) =>
@@ -170,7 +171,8 @@ function WordForm() {
                     placeholder="New head term"
                   />
                 </Col>
-                <Col span={5}>
+                <Col xs={24} xl={1}></Col>
+                <Col xs={24} xl={6}>
                   <Button
                     type="primary"
                     // size="large"
@@ -182,17 +184,20 @@ function WordForm() {
                   </Button>
                 </Col>
               </Row>
-
-              <Form.Item
-                name="other_language_term"
-                rules={[{ required: true, message: "Please inut a word" }]}
-              >
-                <Input
-                  onChange={(val) => setOtherLanguageTerm(val.target.value)}
-                  placeholder="Word in <selected langauge>"
-                />
-              </Form.Item>
-
+              <br />
+              <Row>
+                <Col xs={24} xl={24}>
+                  <Form.Item
+                    name="other_language_term"
+                    rules={[{ required: true, message: "Please inut a word" }]}
+                  >
+                    <Input
+                      onChange={(val) => setOtherLanguageTerm(val.target.value)}
+                      placeholder="Word in <selected langauge>"
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
               <Form.Item
                 rules={[
                   { required: true, message: "Please input a word class" },
