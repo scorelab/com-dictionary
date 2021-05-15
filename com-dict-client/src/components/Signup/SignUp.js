@@ -167,7 +167,7 @@ const RegistrationForm = () => {
                                             c++;
                                         }
                                         // check for punctuation mark
-                                        if (/[@#$&*^%_!+=\/\\[\]|?.,<>)(;:'"~`]/.test(value) === false) {
+                                        if (/[@#$&*^%_!+=/[\]|?.,<>)(;:'"~`]/.test(value) === false) {
                                             c = c + 0;
                                         }
                                         else {
