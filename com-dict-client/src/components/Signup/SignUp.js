@@ -139,6 +139,50 @@ const RegistrationForm = () => {
                   required: true,
                   message: "Please input your password!",
                 },
+                ({ getFieldValue }) => ({
+                                    validator(rule, value) {
+                                        var c = 0;
+                                        if (!value || value.length < 8) {
+                                            return Promise.reject("Enter a strong password with minimum 8 characters!");
+                                        }
+                                        // check for a number
+                                        if (/[0-9]/.test(value) === false) {
+                                            c = c + 0;
+                                        }
+                                        else {
+                                            c++;
+                                        }
+                                        // check for a capital letter
+                                        if (/[A-Z]/.test(value) === false) {
+                                            c = c + 0;
+                                        }
+                                        else {
+                                            c++;
+                                        }
+                                        // check for a lowercase letter
+                                        if (/[a-z]/.test(value) === false) {
+                                            c = c + 0;
+                                        }
+                                        else {
+                                            c++;
+                                        }
+                                        // check for punctuation mark
+                                        if (/[@#$&*^%_!+=\/\\[\]|?.,<>)(;:'"~`]/.test(value) === false) {
+                                            c = c + 0;
+                                        }
+                                        else {
+                                            c++;
+                                        }
+
+                                        if (c >= 3) {
+                                            return Promise.resolve();
+                                        }
+                                        else {
+                                            return Promise.reject("The password must contain at least three of these four character categories: English uppercase , English lowercase , Number and Non - alphanumeric");
+                                        }
+                                    }
+                                }
+                                ),
               ]}
               hasFeedback
             >
