@@ -1,25 +1,27 @@
-<center>
-<img src="https://i.imgur.com/LMQFcsR.png">
-</center>
+<p align="center">
+<img src="https://i.imgur.com/NEjnSNE.png">
+</p>
 
-# Community Dictionary: Build your vocabulary!
+# <p align="center">Community Dictionary: Build your vocabulary!</p>
 
-<img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> 
-<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> 
-<img alt="Firebase" src="https://img.shields.io/badge/firebase%20-%23039BE5.svg?&style=for-the-badge&logo=firebase"/>
+<p align="center"><img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/><img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> 
+<img alt="Firebase" src="https://img.shields.io/badge/firebase%20-%23039BE5.svg?&style=for-the-badge&logo=firebase"/></p>
 
-## About
+# About
 
-Community Dictionary is a project focused on creating a community around people who are in need of a dictionary on the go. It lets general public to contribute in building a rich dictionary including slang and common phrases that we use in the day to day life. Rather than having a formal dictionalry, community dictionary provides you with day to day phrases and examples so that anyone can have a clear understanding.
+Not your average formal dictionary! Community Dictionary is a dictionary for the community, by the community. This project focuses on creating a community around people who are in need of a dictionary on the go. It lets general public to contribute in building a rich dictionary including slangs and common phrases that we use in in our day-to-day life. Rather than having a formal dictionary, community dictionary provides you with day to day phrases and examples so that anyone can have a clear understanding.
 
 
-# Set up
+# Usage
 
 
 ### Requirements
 
 - [React.js](https://reactjs.org/docs/getting-started.html)
-- A Firebase account - [sign up](https://console.firebase.google.com/)
+- A [Firebase account](https://console.firebase.google.com/)
+- NodeJS
+- Yarn
+- NPM
 
 
 ### Local development
@@ -27,7 +29,7 @@ Community Dictionary is a project focused on creating a community around people 
 After the above requirements have been met: 
 <br><br>
 
-<b>1. Clone this repository and `cd` into it</b>
+<b>1. Clone this repository and `cd` into the project</b>
 
 ```bash
 git clone https://github.com/scorelab/com-dictionary.git
@@ -44,7 +46,8 @@ yarn install
 
 <b>3. Setup Firebase Project</b>
 
-Goto your <a href="">Firebase Console </a>and create a new project in Firebase Console. Then register a new web app.
+Goto your <a href="">Firebase Console </a>and create a new project in Firebase Console.
+Register a new web app.
 Copy the **config data** from the config file which will look like this.
 ```
 apiKey: "firebase-api-key",
@@ -83,7 +86,7 @@ Goto `Authentication` section in your Firebase Console and click on *Sign-in met
 <br>
 <br>
 
-<b>7. Run the project </b>
+<b>7. Run the project (aka start your development server) </b>
 
 ```bash
 yarn start
