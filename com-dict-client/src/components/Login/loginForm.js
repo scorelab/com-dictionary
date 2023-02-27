@@ -23,9 +23,11 @@ const NormalLoginForm = () => {
         remember: true,
       }}
       onFinish={onSubmit}
+      style={{width: '80%',margin:' 0 10%'}}
     >
       <Form.Item
         name="email"
+        style={{width: '80%'}}
         rules={[
           {
             required: true,
@@ -40,6 +42,7 @@ const NormalLoginForm = () => {
       </Form.Item>
       <Form.Item
         name="password"
+        style={{width: '80%'}}
         rules={[
           {
             required: true,
@@ -53,18 +56,18 @@ const NormalLoginForm = () => {
           placeholder="Password"
         />
       </Form.Item>
-      <Form.Item>
+      <Form.Item style={{marginLeft:'20px'}}>
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <a href="#1" className="login-form-forgot">
+        <a href="#1" className="login-form-forgot" style={{marginRight:'120px'}}>
           Forgot password
         </a>
       </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+      <Form.Item style={{textAlign:'center',paddingRight: "20%"}}>
+        <Button type="primary" htmlType="submit" className="login-form-button" style={{maxWidth: '200px',width:'50%',paddingBottom:'10px',borderRadius:'10px',}}>
           Sign in
         </Button>
       </Form.Item>

@@ -50,7 +50,7 @@ const formItemLayout = {
       span: 16,
     },
     lg: {
-      span: 18,
+      span: 2,
     },
   },
 };
@@ -96,16 +96,16 @@ const RegistrationForm = () => {
           </span>
         </Col>
       </Row>
-      <Row style={{ paddingTop: "3vmin" }}>
+      <Row style={{ paddingTop: "3vmin",textAlign:'center' }}>
         <Col xl={1} lg={0}></Col>
         <Col xl={7} lg={8} md={0} sm={0} xs={0} style={{ textAlign: "center" }}>
           <Row align="middle">
-            <img style={{ maxWidth: "120%", paddingTop: "5%" }} src={signup} />
+            <img style={{ maxWidth: "120%", paddingTop: "50% !important"  }} src={signup} alt='signup'/>
           </Row>
         </Col>
         <Col xl={0} lg={1} md={1} sm={1} xs={1}></Col>
         <Row></Row>
-        <Col xl={14} lg={12} md={22} sm={22} xs={22}>
+        <Col xl={10} lg={2} md={2} sm={2} xs={2}>
           <Form
             {...formItemLayout}
             form={form}
@@ -116,6 +116,7 @@ const RegistrationForm = () => {
             <Form.Item
               name="email"
               label="E-mail"
+              style={{ maxWidth: "1%"}}
               rules={[
                 {
                   type: "email",
@@ -127,7 +128,7 @@ const RegistrationForm = () => {
                 },
               ]}
             >
-              <Input />
+              <Input style={{ maxWidth: "1%"}}/>
             </Form.Item>
 
             <Form.Item
