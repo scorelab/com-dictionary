@@ -92,29 +92,26 @@ function App(props) {
                 backgroundColor: "#FFFFFF ",
                 border: 0,
                 padding: "1vmin",
-                width: "100%"
+                width: "100%",
               }}
               headStyle={{
                 backgroundColor: "#FFFFFF ",
                 fontSize: "6vmin",
                 color: "#black",
                 border: 0,
-                textAlign: "left",
-                paddingLeft: "28%"
-
+                textAlign: "center",
               }}
               bodyStyle={{ backgroundColor: "#FFFFFF", border: 0 }}
             >
-              <div style={{marginLeft: "16%"}}>
-              <NormalLoginForm/>
-              </div>
+              <NormalLoginForm />
+
               <Divider> OR </Divider>
 
               <SocialLogin />
             </Card>
 
             <div style={{ textAlign: "center" }}>
-              <Text strong>Don't have an account?&nbsp;</Text>
+              <Text strong>Don't have an account?</Text>
               <a href="/signup">Sign Up here</a>
             </div>
           </Col>

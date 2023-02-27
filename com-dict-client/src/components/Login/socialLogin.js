@@ -24,9 +24,9 @@ function SocialLogin() {
     await signInWithProviderID(provider)(firebase, history);
   };
   return (
-    <div style={{width:'80%',paddingLeft:'20%' }}>
+    <div>
       <Row gutter={[16, 16]}>
-        <Col span={24} style={{ textAlign: "center",paddingBottom:'5px' }}>
+        <Col span={24} style={{ textAlign: "center" }}>
           <Text strong>Login using your social media account</Text>
         </Col>
       </Row>
@@ -38,11 +38,11 @@ function SocialLogin() {
           md={24}
           sm={24}
           xs={24}
-          style={{ textAlign: "center"}}
+          style={{ textAlign: "center" }}
         >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#0284E1", width: "80%",paddingBottom:'10px',borderRadius:'10px' }}
+            style={{ backgroundColor: "#0284E1", width: "100%" }}
             icon={<FacebookFilled />}
             // size="large"
             onClick={() => loginWithProviderID("facebook")}
@@ -60,7 +60,7 @@ function SocialLogin() {
         >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#64CFF6", width: "80%",paddingBottom:'10px',borderRadius:'10px'}}
+            style={{ backgroundColor: "#64CFF6", width: "100%" }}
             icon={<TwitterOutlined />}
             // size="large"
             onClick={() => loginWithProviderID("twitter")}
@@ -78,7 +78,7 @@ function SocialLogin() {
         >
           <Button
             className="social_btn"
-            style={{ backgroundColor: "#F4414B", width: "80%",paddingBottom:'10px',borderRadius:'10px'}}
+            style={{ backgroundColor: "#F4414B", width: "100%" }}
             icon={<GoogleOutlined />}
             onClick={loginWithGoogle}
             // size="large"
