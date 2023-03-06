@@ -58,7 +58,7 @@ const NormalLoginForm = () => {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <a href="#1" className="login-form-forgot">
+        <a href="/ForgotPassword" className="login-form-forgot">
           Forgot password
         </a>
       </Form.Item>
