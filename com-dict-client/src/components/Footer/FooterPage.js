@@ -80,7 +80,7 @@ function Footer() {
                   <BugOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to={{ pathname: "https://github.com/scorelab/com-dictionary/pulls" }} target="_blank" className="link">
                     Bug Report
                   </Link>
                 </Col>
@@ -90,9 +90,11 @@ function Footer() {
                   <GithubOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to={{ pathname: "https://github.com/scorelab/com-dictionary" }} target="_blank" className="link">
                     GitHub
                   </Link>
+
+
                 </Col>
               </Row>
               <Row>
@@ -100,7 +102,7 @@ function Footer() {
                   <ExclamationCircleOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to={{ pathname: "https://github.com/scorelab/com-dictionary/issues" }} target="_blank" className="link">
                     Issues
                   </Link>
                 </Col>
