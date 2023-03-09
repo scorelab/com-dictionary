@@ -70,7 +70,7 @@ function TitleBar() {
                 key="profile"
               >
                 <Menu.Item key="cat:0">
-                  <Link to="/#">{user.displayName}</Link>
+                  <Link to="/#">{user.email}</Link>
                 </Menu.Item>
                 <Menu.Item key="cat:0">
                   <Typography onClick={() => signOut()(firebase, history)}>
