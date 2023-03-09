@@ -19,14 +19,14 @@ export default function Routes() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/browse" component={Browse} />
-      <Route path="/search/:language/:keyword" component={Search} />
+      <Route exact path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>
-      <Route path="/letter" component={LetterBased} />
-      <Route path="/comment" component={CommentWord} />
-      <Route path="/report" component={Report} />
+      <Route exact path="/letter" component={LetterBased} />
+      <Route exact path="/comment" component={CommentWord} />
+      <Route exact path="/report" component={Report} />
     </Router>
   );
 }
