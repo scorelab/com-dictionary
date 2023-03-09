@@ -19,7 +19,7 @@ export default function Routes() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/browse" component={Browse} />
-      <Route exact path="/search/:language/:keyword" component={Search} />
+      <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
       <PrivateRoute path="/add">
         <AddWord />
