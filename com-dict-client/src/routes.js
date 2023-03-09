@@ -24,9 +24,9 @@ export default function Routes() {
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>
-      <Route path="/letter" component={LetterBased} />
-      <Route path="/comment" component={CommentWord} />
-      <Route path="/report" component={Report} />
+      <Route exact path="/letter" component={LetterBased} />
+      <Route exact path="/comment" component={CommentWord} />
+      <Route exact path="/report" component={Report} />
     </Router>
   );
 }
