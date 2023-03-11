@@ -115,7 +115,7 @@ function Footer() {
                   <PhoneOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to="/contact" className="link">
                     +94 XXXXXXXXX
                   </Link>
                 </Col>
@@ -125,7 +125,7 @@ function Footer() {
                   <MailOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to="/contact" className="link">
                     XXXXXXXX@gmail.com
                   </Link>
                 </Col>
@@ -135,7 +135,7 @@ function Footer() {
                   <EnvironmentOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to="/contact" className="link">
                     Location
                   </Link>
                 </Col>
