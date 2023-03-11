@@ -2,6 +2,7 @@ import React from "react";
 import { Row , Col} from 'antd';
 import {Link} from 'react-router-dom';
 import { Typography } from 'antd';
+import contactUs from '../../containers/contactUs/contactUs'
 import {InfoCircleOutlined, LockOutlined, FileTextOutlined, BugOutlined,
 GithubOutlined, ExclamationCircleOutlined, PhoneOutlined,
 UnorderedListOutlined,MailOutlined, EnvironmentOutlined}
@@ -106,7 +107,7 @@ function Footer() {
             <PhoneOutlined />
             </Col>
             <Col span={22}>
-              <Link to="#" className="link">
+              <Link to="/contact" className="link">
               +94 XXXXXXXXX</Link>
               </Col>
             </Row>
@@ -115,7 +116,7 @@ function Footer() {
             <MailOutlined />
             </Col>
             <Col span={22}>
-              <Link to="#" className="link">
+              <Link to="/contact" className="link">
               XXXXXXXX@gmail.com</Link>
               </Col>
             </Row>
@@ -124,7 +125,7 @@ function Footer() {
             <EnvironmentOutlined />
             </Col>
             <Col span={22}>
-              <Link to="#" className="link">
+              <Link to="/contact" className="link">
               Location</Link>
               </Col>
             </Row>
