@@ -26,7 +26,7 @@ function WordHome() {
           // let lastItem = "";
           const defs = [];
           querySnapshot.docs.filter((doc) => {
-            if (doc.data().word_of_the_day) {
+            if (Date.parse(doc.data().word_of_the_day)<Date.parse(moment().format("YYYY-MM-DD"))) {
               // lastItem = doc.id;
               let tempObj = {};
               tempObj = doc.data();

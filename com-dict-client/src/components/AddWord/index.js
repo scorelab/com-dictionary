@@ -11,6 +11,9 @@ import {
   message,
 } from "antd";
 import WordClass from "./WordClass";
+
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import EditableTagGroup from "./RelatedWords";
 
 import { useFirestore, useFirestoreConnect } from "react-redux-firebase";
@@ -45,6 +48,13 @@ function WordForm() {
   const onSubmit = (values) => {
     // const definition = values;
     // console.log(definition);
+    var dateString = null;
+    if (checked) {
+      dateString = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
+        .toISOString()
+        .split("T")[0];
+    }
+
     const data = {
       other_language: language,
       head_term: headTerm,
@@ -60,13 +70,16 @@ function WordForm() {
       uname: user.displayName,
       createdAt: new Date().getTime(),
       alphabatical: headTerm[0].toUpperCase(),
-      word_of_the_day: null,
+      word_of_the_day: dateString,
       pronunciation: null,
       trending_factor: 0,
     };
     console.log(data);
     return addWord(data)(firestore);
   };
+
+  const [date, setDate] = useState(new Date());
+  const [checked, setChecked] = React.useState(false);
 
   const categories = useSelector((state) => state.firestore.ordered.categories);
 
@@ -87,7 +100,9 @@ function WordForm() {
     console.log(newHdTm);
     addHeadTerm(newHdTm)(firestore, setHeadTerm);
   };
-
+  const handleChange = () => {
+    setChecked(!checked);
+  };
   return (
     <div>
       <Row>
@@ -244,6 +259,27 @@ function WordForm() {
                 <Row>
                   <Col xl={6} ls={6} md={3} sm={0} xs={0}></Col>
                   <Col xl={12} lg={12} md={18} sm={24} xs={24}>
+                    <div>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={handleChange}
+                        />
+                        Word of the Day?
+                      </label>
+                    </div>
+                    {checked && (
+                      <div className="app">
+                        <h1 className="header">Select Date</h1>
+                        <div className="calendar-container">
+                          <Calendar onChange={setDate} value={date} />
+                        </div>
+                        <div className="text-center">
+                          Selected date: {date.toDateString()}
+                        </div>
+                      </div>
+                    )}
                     <Button
                       type="primary"
                       // size="large"
