@@ -1,0 +1,429 @@
+[debug] [2023-03-14T18:06:08.144Z] ----------------------------------------------------------------------
+[debug] [2023-03-14T18:06:08.146Z] Command:       /home/partiksingh/.nvm/versions/node/v16.17.0/bin/node /home/partiksingh/.nvm/versions/node/v16.17.0/bin/firebase emulators:start
+[debug] [2023-03-14T18:06:08.146Z] CLI Version:   11.24.1
+[debug] [2023-03-14T18:06:08.146Z] Platform:      linux
+[debug] [2023-03-14T18:06:08.146Z] Node Version:  v16.17.0
+[debug] [2023-03-14T18:06:08.146Z] Time:          Tue Mar 14 2023 23:36:08 GMT+0530 (India Standard Time)
+[debug] [2023-03-14T18:06:08.146Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-14T18:06:08.206Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-14T18:06:08.207Z] > authorizing via signed-in user (partik.sbumrah.cse21@itbhu.ac.in)
+[debug] [2023-03-14T18:06:08.251Z] openjdk version "11.0.16" 2022-07-19
+
+[debug] [2023-03-14T18:06:08.252Z] OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+
+[debug] [2023-03-14T18:06:08.256Z] Parsed Java major version: 11
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, hosting, pubsub, eventarc {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, hosting, pubsub, eventarc"}}
+[debug] [2023-03-14T18:06:08.262Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.262Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.262Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.262Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.262Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.263Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.263Z] [pubsub] Pub/Sub Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.263Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"pubsub":[{"address":"127.0.0.1","family":"IPv4","port":8085}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-03-14T18:06:08.269Z] [hub] writing locator at /tmp/hub-codelabz-ca5c2.json
+[debug] [2023-03-14T18:06:08.273Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.273Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T18:06:08.273Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"pubsub":[{"address":"127.0.0.1","family":"IPv4","port":8085}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mstorage\u001b[22m"}}
+[debug] [2023-03-14T18:06:08.276Z] defaultcredentials: writing to file /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json
+[debug] [2023-03-14T18:06:08.277Z] Setting GAC to /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json"}}
+[debug] [2023-03-14T18:06:08.279Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/adminSdkConfig [none]
+[debug] [2023-03-14T18:06:09.751Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/adminSdkConfig 200
+[debug] [2023-03-14T18:06:09.751Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/adminSdkConfig {"projectId":"codelabz-ca5c2","databaseURL":"https://codelabz-ca5c2-default-rtdb.firebaseio.com","storageBucket":"codelabz-ca5c2.appspot.com"}
+[debug] [2023-03-14T18:06:09.778Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T18:06:09.779Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-03-14T18:06:09.779Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/partiksingh/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.0.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","codelabz-ca5c2","--rules","/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/partiksingh/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"codelabz-ca5c2\",\"--rules\",\"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-03-14T18:06:10.567Z] Mar 14, 2023 11:36:10 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 14, 2023 11:36:10 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2023-03-14T18:06:10.621Z] API endpoint: http://127.0.0.1:8080 {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:8080"}}
+[debug] [2023-03-14T18:06:10.621Z] 
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-03-14T18:06:10.808Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 [none]
+[debug] [2023-03-14T18:06:13.262Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 200
+[debug] [2023-03-14T18:06:13.262Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 {"projectId":"codelabz-ca5c2","projectNumber":"900483764206","displayName":"Codelabz","name":"projects/codelabz-ca5c2","resources":{"hostingSite":"codelabz-ca5c2","realtimeDatabaseInstance":"codelabz-ca5c2-default-rtdb"},"state":"ACTIVE","etag":"1_76d45705-4a9b-4f4a-8616-1d126dd70f86"}
+[debug] [2023-03-14T18:06:13.263Z] database rules config:  [{"instance":"codelabz-ca5c2-default-rtdb","rules":"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/database.rules.json"}]
+[debug] [2023-03-14T18:06:13.268Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-03-14T18:06:13.268Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T18:06:13.268Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2023-03-14T18:06:13.269Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning","--functions_emulator_host","127.0.0.1","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\",\"--functions_emulator_host\",\"127.0.0.1\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2023-03-14T18:06:13.775Z] WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+ {"metadata":{"emulator":{"name":"database"},"message":"WARNING: An illegal reflective access operation has occurred\nWARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys\nWARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil\nWARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations\nWARNING: All illegal access operations will be denied in a future release\n"}}
+[debug] [2023-03-14T18:06:14.247Z] 23:36:14.245 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"23:36:14.245 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2023-03-14T18:06:14.384Z] 23:36:14.384 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"23:36:14.384 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2023-03-14T18:06:20.370Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-03-14T18:06:20.370Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T18:06:20.370Z] Starting Pub/Sub Emulator with command {"binary":"/home/partiksingh/.cache/firebase/emulators/pubsub-emulator-0.7.1/pubsub-emulator/bin/cloud-pubsub-emulator","args":["--host=127.0.0.1","--port=8085"],"optionalArgs":["port","host"],"joinArgs":true} {"metadata":{"emulator":{"name":"pubsub"},"message":"Starting Pub/Sub Emulator with command {\"binary\":\"/home/partiksingh/.cache/firebase/emulators/pubsub-emulator-0.7.1/pubsub-emulator/bin/cloud-pubsub-emulator\",\"args\":[\"--host=127.0.0.1\",\"--port=8085\"],\"optionalArgs\":[\"port\",\"host\"],\"joinArgs\":true}"}}
+[info] i  pubsub: Pub/Sub Emulator logging to pubsub-debug.log {"metadata":{"emulator":{"name":"pubsub"},"message":"Pub/Sub Emulator logging to \u001b[1mpubsub-debug.log\u001b[22m"}}
+[debug] [2023-03-14T18:06:20.503Z] This is the Google Pub/Sub fake.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"This is the Google Pub/Sub fake.\n"}}
+[debug] [2023-03-14T18:06:20.503Z] Implementation may be incomplete or differ from the real system.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Implementation may be incomplete or differ from the real system.\n"}}
+[debug] [2023-03-14T18:06:20.540Z] Mar 14, 2023 11:36:20 PM com.google.cloud.pubsub.testing.v1.Main main
+INFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Mar 14, 2023 11:36:20 PM com.google.cloud.pubsub.testing.v1.Main main\nINFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported\n"}}
+[debug] [2023-03-14T18:06:20.658Z] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation {"metadata":{"emulator":{"name":"pubsub"},"message":"SLF4J: Failed to load class \"org.slf4j.impl.StaticLoggerBinder\".\nSLF4J: Defaulting to no-operation (NOP) logger implementation"}}
+[debug] [2023-03-14T18:06:20.658Z] 
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"\nSLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.\n"}}
+[debug] [2023-03-14T18:06:21.051Z] Mar 14, 2023 11:36:21 PM com.google.cloud.pubsub.testing.v1.Main main
+INFO: Server started, listening on 8085
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Mar 14, 2023 11:36:21 PM com.google.cloud.pubsub.testing.v1.Main main\nINFO: Server started, listening on 8085\n"}}
+[debug] [2023-03-14T18:06:21.141Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/codelabz-ca5c2/sites 
+[debug] [2023-03-14T18:06:22.680Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/codelabz-ca5c2/sites 200
+[debug] [2023-03-14T18:06:22.681Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/codelabz-ca5c2/sites {"sites":[{"name":"projects/codelabz-ca5c2/sites/codelabz-ca5c2","defaultUrl":"https://codelabz-ca5c2.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-14T18:06:22.681Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/webApps/-/config [none]
+[debug] [2023-03-14T18:06:24.216Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/webApps/-/config 200
+[debug] [2023-03-14T18:06:24.216Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2/webApps/-/config {"projectId":"codelabz-ca5c2","databaseURL":"https://codelabz-ca5c2-default-rtdb.firebaseio.com","storageBucket":"codelabz-ca5c2.appspot.com","apiKey":"AIzaSyA-jAw3vZIGr4FKqFmzAK0xFl8-SFPWRyE","authDomain":"codelabz-ca5c2.firebaseapp.com","messagingSenderId":"900483764206"}
+[debug] [2023-03-14T18:06:24.223Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 [none]
+[debug] [2023-03-14T18:06:24.933Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 200
+[debug] [2023-03-14T18:06:24.933Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codelabz-ca5c2 {"projectId":"codelabz-ca5c2","projectNumber":"900483764206","displayName":"Codelabz","name":"projects/codelabz-ca5c2","resources":{"hostingSite":"codelabz-ca5c2","realtimeDatabaseInstance":"codelabz-ca5c2-default-rtdb"},"state":"ACTIVE","etag":"1_76d45705-4a9b-4f4a-8616-1d126dd70f86"}
+[debug] [2023-03-14T18:06:24.935Z] Specified "public" directory "build" does not exist; Deploy to Hosting site "codelabz-ca5c2" may fail or be empty.
+[info] i  hosting[codelabz-ca5c2]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[codelabz-ca5c2]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-03-14T18:06:24.956Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T18:06:24.956Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-03-14T18:06:24.956Z] Starting Emulator UI with command {"binary":"node","args":["/home/partiksingh/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/partiksingh/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-03-14T18:06:25.046Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-03-14T18:06:25.046Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions\" for Cloud Functions..."}}
+[debug] [2023-03-14T18:06:25.226Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2023-03-14T18:06:25.714Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.3.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.1",
+    "moment": "^2.27.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-03-14T18:06:25.714Z] Building nodejs source
+[debug] [2023-03-14T18:06:25.714Z] Failed to find version of module node: reached end of search path /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "10" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-03-14T18:06:25.716Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-14T18:06:25.734Z] Found firebase-functions binary at '/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-14T18:06:25.840Z] Serving at port 8378
+
+[debug] [2023-03-14T18:06:25.874Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'
+Require stack:
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js
+[debug] [2023-03-14T18:06:25.877Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module './serviceA ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'\nRequire stack:\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module './serviceA ... \n                                         ^"}
+[debug] [2023-03-14T18:06:25.881Z] shutdown requested via /__/quitquitquit
+
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'
+Require stack:
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'\nRequire stack:\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js"}}
+[debug] [2023-03-14T18:06:25.886Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=codelabz-ca5c2-default-rtdb
+[debug] [2023-03-14T18:06:25.887Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n    \"rules\": {\n        \".read\": false,\n        \".write\": false\n    }\n}"
+[debug] [2023-03-14T18:06:26.114Z] 23:36:26.114 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - codelabz-ca5c2-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 113ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"23:36:26.114 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - codelabz-ca5c2-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 113ms, init: 0ms\n"}}
+[debug] [2023-03-14T18:06:26.174Z] 23:36:26.174 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace codelabz-ca5c2-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"23:36:26.174 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace codelabz-ca5c2-default-rtdb status Active to Active\n"}}
+[debug] [2023-03-14T18:06:26.198Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2023-03-14T18:06:26.198Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database  │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Pub/Sub        │ 127.0.0.1:8085 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Eventarc       │ 127.0.0.1:9299 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-03-14T18:06:32.573Z] Mar 14, 2023 11:36:32 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 14, 2023 11:36:32 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2023-03-14T18:06:36.955Z] Mar 14, 2023 11:36:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 14, 2023 11:36:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2023-03-14T18:06:37.056Z] Mar 14, 2023 11:36:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 14, 2023 11:36:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2023-03-14T18:13:45.795Z] Mar 14, 2023 11:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 14, 2023 11:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2023-03-14T19:19:19.822Z] ----------------------------------------------------------------------
+[debug] [2023-03-14T19:19:19.823Z] Command:       /home/partiksingh/.nvm/versions/node/v16.17.0/bin/node /home/partiksingh/.nvm/versions/node/v16.17.0/bin/firebase emulators:start
+[debug] [2023-03-14T19:19:19.824Z] CLI Version:   11.24.1
+[debug] [2023-03-14T19:19:19.824Z] Platform:      linux
+[debug] [2023-03-14T19:19:19.824Z] Node Version:  v16.17.0
+[debug] [2023-03-14T19:19:19.827Z] Time:          Wed Mar 15 2023 00:49:19 GMT+0530 (India Standard Time)
+[debug] [2023-03-14T19:19:19.827Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-14T19:19:19.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-14T19:19:19.885Z] > authorizing via signed-in user (partik.sbumrah.cse21@itbhu.ac.in)
+[debug] [2023-03-14T19:19:19.993Z] openjdk version "11.0.16" 2022-07-19
+
+[debug] [2023-03-14T19:19:19.993Z] OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+
+[debug] [2023-03-14T19:19:19.996Z] Parsed Java major version: 11
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, hosting, pubsub, eventarc {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, hosting, pubsub, eventarc"}}
+[debug] [2023-03-14T19:19:19.999Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:19.999Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:19.999Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:19.999Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.000Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.000Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.000Z] [pubsub] Pub/Sub Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.000Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"pubsub":[{"address":"127.0.0.1","family":"IPv4","port":8085}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-03-14T19:19:20.005Z] [hub] writing locator at /tmp/hub-codelabz-ca5c2.json
+[debug] [2023-03-14T19:19:20.008Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.008Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T19:19:20.008Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"pubsub":[{"address":"127.0.0.1","family":"IPv4","port":8085}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mstorage\u001b[22m"}}
+[debug] [2023-03-14T19:19:20.011Z] defaultcredentials: writing to file /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json
+[debug] [2023-03-14T19:19:20.012Z] Setting GAC to /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/partiksingh/.config/firebase/partik_sbumrah.cse21_itbhu.ac.in_application_default_credentials.json"}}
+[debug] [2023-03-14T19:19:20.013Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T19:19:20.014Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T19:19:20.014Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T19:19:20.102Z] Failed to get Admin SDK config for codelabz-ca5c2, falling back to cacheFailed to get Admin SDK for Firebase project codelabz-ca5c2. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project codelabz-ca5c2. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"exit":1,"message":"Authentication Error: Your credentials are no longer valid. Please run \u001b[1mfirebase login --reauth\u001b[22m\n\nFor CI servers and headless environments, generate a new token with \u001b[1mfirebase login:ci\u001b[22m","status":500},"status":500}
+[debug] [2023-03-14T19:19:20.121Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T19:19:20.121Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-03-14T19:19:20.121Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/partiksingh/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.0.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","codelabz-ca5c2","--rules","/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/partiksingh/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"codelabz-ca5c2\",\"--rules\",\"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-03-14T19:19:20.902Z] Mar 15, 2023 12:49:20 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 15, 2023 12:49:20 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2023-03-14T19:19:20.954Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2023-03-14T19:19:20.955Z] 127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-03-14T19:19:21.136Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T19:19:21.137Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T19:19:21.137Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T19:19:21.155Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-03-14T19:19:21.155Z] Failed to retrieve default database instance: {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Firebase project codelabz-ca5c2. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"exit":1,"message":"Authentication Error: Your credentials are no longer valid. Please run \u001b[1mfirebase login --reauth\u001b[22m\n\nFor CI servers and headless environments, generate a new token with \u001b[1mfirebase login:ci\u001b[22m","status":500},"status":500} {"metadata":{"emulator":{"name":"database"},"message":"Failed to retrieve default database instance: {\"name\":\"FirebaseError\",\"children\":[],\"exit\":2,\"message\":\"Failed to get Firebase project codelabz-ca5c2. Please make sure the project exists and your account has permission to access it.\",\"original\":{\"name\":\"FirebaseError\",\"children\":[],\"exit\":1,\"message\":\"Authentication Error: Your credentials are no longer valid. Please run \\u001b[1mfirebase login --reauth\\u001b[22m\\n\\nFor CI servers and headless environments, generate a new token with \\u001b[1mfirebase login:ci\\u001b[22m\",\"status\":500},\"status\":500}"}}
+[debug] [2023-03-14T19:19:21.156Z] database rules config:  [{"instance":"codelabz-ca5c2-default-rtdb","rules":"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/database.rules.json"}]
+[debug] [2023-03-14T19:19:21.158Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-03-14T19:19:21.158Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T19:19:21.158Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2023-03-14T19:19:21.159Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning","--functions_emulator_host","127.0.0.1","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\",\"--functions_emulator_host\",\"127.0.0.1\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2023-03-14T19:19:21.573Z] WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+ {"metadata":{"emulator":{"name":"database"},"message":"WARNING: An illegal reflective access operation has occurred\nWARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/partiksingh/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys\nWARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil\nWARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations\nWARNING: All illegal access operations will be denied in a future release\n"}}
+[debug] [2023-03-14T19:19:22.014Z] 00:49:22.014 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"00:49:22.014 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2023-03-14T19:19:22.147Z] 00:49:22.147 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"00:49:22.147 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2023-03-14T19:19:27.408Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-03-14T19:19:27.408Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T19:19:27.408Z] Starting Pub/Sub Emulator with command {"binary":"/home/partiksingh/.cache/firebase/emulators/pubsub-emulator-0.7.1/pubsub-emulator/bin/cloud-pubsub-emulator","args":["--host=127.0.0.1","--port=8085"],"optionalArgs":["port","host"],"joinArgs":true} {"metadata":{"emulator":{"name":"pubsub"},"message":"Starting Pub/Sub Emulator with command {\"binary\":\"/home/partiksingh/.cache/firebase/emulators/pubsub-emulator-0.7.1/pubsub-emulator/bin/cloud-pubsub-emulator\",\"args\":[\"--host=127.0.0.1\",\"--port=8085\"],\"optionalArgs\":[\"port\",\"host\"],\"joinArgs\":true}"}}
+[info] i  pubsub: Pub/Sub Emulator logging to pubsub-debug.log {"metadata":{"emulator":{"name":"pubsub"},"message":"Pub/Sub Emulator logging to \u001b[1mpubsub-debug.log\u001b[22m"}}
+[debug] [2023-03-14T19:19:27.521Z] This is the Google Pub/Sub fake.
+Implementation may be incomplete or differ from the real system.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"This is the Google Pub/Sub fake.\nImplementation may be incomplete or differ from the real system.\n"}}
+[debug] [2023-03-14T19:19:27.544Z] Mar 15, 2023 12:49:27 AM com.google.cloud.pubsub.testing.v1.Main main
+INFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Mar 15, 2023 12:49:27 AM com.google.cloud.pubsub.testing.v1.Main main\nINFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported\n"}}
+[debug] [2023-03-14T19:19:27.672Z] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"SLF4J: Failed to load class \"org.slf4j.impl.StaticLoggerBinder\".\n"}}
+[debug] [2023-03-14T19:19:27.672Z] SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"SLF4J: Defaulting to no-operation (NOP) logger implementation\nSLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.\n"}}
+[debug] [2023-03-14T19:19:28.157Z] Mar 15, 2023 12:49:28 AM com.google.cloud.pubsub.testing.v1.Main main
+INFO: Server started, listening on 8085
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Mar 15, 2023 12:49:28 AM com.google.cloud.pubsub.testing.v1.Main main\nINFO: Server started, listening on 8085\n"}}
+[debug] [2023-03-14T19:19:28.173Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T19:19:28.174Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T19:19:28.174Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T19:19:28.202Z] Failed to list hosting sites
+[debug] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-03-14T19:19:28.202Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T19:19:28.202Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T19:19:28.202Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T19:19:28.213Z] fetchWebSetup error: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[warn] ⚠  hosting: Using web app configuration from cache. 
+[debug] [2023-03-14T19:19:28.214Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T19:19:28.214Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T19:19:28.214Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T19:19:28.228Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-03-14T19:19:28.229Z] Specified "public" directory "build" does not exist; Deploy to Hosting site "codelabz-ca5c2" may fail or be empty.
+[info] i  hosting[codelabz-ca5c2]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[codelabz-ca5c2]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-03-14T19:19:28.245Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T19:19:28.246Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-03-14T19:19:28.246Z] Starting Emulator UI with command {"binary":"node","args":["/home/partiksingh/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/partiksingh/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-03-14T19:19:28.325Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-03-14T19:19:28.326Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions\" for Cloud Functions..."}}
+[debug] [2023-03-14T19:19:28.511Z] Validating nodejs source
+[debug] [2023-03-14T19:19:38.563Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync npm ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1112:20)
+    at Object.spawnSync (node:child_process:827:24)
+    at Function.spawnSync [as sync] (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/cross-spawn/index.js:26:23)
+    at Object.getLatestSDKVersion (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/versioning.js:55:25)
+    at Object.checkFunctionsSDKVersion (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/versioning.js:76:32)
+    at Delegate.validate (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:291:35)
+    at async FunctionsEmulator.loadTriggers (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:320:34)
+    at async FunctionsEmulator.connect (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:257:13)
+    at async Object.startAll (/home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/emulator/controller.js:547:13)
+    at async /home/partiksingh/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/commands/emulators-start.js:32:43
+[debug] [2023-03-14T19:19:38.563Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.3.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.1",
+    "moment": "^2.27.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-03-14T19:19:38.563Z] Building nodejs source
+[debug] [2023-03-14T19:19:38.564Z] Failed to find version of module node: reached end of search path /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "10" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-03-14T19:19:38.566Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-14T19:19:38.582Z] Found firebase-functions binary at '/home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-14T19:19:38.724Z] Serving at port 8820
+
+[debug] [2023-03-14T19:19:38.772Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'
+Require stack:
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js
+[debug] [2023-03-14T19:19:38.775Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module './serviceA ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'\nRequire stack:\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module './serviceA ... \n                                         ^"}
+[debug] [2023-03-14T19:19:38.777Z] shutdown requested via /__/quitquitquit
+
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'
+Require stack:
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js
+- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module './serviceAccountKey.json'\nRequire stack:\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/index.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/runtime/loader.js\n- /home/partiksingh/ScoreLabs/com-dictionary/com-dict-client/functions/node_modules/firebase-functions/lib/bin/firebase-functions.js"}}
+[debug] [2023-03-14T19:19:38.782Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=codelabz-ca5c2-default-rtdb
+[debug] [2023-03-14T19:19:38.782Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n    \"rules\": {\n        \".read\": false,\n        \".write\": false\n    }\n}"
+[debug] [2023-03-14T19:19:39.014Z] 00:49:39.014 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - codelabz-ca5c2-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 119ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"00:49:39.014 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - codelabz-ca5c2-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 119ms, init: 0ms\n"}}
+[debug] [2023-03-14T19:19:39.079Z] 00:49:39.079 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace codelabz-ca5c2-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"00:49:39.079 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace codelabz-ca5c2-default-rtdb status Active to Active\n"}}
+[debug] [2023-03-14T19:19:39.106Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2023-03-14T19:19:39.106Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database  │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Pub/Sub        │ 127.0.0.1:8085 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Eventarc       │ 127.0.0.1:9299 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

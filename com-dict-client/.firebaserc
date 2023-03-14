@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "community-dictionary-dev"
-  }
+    "default": "codelabz-ca5c2",
+    "com-dictionary": "codelabz-ca5c2"
+  },
+  "targets": {},
+  "etags": {}
 }

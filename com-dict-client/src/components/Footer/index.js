@@ -12,6 +12,7 @@ import "../../containers/home/footer.css";
 const { Title } = Typography;
 
 function Footer() {
+  console.log("dmjsdhjvs");
   return (
     <footer className="footer">
     <div className="footer-wrap">
@@ -81,7 +82,7 @@ function Footer() {
             <GithubOutlined />
             </Col>
             <Col span={22}>
-              <Link to="#" className="link">
+              <Link to="https://github.com/scorelab/com-dictionary"  className="link">
               GitHub</Link>
               </Col>
             </Row>
