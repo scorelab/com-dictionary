@@ -19,7 +19,6 @@ import "../../containers/home/footer.css";
 const { Title } = Typography;
 
 function Footer() {
-  console.log("jnvjdsnsvnd");
   return (
     <footer className="footer">
       <div className="footer-wrap">
@@ -81,9 +80,9 @@ function Footer() {
                   <BugOutlined />
                 </Col>
                 <Col span={22}>
-                  <a to="https://github.com/scorelab/com-dictionary/issues/new" className="link">
+                  <Link to="#" className="link">
                     Bug Report
-                  </a>
+                  </Link>
                 </Col>
               </Row>
               <Row>
@@ -91,9 +90,9 @@ function Footer() {
                   <GithubOutlined />
                 </Col>
                 <Col span={22}>
-                  <a href="https://github.com/scorelab/com-dictionary" target="_blank" className="link">
+                  <Link to="#" className="link">
                     GitHub
-                  </a>
+                  </Link>
                 </Col>
               </Row>
               <Row>
@@ -101,9 +100,9 @@ function Footer() {
                   <ExclamationCircleOutlined />
                 </Col>
                 <Col span={22}>
-                  <a to="https://github.com/scorelab/com-dictionary/issues" target="_blank" className="link">
+                  <Link to="#" className="link">
                     Issues
-                  </a>
+                  </Link>
                 </Col>
               </Row>
             </div>
