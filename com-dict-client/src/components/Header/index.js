@@ -20,6 +20,7 @@ function TitleBar() {
   console.log(user);
   const location = useLocation();
   console.log(location.pathname);
+  const {Title} = Typography;
 
   return (
     <nav>
@@ -70,12 +71,34 @@ function TitleBar() {
                 key="profile"
               >
                 <Menu.Item key="cat:0">
-                  <Link to="/#">{user.displayName}</Link>
+                  <Link to="/#">
+                  <Title level={5}>
+                    <span className="icons8-customer" style={{marginRight:"10px"}}></span>
+                     {user.displayName}
+                  </Title>
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="cat:0">
-                  <Typography onClick={() => signOut()(firebase, history)}>
-                    Logout
-                  </Typography>
+                  <Link to="/letter">
+                  <Title level={5}>
+                    <span className="icons8-dictionary" style={{marginRight:"10px"}}></span>
+                    Dictionary
+                  </Title>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="cat:0">
+                  <Link to="/Categories">
+                  <Title level={5}>
+                    <span className="icons8-categories" style={{marginRight:"10px"}}></span>
+                    Categories
+                  </Title>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="cat:0">
+                  <Title onClick={() => signOut()(firebase, history)} level={5} >
+                  <span className="icons8-logout" style={{marginRight:"10px"}}></span>
+                   Logout
+                  </Title>
                 </Menu.Item>
               </SubMenu>
             ) : (
