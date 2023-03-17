@@ -64,7 +64,7 @@ function TitleBar() {
             </span>
           }
         ></SubMenu> */}
-            {true ? (
+            {user.uid ? (
               <SubMenu
                 title={<span className="icons8-customer"></span>}
                 key="profile"
@@ -76,7 +76,7 @@ function TitleBar() {
                         className="icons8-customer"
                         style={{ marginRight: "10px" }}
                       ></span>
-                      Ajay Pediredla
+                      {user.displayName}
                     </Title>
                   </Link>
                 </Menu.Item>
