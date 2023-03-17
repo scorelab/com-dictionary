@@ -17,9 +17,9 @@ function TitleBar() {
   const firebase = useFirebase();
   const history = useHistory();
   const user = useSelector((state) => state.firebase.auth);
-  console.log(user);
   const location = useLocation();
   console.log(location.pathname);
+  const { Title } = Typography;
 
   return (
     <nav>
@@ -64,18 +64,52 @@ function TitleBar() {
             </span>
           }
         ></SubMenu> */}
-            {user.uid ? (
+            {true ? (
               <SubMenu
                 title={<span className="icons8-customer"></span>}
                 key="profile"
               >
                 <Menu.Item key="cat:0">
-                  <Link to="/#">{user.displayName}</Link>
+                  <Link to="/#">
+                    <Title level={5}>
+                      <span
+                        className="icons8-customer"
+                        style={{ marginRight: "10px" }}
+                      ></span>
+                      Ajay Pediredla
+                    </Title>
+                  </Link>
                 </Menu.Item>
-                <Menu.Item key="cat:0">
-                  <Typography onClick={() => signOut()(firebase, history)}>
+                <Menu.Item key="cat:1">
+                  <Link to="/letter">
+                    <Title level={5}>
+                      <span
+                        className="icons8-dictionary"
+                        style={{ marginRight: "10px" }}
+                      ></span>
+                      Word Lists
+                    </Title>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="cat:2">
+                  <Link to="/profile">
+                    <Title level={5}>
+                      <span
+                        className="icons8-categories"
+                        style={{ marginRight: "10px" }}
+                      ></span>
+                      Account Settings
+                    </Title>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="cat:3">
+                  <Title onClick={() => signOut()(firebase, history)} level={5}>
+                    <span
+                      className="icons8-logout"
+                      style={{ marginRight: "10px" }}
+                    ></span>
                     Logout
-                  </Typography>
+                  </Title>
                 </Menu.Item>
               </SubMenu>
             ) : (

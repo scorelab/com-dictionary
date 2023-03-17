@@ -11,6 +11,7 @@ import CommentWord from "./containers/comment/comment";
 import Report from "./containers/reportWord/reportWord";
 import Search from "./containers/search/search";
 import { useSelector } from "react-redux";
+import Profile from "./containers/profile/profile";
 // import { auth } from "./config";
 
 export default function Routes() {
@@ -21,6 +22,7 @@ export default function Routes() {
       <Route exact path="/browse" component={Browse} />
       <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
+      <Route exact path="/Profile" component={Profile} />
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>
