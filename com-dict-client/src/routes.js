@@ -21,9 +21,10 @@ export default function Routes() {
       <Route exact path="/browse" component={Browse} />
       <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
-      <PrivateRoute path="/add">
+      <Route exact path="/add" component={AddWord} />
+      {/* <PrivateRoute path="/add">
         <AddWord />
-      </PrivateRoute>
+      </PrivateRoute> */}
       <Route path="/letter" component={LetterBased} />
       <Route path="/comment" component={CommentWord} />
       <Route path="/report" component={Report} />
