@@ -17,6 +17,15 @@ const firebaseConfig = {
 // Initialize firebase instance
 firebase.initializeApp(firebaseConfig);
 
+if (window.location.hostname === "localhost") {
+  firebase.firestore().useEmulator("localhost", 8080);
+  firebase.auth().useEmulator("http://localhost:9099", {
+    disableWarnings: true,
+  });
+  firebase.database().useEmulator("localhost", 9000);
+  // firebase.functions().useEmulator("localhost", 5001);
+}
+
 // Initialize other services on firebase instance
 // firebase.firestore(); // <- needed if using firestore
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Typography, List } from "antd";
 import report from "../../images/pablo-word-remove.png";
 import Word from "../DictionaryView/word_summary";
-import ReportWord from "../Flag/report_cats";
+import ReportWord from "./report_cats";
 
 const { Text } = Typography;
 
