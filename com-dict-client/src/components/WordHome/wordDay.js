@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Card, Row, Col, Divider } from "antd";
 import {
   SoundOutlined,
+  AudioMutedOutlined,
   //   LikeOutlined,
   //   DislikeOutlined,
 } from "@ant-design/icons";
@@ -155,9 +156,14 @@ function wordDay({ data }) {
                       type="vertical"
                       style={{ height: "4vmin" }}
                     ></Divider>
-                    <SoundOutlined
-                      style={{ fontSize: "3.5vmin", fontWeight: "bold" }}
-                    />
+                   {!data.pronunciation ? (
+              <SoundOutlined
+                onClick={() => new Audio(data.pronunciation).play()}
+                style={{ fontSize: "3.5vmin", fontWeight: "bold" }}
+              />
+            ) : (
+              <AudioMutedOutlined style={{ fontSize: "3.5vmin", fontWeight: "bold" }} />
+            )}
                   </Row>
                   <Row style={{ paddingTop: "4vmin" }}>
                     <Col xl={16} lg={16} md={16} sm={24} xs={24}>
