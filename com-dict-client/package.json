@@ -12,6 +12,7 @@
     "firebase-admin": "^11.5.0",
     "firebase-functions": "^3.8.0",
     "react": "^16.13.1",
+    "react-calendar": "^4.0.0",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-redux-firebase": "^3.3.0",
