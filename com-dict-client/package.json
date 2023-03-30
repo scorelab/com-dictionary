@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "algoliasearch": "^4.3.1",
     "antd": "^4.2.5",
     "firebase": "^7.13.1",
@@ -22,6 +19,12 @@
     "redux-auth-wrapper": "^3.0.0",
     "redux-firestore": "^0.13.0",
     "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "puppeteer": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
