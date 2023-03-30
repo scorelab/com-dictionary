@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Row, Col } from "antd";
+import { Typography, Row, Col,Spin } from "antd";
 import { useFirestore } from "react-redux-firebase";
 import WordSimple from "./wordSimple";
 import WordDay from "./wordDay";
@@ -107,7 +107,13 @@ function WordHome() {
         <Col xl={20} lg={20} md={24} sm={24} xs={24}>
           {words.length > 0
             ? words.map((val, i) => <WordSimple key={i} data={val} />)
-            : ""}
+            :
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center',height:'30vh'}}>
+              <Spin size="large" />
+            </div>
+          }
+
+
         </Col>
         <Col xl={2} lg={2} md={0} sm={0} xs={0}></Col>
 
