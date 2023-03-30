@@ -86,7 +86,7 @@ const RegistrationForm = () => {
     <Row>
       <Row>
         <Col span={1}></Col>
-        <Col span={23}>
+        <Col span={20} style={{ textAlign: "center" }}>
           <span style={{ textAlign: "center" }}>
             <Title level={1}>BECOME A PART OF OUR COMMUNITY TODAY!!!</Title>
           </span>
@@ -98,7 +98,7 @@ const RegistrationForm = () => {
           <Row align="middle">
             <img
               alt="signup"
-              style={{ maxWidth: "120%", paddingTop: "5%" }}
+              style={{ maxWidth: "120%", paddingTop: "5%",paddingLeft: "25%" }}
               src={signup}
             />
           </Row>
@@ -113,6 +113,7 @@ const RegistrationForm = () => {
             name="register"
             onFinish={onFinish}
             scrollToFirstError
+            style={{ maxWidth: "80%",marginLeft:'30%'}}
           >
             <Form.Item
               name="email"
@@ -235,12 +236,13 @@ const RegistrationForm = () => {
 
             <Row gutter={8}>
               <Col span={6}></Col>
-              <Col span={18}>
-                <Form.Item>
+              <Col span={10}>
+                <Form.Item style={{textAlign:'center'}}>
                   <Button
                     type="primary"
                     htmlType="submit"
                     className="register-form-button"
+                    style={{borderRadius: '5px',padding:'5px',textAlign: 'center'}}
                   >
                     Register
                   </Button>
