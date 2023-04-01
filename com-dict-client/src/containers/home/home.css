@@ -161,6 +161,39 @@
       background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdodD0iNDgiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGc+PHBhdGggZD0iTTE1Ny42NjY2Nyw4NmMwLDM5LjU3NzkyIC0zMi4wODg3NSw3MS42NjY2NyAtNzEuNjY2NjcsNzEuNjY2NjdjLTM5LjU3NzkyLDAgLTcxLjY2NjY3LC0zMi4wODg3NSAtNzEuNjY2NjcsLTcxLjY2NjY3YzAsLTM5LjU3NzkyIDMyLjA4ODc1LC03MS42NjY2NyA3MS42NjY2NywtNzEuNjY2NjdjMzkuNTc3OTIsMCA3MS42NjY2NywzMi4wODg3NSA3MS42NjY2Nyw3MS42NjY2N3oiIGZpbGw9IiNjYTZiNjciPjwvcGF0aD48cGF0aCBkPSJNNzguODMzMzMsNTMuNzVoMTQuMzMzMzN2NjQuNWgtMTQuMzMzMzN6IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PHBhdGggZD0iTTUzLjc1LDc4LjgzMzMzaDY0LjV2MTQuMzMzMzNoLTY0LjV6IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=') 50% 50% no-repeat;
       background-size: 100%; }
 
+      .icons8-logout{
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVR4nO3YQUrDQBQG4Kw8QT2BQsW7uJKuXLn5X3yvOYMXEQTBRa1ij+F7RFfiDRR1I2j3ylCoUArNOJNmLPPDgy5K8vWfZChTFDk5ieWhOt5WxrUyTU3oO8Yo01QF4xroBQMdLhbMFofpKgIwXnO22KTgKxjYWnsymwy03OCK5GfwvzVoJzgwxtk9826SQGX6mO2R9GJl2U8PKLj43cgbINcNfDwdbBnT7fw7TK93Fe0nA/RG+t8Ubyp04/4INBkdYrB0mI6U8Txfbvd52XJ7A8sGD/afr4+nYGA9xF7SQGV6T3uJJc5LooJJSy8JBQG9cF0Ajeky6Y3ahD4b47oBlocmOK8r7KzEdQH0TgaGJje48Q1q6kcfKhi31yBGwUB3ROaQ7tfGbM4EoyjHbzk5xXrzA3bWZUEbYIWUAAAAAElFTkSuQmCC") 50% 50% no-repeat;
+        background-size: 100%;
+      }
+      .icons8-dictionary{
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAACdklEQVR4nO2YPYjUUBCA3/mDYnEK/qCNhYKC2OgVohb+VIqCWJzYyHLozuTNbM7G0mPFRmxEOztRUOQKrbQSrlHIzAYVDwT1RBvFTkH8QdSV2U1wWfeWFTcx4g5MkWTy3vdm3puZxLl/Waaq1XmRh13KMKYMkLXGAMt6hosqwW5leKGM9bw08n6kJzhh2CoEn/OE098DxChvOO0VUIhW/g047RVQw2BToQEj70cGgDzwIDb2jDBctAQrhLcLtweF8YswL7V3aow7CwgIt8z+XhCsqFerc4TgVaEAlYIjMcB8JZy094Tg/CwLeaaEV4VhOk/AT1EYDmulvFcZv1pyt/LYycu2CBu34WWGK/kAEtwwW2W4nICEdeeG2psLIdhzPxxbrox3NAjWCx9blwugEB6aKpUWCuO7BORuA5jgbAfbGSV4qBwcnhwdnZs5oDC8jwEWCePBn/fwezwOq2OGzS33Pqgv72gfPw/Aa2YnhNfbnp1oehGfJHbn7LpGWFHGC7ZPcwGsER5oTBQEG802VfV+TQJwOrHD5kLgW2PyCh7NHFAI3z4NwwUxwKpWuCjVMByOQtzQDTC9zsiDcCkJ483OC4CTSfgfpSFWBm4NsTCeygww8rAvBlhseXCW/TmdeGnCDomVwHRcK4sxwZbu4/+5Bx83tVsaglgYXv6SZgg+2mkXxteZHpIsNRoA8sCDbrAH9b86JEI4IwRefXlbx9Lm+6vWJfUMKAzPHxwvLXFFkyj1IEHVFVHiENYmIT7jiih154aa9RPfWFvliijCwX7r26ywC8F4rYLbC3NIUrFvjn58jGu/00yrWPec/Ksu3k90VxD5Ae3LCe3mRvgzAAAAAElFTkSuQmCC') 50% 50% no-repeat;
+        background-size: 100%;
+
+      }
+      .icons8-categories{
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABb0lEQVR4nO1ZUUrEMBDtJVz80CNZ9QiCZNKMezz1BIXOCH64H3sAd73GSizWUmU3aUaSwjwItBl4zWvyJp20qhQKRRQI4ZYQPhjhkNI8R/dgbr55GW1NzuyTeZ3Zc2OuQoQkixg/dOAVEMFDM7uTQuQe1rcpb9z6+I1gHhWCOiNRYF1aqGY/aNY6AvUIq0dAPXIM6hFWj4B6RMQj/1UA+WsxXgfvJ4X48lSqJH1xcP0jxNYyYswuqNRVlAZawikK2jpEiJ6icOApyuv67owcvPVvGLbk3HloP5dS6rbWrgjNpl9+ZuPvfTy0n+cKITSP3fr+wjdy8BQbn/KmiGitXc0W4gc4xJrmMjb+F+9cEVXK16+0kBQRbcqMfC0XP8B+kM+x8SlvighK8Yi02f21Zi0saEayZS0WFjJnE6RRf1H7SJas1Qmn32xZqxMWIiGCS9lHsnxrsWYtyJu1aAmnKBjwe3oRpygYUOoqFIpqjE92rooq7LPvhQAAAABJRU5ErkJggg==') 50% 50% no-repeat;
+        background-size: 100%;
+
+      }
+
       .ant-carousel .slick-slide {
         text-align: center;
         height: 12vmin;
