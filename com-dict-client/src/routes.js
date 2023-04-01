@@ -10,7 +10,9 @@ import Categories from "./containers/categories/categories";
 import CommentWord from "./containers/comment/comment";
 import Report from "./containers/reportWord/reportWord";
 import Search from "./containers/search/search";
+import Profile from "./components/ProfileSection/src/components/Main"
 import { useSelector } from "react-redux";
+// import Profile from "./components/ProfileSection/src/components/Sidebar";
 // import { auth } from "./config";
 
 export default function Routes() {
@@ -21,6 +23,7 @@ export default function Routes() {
       <Route exact path="/browse" component={Browse} />
       <Route path="/search/:language/:keyword" component={Search} />
       <Route exact path="/Categories" component={Categories} />
+      <Route exact path="/profile" component={Profile} />
       <PrivateRoute path="/add">
         <AddWord />
       </PrivateRoute>
