@@ -52,6 +52,7 @@ export const signOut = () => async (firebase, history) => {
   try {
     await firebase.logout();
     history.push("/");
+    message.success("Logout success");
   } catch (e) {
     console.log(e.message);
   }
