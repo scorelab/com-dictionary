@@ -19,7 +19,10 @@ import { addWord, addHeadTerm } from "../../store/actions";
 import { useSelector } from "react-redux";
 
 import { languages } from "../../constants";
+import { categories } from "../../constants";
 import { toTitleCase } from "../../utils.js/toTitleCase";
+
+
 
 const { Text } = Typography;
 // var optionText;
@@ -59,7 +62,7 @@ function WordForm() {
       user_id: user.uid,
       uname: user.displayName,
       createdAt: new Date().getTime(),
-      alphabatical: headTerm[0].toUpperCase(),
+     // alphabatical: headTerm[0].toUpperCase(),
       word_of_the_day: null,
       pronunciation: null,
       trending_factor: 0,
@@ -68,7 +71,7 @@ function WordForm() {
     return addWord(data)(firestore);
   };
 
-  const categories = useSelector((state) => state.firestore.ordered.categories);
+  // const categories = useSelector((state) => state.firestore.ordered.categories);
 
   const headTerms = useSelector((state) => state.firestore.ordered.headTerms);
 
@@ -219,16 +222,19 @@ function WordForm() {
                 />
               </Form.Item>
 
-              <Form.Item name="category">
+              <Form.Item 
+              name="category"
+              //rules={[{ required: true, message: "" }]}
+              >
                 <Select
                   showSearch
                   placeholder="Select the category"
                   onChange={(val) => setCategory(val)}
                 >
                   {categories &&
-                    categories.map((ct, i) => (
-                      <Select.Option value={ct.category}>
-                        {ct.category}
+                    categories.map((ct,j) => (
+                      <Select.Option value={ct}>
+                        {ct}
                       </Select.Option>
                     ))}
                 </Select>

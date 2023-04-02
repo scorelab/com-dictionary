@@ -10,8 +10,10 @@ import Categories from "./containers/categories/categories";
 import CommentWord from "./containers/comment/comment";
 import Report from "./containers/reportWord/reportWord";
 import Search from "./containers/search/search";
+import ContactUs from "./containers/contactUs/contactUs";
+// import ContactUS from "./components/ContactUS/index";
 import { useSelector } from "react-redux";
-// import { auth } from "./config";
+import "./config";
 
 export default function Routes() {
   return (
@@ -27,6 +29,7 @@ export default function Routes() {
       <Route path="/letter" component={LetterBased} />
       <Route path="/comment" component={CommentWord} />
       <Route path="/report" component={Report} />
+      <Route path="/contact" component={ContactUs} />
     </Router>
   );
 }
