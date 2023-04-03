@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Typography, Card, Row, Col, Divider, Button, message } from "antd";
 import {
   SoundOutlined,
@@ -38,6 +38,8 @@ function WordCustom(props) {
     // word_of_the_day,
   } = props.data;
 
+  const likesCount = useRef(parseInt(likes));
+  const dislikesCount = useRef(parseInt(dislikes));
   const history = useHistory();
   const firestore = useFirestore();
   const user = useSelector((state) => state.firebase.auth);
@@ -53,13 +55,21 @@ function WordCustom(props) {
       likes: parseInt(likes) + 1,
       dislikes: dislikes > 0 ? parseInt(dislikes) - 1 : dislikes,
     };
-    console.log(myLikes, user_likes, new_likes);
     if (myLikes.length < 1) {
       updateWord(id, new_likes)(firestore);
       addLikes(user_likes)(firestore);
       myDislikes.length > 0 && deleteDislikes(myDislikes[0].id)(firestore);
+      myDislikes.length > 0 && (dislikesCount.current -= 1);
+      likesCount.current += 1;
     } else {
-      return message.error("You already liked.");
+      let new_likes = {
+        likes: likes > 0 ? parseInt(likes) - 1 : likes,
+        dislikes: dislikes,
+      };
+      updateWord(id, new_likes)(firestore);
+      myLikes.length > 0 && deleteLikes(myLikes[0].id)(firestore);
+      myLikes.length > 0 && (likesCount.current -= 1);
+      // return message.error("You already liked.");
     }
   };
   const handleDislike = () => {
@@ -74,13 +84,21 @@ function WordCustom(props) {
       dislikes: parseInt(dislikes) + 1,
       likes: likes > 0 ? parseInt(likes) - 1 : likes,
     };
-    console.log(myDislikes, user_dislikes, new_dislikes);
     if (myDislikes.length < 1) {
       updateWord(id, new_dislikes)(firestore);
       addDislikes(user_dislikes)(firestore);
       myLikes.length > 0 && deleteLikes(myLikes[0].id)(firestore);
+      myLikes.length > 0 && (likesCount.current -= 1);
+      dislikesCount.current += 1;
     } else {
-      return message.error("You already disliked.");
+      let new_dislikes = {
+        dislikes: dislikes > 0? parseInt(dislikes) - 1: dislikes,
+        likes: likes,
+      };
+      updateWord(id, new_dislikes)(firestore);
+      myDislikes.length > 0 && deleteDislikes(myDislikes[0].id)(firestore);
+      myDislikes.length > 0 && (dislikesCount.current -= 1);
+      // return message.error("You already disliked.");
     }
   };
 
@@ -201,7 +219,7 @@ function WordCustom(props) {
                 onClick={handleLike}
                 style={{ fontSize: "4vmin" }}
               />
-              <Text>{likes}</Text>
+              <Text>{ likesCount.current }</Text>
             </Col>
             <Col xl={1} lg={1} md={1} sm={1}>
               <Divider
@@ -216,7 +234,7 @@ function WordCustom(props) {
                 onClick={handleDislike}
                 style={{ fontSize: "4vmin" }}
               />
-              <Text>{dislikes}</Text>
+              <Text>{ dislikesCount.current }</Text>
             </Col>
             <Col xl={0} lg={0} md={13} sm={13}></Col>
             <Col xl={13} lg={13} md={24} sm={24} style={{ textAlign: "right" }}>
