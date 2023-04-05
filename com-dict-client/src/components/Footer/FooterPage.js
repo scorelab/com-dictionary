@@ -146,7 +146,7 @@ function Footer() {
       </div>
       <Row className="bottom-bar">
         <Col lg={24} sm={24}>
-          <span style={{ textAlign: "center" }}>Copyright © SCoReLab</span>
+          <span >Copyright © SCoReLab</span>
         </Col>
       </Row>
     </footer>
