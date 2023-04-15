@@ -55,7 +55,7 @@ function Footer() {
                   <FileTextOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to="/termsandconditions" className="link">
                     Terms and Conditions
                   </Link>
                 </Col>
