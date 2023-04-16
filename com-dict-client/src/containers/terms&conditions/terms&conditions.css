@@ -1,4 +1,16 @@
-.termscondtionsContent{
-        padding: 2% 25%;
-        background-color: #ffffff;
+.termscondtionsContent {
+  padding: 2% 25%;
+  background-color: #ffffff;
+}
+
+.tcHeading {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+        .tcHeading{
+
+                font-size: 3rem;
+        }
 }

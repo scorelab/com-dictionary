@@ -3,7 +3,7 @@ import React from 'react'
 const TermsConditions = () => {
   return (
         <>
-    <h1 style={{fontSize:"5rem", fontWeight:"bold"}}>Terms&Conditions</h1>
+    <h1 class="tcHeading">Terms & Conditions</h1>
     <ul>
         <li>
                 <h1>Users are responsible for the accuracy and appropriateness of the entries they submit to the Community Dictionary.</h1>
