@@ -70,7 +70,7 @@ function Footer() {
                   <UnorderedListOutlined />
                 </Col>
                 <Col span={22}>
-                  <Link to="#" className="link">
+                  <Link to="/faqs" className="link">
                     FAQ
                   </Link>
                 </Col>
