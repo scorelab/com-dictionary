@@ -7,6 +7,7 @@ export const signIn = (credentials) => async (firebase, history) => {
     history.goBack();
   } catch (e) {
     console.log(e.message);
+    message.error("There is no user record corresponding to this credentials.Please enter valid credentials")
   }
 };
 
