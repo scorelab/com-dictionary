@@ -63,10 +63,24 @@ export const createNewUser = (email, password, username) => async (
 ) => {
   try {
     console.log(email, password, username);
-    await firebase.createUser({ email, password }, { username, email });
-    history.goBack();
-    console.log(history);
-    message.success("User registraion successfull!");
+    firebase.createUser({ email, password }, { username, email })
+      .then(() => {
+        firebase.auth().onAuthStateChanged(function (user) {
+          user.sendEmailVerification();
+          if (!user.emailVerified) message.warning("User Verification sent, Please verify your email");
+        });
+      })
+      .then(() => {
+        firebase.auth().onAuthStateChanged(function (user) {
+          if (user.emailVerified) message.success("Sign Up Successful")
+        })
+      }).then(() => {
+        setTimeout(() => {
+          history.goBack();
+          console.log(history);
+        }, 2000)
+      })
+
   } catch (e) {
     console.log(e.message);
     alert(e.message);
@@ -78,6 +92,7 @@ export const addNewUser = (user) => async (firestore, history) => {
   try {
     const { email, username, phone_number } = user;
     await firestore.add("users", { email, username, phone_number });
+
     console.log("success");
     message.success("User registraion successfull!");
   } catch (e) {
