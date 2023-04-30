@@ -27,6 +27,10 @@ const NormalLoginForm = () => {
       <Form.Item
         name="email"
         rules={[
+           {
+                type: "email",
+                message: "The input is not a valid Email address!",
+            },
           {
             required: true,
             message: "Please input your Email Address!",
